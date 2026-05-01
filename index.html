@@ -552,13 +552,13 @@
   .services-strip {
     background: var(--sage-deep);
     color: var(--cream);
-    padding: 32px 0;
+    padding: 0;
     overflow: hidden;
     margin: 0;
   }
   .ticker {
     display: flex;
-    gap: 60px;
+    gap: 0;
     animation: scroll 30s linear infinite;
     white-space: nowrap;
     width: max-content;
@@ -570,7 +570,19 @@
     letter-spacing: -0.02em;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 48px;
+    position: relative;
+    isolation: isolate;
+    padding: 32px 48px;
+    background-size: cover;
+    background-position: center;
+  }
+  .ticker-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 61, 74, 0.76);
+    z-index: -1;
   }
   .ticker-item::after {
     content: "✦";
@@ -608,18 +620,29 @@
     overflow: hidden;
     display: grid;
     place-items: center;
+    background-size: cover;
+    background-position: center;
   }
-  .service-visual.v-hydro { background: linear-gradient(135deg, #a8d8e0 0%, #2a7a8c 100%); }
-  .service-visual.v-laser { background: linear-gradient(135deg, #f0c898 0%, #c06252 100%); }
-  .service-visual.v-tens  { background: linear-gradient(135deg, #c8dce0 0%, #4a7d8c 100%); }
-  .service-visual.v-acu   { background: linear-gradient(135deg, #a0ccd8 0%, #1c3d4a 100%); }
-  .service-visual.v-house { background: linear-gradient(135deg, #f0ddc8 0%, #d8907a 100%); }
-  .service-visual.v-nutri { background: linear-gradient(135deg, #b8d8d8 0%, #1e5060 100%); }
+  .service-visual.v-hydro { background: linear-gradient(160deg, rgba(42,122,140,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/hydrotherapy-service.jpg') center/cover no-repeat; }
+  .service-visual.v-laser { background: linear-gradient(160deg, rgba(192,98,82,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/laser-treatment-service.jpg') center/cover no-repeat; }
+  .service-visual.v-tens  { background: linear-gradient(160deg, rgba(74,125,140,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/tens-service.jpg') center/cover no-repeat; }
+  .service-visual.v-acu   { background: linear-gradient(160deg, rgba(28,61,74,0.10) 0%, rgba(30,80,96,0.18) 100%), url('./images/acupuncture-service.jpg') center/cover no-repeat; }
+  .service-visual.v-house { background: linear-gradient(160deg, rgba(216,144,122,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/housecall-service.jpg') center/cover no-repeat; }
+  .service-visual.v-nutri { background: linear-gradient(160deg, rgba(30,80,96,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/nutrition-wellness-service.jpg') center/cover no-repeat; }
 
-  .service-visual svg {
-    width: 55%;
-    height: 55%;
-    color: rgba(255,255,255,0.95);
+  .service-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .service-icon {
+    display: block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--terracotta);
+    opacity: 0.85;
   }
   .service-num {
     position: absolute;
@@ -648,7 +671,6 @@
     letter-spacing: 0.15em;
     color: var(--terracotta);
     font-weight: 600;
-    margin-bottom: 20px;
   }
   .service-lead {
     font-size: 16px;
@@ -1147,7 +1169,7 @@
       border-bottom: 1px solid rgba(28, 61, 74, 0.1);
     }
     .section { padding: 70px 0; }
-    .ticker-item { font-size: 26px; gap: 40px; }
+    .ticker-item { font-size: 26px; gap: 36px; padding: 28px 36px; }
     .service-content h3 { font-size: 32px; }
     .hero { padding: 60px 0 80px; }
     .hero-stats { gap: 24px; }
@@ -1394,18 +1416,18 @@
 <!-- ================= TICKER STRIP ================= -->
 <div class="services-strip">
   <div class="ticker">
-    <span class="ticker-item">Hydrotherapy</span>
-    <span class="ticker-item">Laser Therapy</span>
-    <span class="ticker-item">Acupuncture</span>
-    <span class="ticker-item">TENS &amp; NMES</span>
-    <span class="ticker-item">Nutrition Wellness</span>
-    <span class="ticker-item">Housecalls</span>
-    <span class="ticker-item">Hydrotherapy</span>
-    <span class="ticker-item">Laser Therapy</span>
-    <span class="ticker-item">Acupuncture</span>
-    <span class="ticker-item">TENS &amp; NMES</span>
-    <span class="ticker-item">Nutrition Wellness</span>
-    <span class="ticker-item">Housecalls</span>
+    <span class="ticker-item" style="background-image:url('./images/hydrotherapy.jpg')">Hydrotherapy</span>
+    <span class="ticker-item" style="background-image:url('./images/laser-treatment.jpg')">Laser Therapy</span>
+    <span class="ticker-item" style="background-image:url('./images/acupuncture.jpg')">Acupuncture</span>
+    <span class="ticker-item" style="background-image:url('./images/tens.jpg')">TENS &amp; NMES</span>
+    <span class="ticker-item" style="background-image:url('./images/nutrition-wellness.jpg')">Nutrition Wellness</span>
+    <span class="ticker-item" style="background-image:url('./images/housecall.jpg')">Housecalls</span>
+    <span class="ticker-item" style="background-image:url('./images/hydrotherapy.jpg')">Hydrotherapy</span>
+    <span class="ticker-item" style="background-image:url('./images/laser-treatment.jpg')">Laser Therapy</span>
+    <span class="ticker-item" style="background-image:url('./images/acupuncture.jpg')">Acupuncture</span>
+    <span class="ticker-item" style="background-image:url('./images/tens.jpg')">TENS &amp; NMES</span>
+    <span class="ticker-item" style="background-image:url('./images/nutrition-wellness.jpg')">Nutrition Wellness</span>
+    <span class="ticker-item" style="background-image:url('./images/housecall.jpg')">Housecalls</span>
   </div>
 </div>
 
@@ -1427,7 +1449,7 @@
     <!-- Hydrotherapy -->
     <div class="service-block reveal">
       <div class="service-content">
-        <span class="service-tag">Service 01 — Water-based therapy</span>
+        <div class="service-tag-row"><span class="service-tag">Service 01 — Water-based therapy</span><svg class="service-icon" viewBox="0 0 100 100" fill="currentColor"><path d="M50 15c-15 20-25 35-25 50a25 25 0 0050 0c0-15-10-30-25-50z"/></svg></div>
         <h3>Hydrotherapy</h3>
         <p class="service-lead">Hydrotherapy harnesses the unique properties of water to improve mobility and overall health. Buoyancy and resistance combine to strengthen and condition muscles without stressing joints — and warm water at 29–30°C dilates blood vessels, easing aches and aiding healing.</p>
         <h4 class="service-subhead">How it works</h4>
@@ -1445,14 +1467,13 @@
       </div>
       <div class="service-visual v-hydro">
         <span class="service-num">01</span>
-        <svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 15c-15 20-25 35-25 50a25 25 0 0050 0c0-15-10-30-25-50z"/></svg>
       </div>
     </div>
 
     <!-- Laser Therapy -->
     <div class="service-block reverse reveal">
       <div class="service-content">
-        <span class="service-tag">Service 02 — Photobiomodulation</span>
+        <div class="service-tag-row"><span class="service-tag">Service 02 — Photobiomodulation</span><svg class="service-icon" viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="8"/><path d="M50 20v15M50 65v15M20 50h15M65 50h15M28 28l11 11M61 61l11 11M72 28L61 39M39 61L28 72" stroke="currentColor" stroke-width="3" fill="none"/></svg></div>
         <h3>Laser Therapy</h3>
         <p class="service-lead">Laser therapy reduces pain, accelerates healing, and lowers inflammation. Pets dealing with pain, swelling, or slow-healing wounds can benefit from focused laser treatment.</p>
         <h4 class="service-subhead">How it works</h4>
@@ -1470,14 +1491,13 @@
       </div>
       <div class="service-visual v-laser">
         <span class="service-num">02</span>
-        <svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="8"/><path d="M50 20v15M50 65v15M20 50h15M65 50h15M28 28l11 11M61 61l11 11M72 28L61 39M39 61L28 72" stroke="currentColor" stroke-width="3" fill="none"/></svg>
       </div>
     </div>
 
     <!-- TENS / NMES -->
     <div class="service-block reveal">
       <div class="service-content">
-        <span class="service-tag">Service 03 — Electrotherapy</span>
+        <div class="service-tag-row"><span class="service-tag">Service 03 — Electrotherapy</span><svg class="service-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 50 L35 50 L42 30 L52 70 L60 40 L68 60 L80 50"/></svg></div>
         <h3>TENS &amp; NMES</h3>
         <p class="service-lead">Both forms of electrotherapy target nerves through a mild electrical current. TENS provides pain relief; NMES treats muscular weakness — together, they're powerful tools in recovery.</p>
         <h4 class="service-subhead">How it works</h4>
@@ -1495,14 +1515,13 @@
       </div>
       <div class="service-visual v-tens">
         <span class="service-num">03</span>
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 50 L35 50 L42 30 L52 70 L60 40 L68 60 L80 50"/></svg>
       </div>
     </div>
 
     <!-- Acupuncture -->
     <div class="service-block reverse reveal">
       <div class="service-content">
-        <span class="service-tag">Service 04 — TCM &amp; modern integration</span>
+        <div class="service-tag-row"><span class="service-tag">Service 04 — TCM &amp; modern integration</span><svg class="service-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="3" fill="currentColor"/><path d="M50 20v8M50 72v8M20 50h8M72 50h8"/></svg></div>
         <h3>Acupuncture</h3>
         <p class="service-lead">Acupuncture is the gentle insertion of fine, sterile needles into specific points to bring positive effects on the nervous and physiological systems — pain modulation, circulation, and balance.</p>
         <h4 class="service-subhead">How it works</h4>
@@ -1521,14 +1540,13 @@
       </div>
       <div class="service-visual v-acu">
         <span class="service-num">04</span>
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="3" fill="currentColor"/><path d="M50 20v8M50 72v8M20 50h8M72 50h8"/></svg>
       </div>
     </div>
 
     <!-- Housecalls -->
     <div class="service-block reveal">
       <div class="service-content">
-        <span class="service-tag">Service 05 — Care at home</span>
+        <div class="service-tag-row"><span class="service-tag">Service 05 — Care at home</span><svg class="service-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 50 L50 25 L80 50 V80 H20 Z"/><path d="M40 80 V60 H60 V80"/></svg></div>
         <h3>House Visits</h3>
         <p class="service-lead">Our rehabilitation veterinarians visit your home to deliver personalised care. Ideal for pets that travel poorly or owners with mobility limitations — we bring the clinic to you.</p>
         <h4 class="service-subhead">What's included</h4>
@@ -1542,14 +1560,13 @@
       </div>
       <div class="service-visual v-house">
         <span class="service-num">05</span>
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 50 L50 25 L80 50 V80 H20 Z"/><path d="M40 80 V60 H60 V80"/></svg>
       </div>
     </div>
 
     <!-- Nutrition -->
     <div class="service-block reverse reveal">
       <div class="service-content">
-        <span class="service-tag">Service 06 — Food as medicine</span>
+        <div class="service-tag-row"><span class="service-tag">Service 06 — Food as medicine</span><svg class="service-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M50 20 C30 30 25 55 35 75 C45 80 60 78 65 70 C75 55 70 30 50 20z"/><path d="M50 20 V75" stroke-width="2"/></svg></div>
         <h3>Nutrition &amp; Wellness</h3>
         <p class="service-lead">A healthy body starts with proper nutrition. We blend modern science with Traditional Chinese Medicine, treating food as medicine that supports growth, immunity, and emotional balance.</p>
         <h4 class="service-subhead">The five food elements</h4>
@@ -1568,7 +1585,6 @@
       </div>
       <div class="service-visual v-nutri">
         <span class="service-num">06</span>
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M50 20 C30 30 25 55 35 75 C45 80 60 78 65 70 C75 55 70 30 50 20z"/><path d="M50 20 V75" stroke-width="2"/></svg>
       </div>
     </div>
   </div>
