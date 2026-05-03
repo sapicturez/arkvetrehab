@@ -757,19 +757,19 @@ nav {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 68px;
-  height: 68px;
+  width: 129px;
+  height: 129px;
   background: none;
   border-radius: 0;
   box-shadow: none;
   display: grid;
   place-items: center;
-  color: #c06252;
+  color: #e6d8c0;
   z-index: 2;
 }
 .service-icon svg {
-  width: 61px;
-  height: 61px;
+  width: 116px;
+  height: 116px;
 }
 .service-num { display: none; }
 
