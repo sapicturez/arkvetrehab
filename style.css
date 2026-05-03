@@ -634,7 +634,10 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
+.collage-top:hover img,
+.collage-bottom > div:hover img { transform: scale(1.07); }
 /* ========================================
    Unified slideshow — pure opacity fade
    2-img: 5s cycle (2.5s each)
@@ -754,19 +757,19 @@ nav {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 50px;
-  height: 50px;
-  background: var(--cream-warm);
-  border-radius: 14px;
+  width: 68px;
+  height: 68px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
   display: grid;
   place-items: center;
-  color: var(--terracotta);
+  color: #c06252;
   z-index: 2;
-  box-shadow: 0 4px 16px rgba(28, 61, 74, 0.14);
 }
 .service-icon svg {
-  width: 36px;
-  height: 36px;
+  width: 61px;
+  height: 61px;
 }
 .service-num { display: none; }
 
