@@ -706,8 +706,90 @@ nav {
   .tens-slide img:nth-child(1) { -webkit-animation: none; animation: none; opacity: 1; }
   .tens-slide img:nth-child(2) { display: none; }
 }
-.service-visual.v-acu   { background: linear-gradient(160deg, rgba(28,61,74,0.10) 0%, rgba(30,80,96,0.18) 100%), url('./images/acupuncture-service.jpg') center/cover no-repeat; }
-.service-visual.v-house { background: linear-gradient(160deg, rgba(216,144,122,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/housecall-service.jpg') center/cover no-repeat; }
+.service-visual.v-acu { background: var(--cream); }
+.acu-slide {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 0;
+}
+.acu-slide img {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  will-change: opacity, transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: acu-show 6s ease-in-out infinite;
+  animation: acu-show 6s ease-in-out infinite;
+}
+.acu-slide img:nth-child(1) { animation-delay:  0s; -webkit-animation-delay:  0s; }
+.acu-slide img:nth-child(2) { animation-delay: -4s; -webkit-animation-delay: -4s; }
+.acu-slide img:nth-child(3) { animation-delay: -2s; -webkit-animation-delay: -2s; }
+
+@keyframes acu-show {
+  0%   { opacity: 0; transform: scale(1.06) translateX(6px); }
+  6%   { opacity: 1; transform: scale(1.06) translateX(6px); }
+  27%  { opacity: 1; transform: scale(1.0)  translateX(0px); }
+  33%  { opacity: 0; transform: scale(1.0)  translateX(0px); }
+  100% { opacity: 0; transform: scale(1.06) translateX(6px); }
+}
+@-webkit-keyframes acu-show {
+  0%   { opacity: 0; -webkit-transform: scale(1.06) translateX(6px); }
+  6%   { opacity: 1; -webkit-transform: scale(1.06) translateX(6px); }
+  27%  { opacity: 1; -webkit-transform: scale(1.0)  translateX(0px); }
+  33%  { opacity: 0; -webkit-transform: scale(1.0)  translateX(0px); }
+  100% { opacity: 0; -webkit-transform: scale(1.06) translateX(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .acu-slide img:nth-child(1) { animation: none; -webkit-animation: none; opacity: 1; transform: none; }
+  .acu-slide img:nth-child(2),
+  .acu-slide img:nth-child(3) { display: none; }
+}
+.service-visual.v-house { background: var(--cream); }
+.house-slide {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 0;
+}
+.house-slide img {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  will-change: opacity, transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: house-drift 9s ease-in-out infinite;
+  animation: house-drift 9s ease-in-out infinite;
+}
+.house-slide img:nth-child(1) { animation-delay: 0s;  -webkit-animation-delay: 0s;  }
+.house-slide img:nth-child(2) { animation-delay: -6s; -webkit-animation-delay: -6s; }
+.house-slide img:nth-child(3) { animation-delay: -3s; -webkit-animation-delay: -3s; }
+
+@keyframes house-drift {
+  0%   { opacity: 0; transform: translateY(14px) scale(1.04); }
+  6%   { opacity: 1; transform: translateY(14px) scale(1.04); }
+  28%  { opacity: 1; transform: translateY(0px)  scale(1.0);  }
+  33%  { opacity: 0; transform: translateY(-6px) scale(1.0);  }
+  100% { opacity: 0; transform: translateY(14px) scale(1.04); }
+}
+@-webkit-keyframes house-drift {
+  0%   { opacity: 0; -webkit-transform: translateY(14px) scale(1.04); }
+  6%   { opacity: 1; -webkit-transform: translateY(14px) scale(1.04); }
+  28%  { opacity: 1; -webkit-transform: translateY(0px)  scale(1.0);  }
+  33%  { opacity: 0; -webkit-transform: translateY(-6px) scale(1.0);  }
+  100% { opacity: 0; -webkit-transform: translateY(14px) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .house-slide img:nth-child(1) { animation: none; -webkit-animation: none; opacity: 1; transform: none; }
+  .house-slide img:nth-child(2),
+  .house-slide img:nth-child(3) { display: none; }
+}
 
 .service-tag-row {
   display: flex;
@@ -1252,7 +1334,7 @@ footer a:hover { color: var(--terracotta-soft); }
   .service-block.reverse { direction: ltr; }
   .team-grid { grid-template-columns: 1fr; }
   .team-card { grid-template-columns: 100px 1fr; gap: 20px; padding: 28px; }
-  .team-avatar { width: 100px; height: 100px; }
+  .team-avatar { width: 120px; height: 120px; }
   .space-grid { grid-template-columns: repeat(2, 1fr); }
   .space-section { padding: 70px 32px; margin: 0 16px; }
   .packages-grid { grid-template-columns: 1fr; }
