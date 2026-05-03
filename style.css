@@ -594,7 +594,9 @@ nav {
   background-size: cover;
   background-position: center;
 }
-.service-visual.v-hydro { background: #f3ede0; }
+.service-visual.v-hydro,
+.service-visual.v-nutri { background: #f3ede0; }
+
 .hydro-collage,
 .nutri-collage {
   position: absolute;
@@ -602,24 +604,27 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding: 6px;
   background: #f3ede0;
+  box-sizing: border-box;
   z-index: 0;
 }
-.hydro-collage .collage-top,
-.nutri-collage .collage-top {
+.collage-top {
   flex: 3;
+  min-height: 0;
+  border-radius: 10px;
   overflow: hidden;
 }
-.hydro-collage .collage-bottom,
-.nutri-collage .collage-bottom {
+.collage-bottom {
   flex: 2;
+  min-height: 0;
   display: flex;
   gap: 6px;
-  overflow: hidden;
 }
-.hydro-collage .collage-bottom > div,
-.nutri-collage .collage-bottom > div {
+.collage-bottom > div {
   flex: 1;
+  min-width: 0;
+  border-radius: 10px;
   overflow: hidden;
 }
 .hydro-collage img,
@@ -702,7 +707,6 @@ nav {
 }
 .service-visual.v-acu   { background: linear-gradient(160deg, rgba(28,61,74,0.10) 0%, rgba(30,80,96,0.18) 100%), url('./images/acupuncture-service.jpg') center/cover no-repeat; }
 .service-visual.v-house { background: linear-gradient(160deg, rgba(216,144,122,0.10) 0%, rgba(28,61,74,0.18) 100%), url('./images/housecall-service.jpg') center/cover no-repeat; }
-.service-visual.v-nutri { background: #f3ede0; }
 
 .service-tag-row {
   display: flex;
