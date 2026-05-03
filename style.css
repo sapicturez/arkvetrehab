@@ -612,7 +612,7 @@ nav {
 .collage-top {
   flex: 3;
   min-height: 0;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
 .collage-bottom {
@@ -624,9 +624,10 @@ nav {
 .collage-bottom > div {
   flex: 1;
   min-width: 0;
-  border-radius: 10px;
   overflow: hidden;
 }
+.collage-bottom > div:first-child { border-radius: 0 0 0 10px; }
+.collage-bottom > div:last-child  { border-radius: 0 0 10px 0; }
 .hydro-collage img,
 .nutri-collage img {
   display: block;
