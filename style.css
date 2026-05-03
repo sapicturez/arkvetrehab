@@ -602,7 +602,7 @@ nav {
   grid-template-rows: 3fr 2fr;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
-  background: #1c3d4a;
+  background: #f3ede0;
   z-index: 0;
 }
 .hydro-collage img {
@@ -696,7 +696,7 @@ nav {
   grid-template-rows: 3fr 2fr;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
-  background: #1c3d4a;
+  background: #f3ede0;
   z-index: 0;
 }
 .nutri-collage img {
@@ -718,22 +718,21 @@ nav {
 }
 .service-icon {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  width: 72px;
-  height: 72px;
-  background: none;
-  border: none;
-  border-radius: 0;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  display: block;
-  color: rgba(255, 255, 255, 0.4);
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--cream-warm);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--terracotta);
   z-index: 2;
+  box-shadow: 0 4px 16px rgba(28, 61, 74, 0.14);
 }
 .service-icon svg {
-  width: 72px;
-  height: 72px;
+  width: 36px;
+  height: 36px;
 }
 .service-num { display: none; }
 
