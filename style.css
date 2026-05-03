@@ -603,8 +603,8 @@ nav {
   top: 0; right: 0; bottom: 0; left: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 6px;
+  gap: 3px;
+  padding: 3px;
   background: #f3ede0;
   box-sizing: border-box;
   z-index: 0;
@@ -619,7 +619,7 @@ nav {
   flex: 2;
   min-height: 0;
   display: flex;
-  gap: 6px;
+  gap: 3px;
 }
 .collage-bottom > div {
   flex: 1;
