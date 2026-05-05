@@ -228,6 +228,17 @@ nav {
   border-radius: 50%;
   background: var(--terracotta);
   animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+.eyebrow-sep {
+  width: 1px; height: 14px;
+  background: rgba(28,61,74,0.20);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+.eyebrow-accent {
+  color: var(--terracotta);
+  font-weight: 600;
 }
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
