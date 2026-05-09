@@ -138,9 +138,12 @@
 
         <details class="why-item reveal">
           <summary class="why-summary" style="background-image:url('./images/ark_choose1.jpg')">
-            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 18h8"/></svg></div>
-            <h3>Complete Services</h3>
-            <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="why-img" style="background-image:url('./images/ark_choose1.jpg')"></div>
+            <div class="why-bar">
+              <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 18h8"/></svg></div>
+              <h3>Complete Services</h3>
+              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
           </summary>
           <div class="why-body">
             <ul>
@@ -156,9 +159,12 @@
 
         <details class="why-item reveal">
           <summary class="why-summary" style="background-image:url('./images/ark_choose2.jpg')">
-            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14v7"/><path d="M5 10v6c0 2 3 4 7 4s7-2 7-4v-6"/></svg></div>
-            <h3>Trusted Veterinarians</h3>
-            <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="why-img" style="background-image:url('./images/ark_choose2.jpg')"></div>
+            <div class="why-bar">
+              <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14v7"/><path d="M5 10v6c0 2 3 4 7 4s7-2 7-4v-6"/></svg></div>
+              <h3>Trusted Veterinarians</h3>
+              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
           </summary>
           <div class="why-body">
             <ul>
@@ -173,9 +179,12 @@
 
         <details class="why-item reveal">
           <summary class="why-summary" style="background-image:url('./images/ark_choose3.jpg');background-position:center 20%">
-            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
-            <h3>Rehab At Your Doorstep</h3>
-            <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="why-img" style="background-image:url('./images/ark_choose3.jpg');background-position:center 20%"></div>
+            <div class="why-bar">
+              <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+              <h3>Rehab At Your Doorstep</h3>
+              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
           </summary>
           <div class="why-body">
             <ul>
@@ -190,9 +199,12 @@
 
         <details class="why-item reveal">
           <summary class="why-summary" style="background-image:url('./images/ark_choose4.jpg')">
-            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2z"/><path d="M12 14v8"/><path d="M5 22h14"/></svg></div>
-            <h3>Wellness Begins Here</h3>
-            <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="why-img" style="background-image:url('./images/ark_choose4.jpg')"></div>
+            <div class="why-bar">
+              <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2z"/><path d="M12 14v8"/><path d="M5 22h14"/></svg></div>
+              <h3>Wellness Begins Here</h3>
+              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
           </summary>
           <div class="why-body">
             <ul>
@@ -208,16 +220,32 @@
       <script>
       (function(){
         var items = document.querySelectorAll('.why-item');
+        var DESKTOP = 881;
+
+        function isDesktop(){ return window.innerWidth >= DESKTOP; }
+
+        function setMode(){
+          if(isDesktop()){
+            items.forEach(function(det){ det.setAttribute('open',''); });
+          } else {
+            items.forEach(function(det){ det.removeAttribute('open'); det.classList.remove('closing'); });
+          }
+        }
+
+        setMode();
+        window.addEventListener('resize', setMode);
+
         items.forEach(function(det){
           det.addEventListener('click', function(e){
-            if (!e.target.closest('summary')) return;
-            if (det.open) {
+            if(!e.target.closest('summary')) return;
+            if(isDesktop()){ e.preventDefault(); return; }
+            if(det.open){
               e.preventDefault();
               det.classList.add('closing');
               setTimeout(function(){ det.classList.remove('closing'); det.removeAttribute('open'); }, 380);
             } else {
               items.forEach(function(other){
-                if (other !== det && other.open && !other.classList.contains('closing')) {
+                if(other !== det && other.open && !other.classList.contains('closing')){
                   other.classList.add('closing');
                   setTimeout(function(){ other.classList.remove('closing'); other.removeAttribute('open'); }, 380);
                 }
@@ -249,62 +277,56 @@
     <div class="services-grid reveal">
       <a href="services.html#hydrotherapy" class="srv-card">
         <span class="srv-num">01</span>
-        <span class="srv-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C8.5 6.5 6 11 6 15a6 6 0 0012 0c0-4-2.5-8.5-6-13z"/></svg></span>
         <div class="srv-info">
           <h3>Hydrotherapy</h3>
           <p>Water-based therapy to rebuild strength without joint stress</p>
         </div>
-        <span class="srv-thumb"><img src="./images/hydrotherapy.jpg" alt="Dog hydrotherapy Singapore"></span>
+        <span class="srv-thumb"><img src="./images/hydrotherapy-thumb.jpg" alt="Dog hydrotherapy Singapore"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="services.html#laser-therapy" class="srv-card">
         <span class="srv-num">02</span>
-        <span class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/><path d="M12 5v2M12 17v2M5 12h2M17 12h2M7.05 7.05l1.42 1.42M15.54 15.54l1.42 1.42M16.95 7.05l-1.42 1.42M8.46 15.54l-1.42 1.42"/></svg></span>
         <div class="srv-info">
           <h3>Laser Therapy</h3>
           <p>Photobiomodulation to reduce pain, inflammation, and aid healing</p>
         </div>
-        <span class="srv-thumb"><img src="./images/laser-treatment.jpg" alt="Laser therapy for dogs Singapore"></span>
+        <span class="srv-thumb"><img src="./images/laser-treatment-thumb.jpg" alt="Laser therapy for dogs Singapore"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="services.html#tens-nmes" class="srv-card">
         <span class="srv-num">03</span>
-        <span class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l2-5 4 10 2-8 2 5h7"/></svg></span>
         <div class="srv-info">
           <h3>TENS &amp; NMES</h3>
           <p>Electrotherapy for pain relief and muscle re-education</p>
         </div>
-        <span class="srv-thumb"><img src="./images/tens.jpg" alt="TENS NMES electrotherapy pets"></span>
+        <span class="srv-thumb"><img src="./images/tens-thumb.jpg" alt="TENS NMES electrotherapy pets"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="services.html#acupuncture" class="srv-card">
         <span class="srv-num">04</span>
-        <span class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M12 5v1.5M12 17.5V19M5 12h1.5M17.5 12H19"/></svg></span>
         <div class="srv-info">
           <h3>Acupuncture</h3>
           <p>TCM needle therapy to modulate pain and restore balance</p>
         </div>
-        <span class="srv-thumb"><img src="./images/acupuncture.jpg" alt="Pet acupuncture Singapore"></span>
+        <span class="srv-thumb"><img src="./images/acupuncture-thumb.jpg" alt="Pet acupuncture Singapore"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="services.html#house-visits" class="srv-card">
         <span class="srv-num">05</span>
-        <span class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v10H3V11z"/><path d="M10 21v-5h4v5"/></svg></span>
         <div class="srv-info">
-          <h3>House Visits</h3>
+          <h3>House Visits &amp; Remote Rehab Care&nbsp;&nbsp;</h3>
           <p>Personalised rehabilitation care delivered at your home</p>
         </div>
-        <span class="srv-thumb"><img src="./images/housecall.jpg" alt="Veterinary house calls Singapore"></span>
+        <span class="srv-thumb"><img src="./images/housecall-thumb.jpg" alt="Veterinary house calls Singapore"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="services.html#nutrition-wellness" class="srv-card">
         <span class="srv-num">06</span>
-        <span class="srv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3C8 7 8 14 12 21c4-7 4-14 0-18z"/><path d="M12 3v18"/></svg></span>
         <div class="srv-info">
           <h3>Nutrition &amp; Wellness</h3>
           <p>Integrative dietary plans blending science and TCM food medicine</p>
         </div>
-        <span class="srv-thumb"><img src="./images/nutrition-wellness.jpg" alt="Pet nutrition consultation Singapore"></span>
+        <span class="srv-thumb"><img src="./images/nutrition-wellness-thumb.jpg" alt="Pet nutrition consultation Singapore"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -314,13 +336,13 @@
 <!-- ================= TICKER STRIP ================= -->
 <div class="services-strip">
   <div class="ticker">
-    <span class="ticker-item" style="background-image:url('./images/hydrotherapy.jpg')">Hydrotherapy</span>
+    <span class="ticker-item" style="background-image:url('./images/hydrotherapy-thumb.jpg')">Hydrotherapy</span>
     <span class="ticker-item" style="background-image:url('./images/laser-treatment.jpg')">Laser Therapy</span>
     <span class="ticker-item" style="background-image:url('./images/acupuncture.jpg')">Acupuncture</span>
     <span class="ticker-item" style="background-image:url('./images/tens.jpg')">TENS &amp; NMES</span>
     <span class="ticker-item" style="background-image:url('./images/nutrition-wellness.jpg')">Nutrition Wellness</span>
     <span class="ticker-item" style="background-image:url('./images/housecall.jpg')">Housecalls</span>
-    <span class="ticker-item" style="background-image:url('./images/hydrotherapy.jpg')">Hydrotherapy</span>
+    <span class="ticker-item" style="background-image:url('./images/hydrotherapy-thumb.jpg')">Hydrotherapy</span>
     <span class="ticker-item" style="background-image:url('./images/laser-treatment.jpg')">Laser Therapy</span>
     <span class="ticker-item" style="background-image:url('./images/acupuncture.jpg')">Acupuncture</span>
     <span class="ticker-item" style="background-image:url('./images/tens.jpg')">TENS &amp; NMES</span>
@@ -380,43 +402,33 @@
 <section class="section" id="space" style="padding-top:0">
   <div class="space-section">
     <div class="container" style="padding:0">
-      <span class="section-eyebrow">Come experience our space</span>
-      <h2 class="section-title">A sanctuary, <em>not a clinic.</em></h2>
-      <p class="section-intro" style="color:rgba(246,241,232,0.75);max-width:620px">
-        Designed with your pet's comfort in mind. Because environment shapes how the body, mind, and emotions heal.
-      </p>
-
-      <div class="space-grid">
-        <div class="space-card">
-          <div class="space-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>
-          </div>
-          <h4>Warm, open spaces</h4>
-          <p>Because environment shapes physical, mental, and emotional wellbeing.</p>
+      <div class="space-inner">
+        <div class="space-header">
+          <span class="section-eyebrow">Come experience our space</span>
+          <h2 class="section-title">A sanctuary, <em>not a clinic.</em></h2>
+          <p class="section-intro" style="color:rgba(246,241,232,0.75)">
+            Designed with your pet's comfort in mind. Because environment shapes how the body, mind, and emotions heal.
+          </p>
         </div>
-        <div class="space-card">
-          <div class="space-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 19l4-4M9 15l4-4M13 11l4-4M19 5l-2 2"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="6" r="2"/></svg>
+        <div class="space-grid">
+          <div class="space-card">
+            <h4>Warm, open spaces</h4>
+            <p>Because environment shapes physical, mental, and emotional wellbeing.</p>
           </div>
-          <h4>Fully equipped gym</h4>
-          <p>Strength training that feels playful — joyful conditioning for stronger bodies.</p>
-        </div>
-        <div class="space-card">
-          <div class="space-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c0-5 4-9 9-9s9 4 9 9"/><path d="M3 12c0 5 4 9 9 9s9-4 9-9"/><path d="M3 12h18"/></svg>
+          <div class="space-card">
+            <h4>Fully equipped gym</h4>
+            <p>Strength training that feels playful — joyful conditioning for stronger bodies.</p>
           </div>
-          <h4>State-of-the-art hydrotreadmill</h4>
-          <p>Low-impact strengthening calibrated to each pet's needs.</p>
-        </div>
-        <div class="space-card">
-          <div class="space-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2zM12 22c-4-4-4-8 0-12"/></svg>
+          <div class="space-card">
+            <h4>State-of-the-art hydrotreadmill</h4>
+            <p>Low-impact strengthening calibrated to each pet's needs.</p>
           </div>
-          <h4>Plants &amp; essential oils</h4>
-          <p>Open layouts, warm lighting, and soothing aromas calm the nervous system.</p>
+          <div class="space-card">
+            <h4>Plants &amp; essential oils</h4>
+            <p>Open layouts, warm lighting, and soothing aromas calm the nervous system.</p>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
