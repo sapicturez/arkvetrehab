@@ -346,6 +346,68 @@ nav {
   object-position: center 18%;
   display: block;
 }
+/* ── Hero play button ── */
+.hero-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.hero-play-ring {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(246,241,232,0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(246,241,232,0.35);
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.hero-play-ring::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(246,241,232,0.15);
+  animation: play-pulse 2.4s ease-out infinite;
+}
+.hero-play svg {
+  width: 32px;
+  height: 32px;
+  color: var(--cream);
+  margin-left: 3px;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+}
+.hero-play-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(246,241,232,0.75);
+  white-space: nowrap;
+}
+.hero-play:hover .hero-play-ring {
+  background: rgba(246,241,232,0.22);
+  transform: scale(1.08);
+}
+@keyframes play-pulse {
+  0%   { opacity: 0.6; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.45); }
+  100% { opacity: 0;   transform: scale(1.45); }
+}
+
 .hero-photo-overlay {
   position: absolute;
   inset: 0;
@@ -655,49 +717,112 @@ nav {
 }
 
 /* ---------- SERVICES TAGS / TICKER ---------- */
+/* ============================================================
+   SERVICES STRIP — review marquee
+   ============================================================ */
 .services-strip {
   background: var(--sage-deep);
-  color: var(--cream);
-  padding: 0;
   overflow: hidden;
-  margin: 0;
-}
-.ticker {
-  display: flex;
-  gap: 0;
-  animation: scroll 30s linear infinite;
-  white-space: nowrap;
-  width: max-content;
-}
-.ticker-item {
-  font-family: var(--font-display);
-  font-size: 25px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  gap: 34px;
+  padding: 44px 0;
   position: relative;
-  isolation: isolate;
-  padding: 22px 34px;
-  background-size: cover;
-  background-position: center;
 }
-.ticker-item::before {
+
+/* Fade edges left & right */
+.services-strip::before,
+.services-strip::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: rgba(28, 61, 74, 0.76);
-  z-index: -1;
+  top: 0; bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
 }
-.ticker-item::after {
-  content: "✦";
-  color: var(--terracotta-soft);
-  font-size: 17px;
+.services-strip::before { left:  0; background: linear-gradient(to right, var(--sage-deep), transparent); }
+.services-strip::after  { right: 0; background: linear-gradient(to left,  var(--sage-deep), transparent); }
+
+/* Scrolling track */
+.rv-track { overflow: hidden; }
+.rv-inner {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  align-items: stretch;
+  animation: rv-scroll 65s linear infinite;
+  will-change: transform;
 }
-@keyframes scroll {
-  0% { transform: translateX(0); }
+.services-strip:hover .rv-inner { animation-play-state: paused; }
+
+@keyframes rv-scroll {
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* Review card */
+.rv-card {
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(246,241,232,0.10);
+  border-radius: 14px;
+  padding: 22px 24px 20px;
+  width: 290px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.25s ease;
+}
+.rv-card:hover { background: rgba(255,255,255,0.09); }
+
+/* Stars + source */
+.rv-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rv-stars {
+  color: #f0b429;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.rv-source {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(246,241,232,0.35);
+}
+
+/* Hook headline */
+.rv-hook {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Review text */
+.rv-text {
+  font-size: 12.5px;
+  color: rgba(246,241,232,0.52);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+/* Author */
+.rv-author {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--terracotta-soft);
+  margin-top: 4px;
+}
+.rv-author span {
+  font-weight: 400;
+  color: rgba(246,241,232,0.35);
 }
 
 /* ---------- SERVICES PREVIEW (homepage) ---------- */
@@ -1555,6 +1680,9 @@ footer a:hover { color: var(--terracotta-soft); }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 880px) {
+  .hero-play-ring { width: 90px; height: 90px; }
+  .hero-play svg  { width: 32px; height: 32px; }
+  .hero-play-label { font-size: 11px; }
   .container { padding: 0 24px; }
   .hero-grid { grid-template-columns: 1fr; gap: 60px; }
   .hero-visual { max-width: 83vw; width: 83vw; margin: 0 auto; transform: none; aspect-ratio: 5/6; }
@@ -1595,7 +1723,10 @@ footer a:hover { color: var(--terracotta-soft); }
     border-bottom: 1px solid rgba(28, 61, 74, 0.1);
   }
   .section { padding: 70px 0; }
-  .ticker-item { font-size: 18px; gap: 25px; padding: 15px 25px; }
+  .rv-card { width: 250px; padding: 18px 18px 16px; }
+  .rv-hook { font-size: 14px; }
+  .rv-text { font-size: 12px; }
+  .services-strip { padding: 32px 0; }
   .service-content h3 { font-size: 32px; }
   .hero { padding: 60px 0 80px; }
   .hero-stats { gap: clamp(10px, 2.5vw, 20px); }

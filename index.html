@@ -103,6 +103,12 @@
         <div class="hero-photo-frame">
           <img src="./images/arkvetrehab-home.jpg" alt="Dr. Priya Streram providing laser therapy to a dog at ARK Vet Rehab" class="hero-photo">
           <div class="hero-photo-overlay"></div>
+          <button class="hero-play" aria-label="Watch our story" onclick="alert('Video coming soon.')">
+            <span class="hero-play-ring">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+            </span>
+            <span class="hero-play-label">Watch our story</span>
+          </button>
         </div>
         <div class="hero-badge bdg-1">
           <div class="badge-icon">
@@ -217,44 +223,6 @@
         </details>
 
       </div>
-      <script>
-      (function(){
-        var items = document.querySelectorAll('.why-item');
-        var DESKTOP = 881;
-
-        function isDesktop(){ return window.innerWidth >= DESKTOP; }
-
-        function setMode(){
-          if(isDesktop()){
-            items.forEach(function(det){ det.setAttribute('open',''); });
-          } else {
-            items.forEach(function(det){ det.removeAttribute('open'); det.classList.remove('closing'); });
-          }
-        }
-
-        setMode();
-        window.addEventListener('resize', setMode);
-
-        items.forEach(function(det){
-          det.addEventListener('click', function(e){
-            if(!e.target.closest('summary')) return;
-            if(isDesktop()){ e.preventDefault(); return; }
-            if(det.open){
-              e.preventDefault();
-              det.classList.add('closing');
-              setTimeout(function(){ det.classList.remove('closing'); det.removeAttribute('open'); }, 380);
-            } else {
-              items.forEach(function(other){
-                if(other !== det && other.open && !other.classList.contains('closing')){
-                  other.classList.add('closing');
-                  setTimeout(function(){ other.classList.remove('closing'); other.removeAttribute('open'); }, 380);
-                }
-              });
-            }
-          });
-        });
-      })();
-      </script>
     </div>
   </div>
 </section>
@@ -335,19 +303,124 @@
 
 <!-- ================= TICKER STRIP ================= -->
 <div class="services-strip">
-  <div class="ticker">
-    <span class="ticker-item" style="background-image:url('./images/hydrotherapy-thumb.jpg')">Hydrotherapy</span>
-    <span class="ticker-item" style="background-image:url('./images/laser-treatment.jpg')">Laser Therapy</span>
-    <span class="ticker-item" style="background-image:url('./images/acupuncture.jpg')">Acupuncture</span>
-    <span class="ticker-item" style="background-image:url('./images/tens.jpg')">TENS &amp; NMES</span>
-    <span class="ticker-item" style="background-image:url('./images/nutrition-wellness.jpg')">Nutrition Wellness</span>
-    <span class="ticker-item" style="background-image:url('./images/housecall.jpg')">Housecalls</span>
-    <span class="ticker-item" style="background-image:url('./images/hydrotherapy-thumb.jpg')">Hydrotherapy</span>
-    <span class="ticker-item" style="background-image:url('./images/laser-treatment.jpg')">Laser Therapy</span>
-    <span class="ticker-item" style="background-image:url('./images/acupuncture.jpg')">Acupuncture</span>
-    <span class="ticker-item" style="background-image:url('./images/tens.jpg')">TENS &amp; NMES</span>
-    <span class="ticker-item" style="background-image:url('./images/nutrition-wellness.jpg')">Nutrition Wellness</span>
-    <span class="ticker-item" style="background-image:url('./images/housecall.jpg')">Housecalls</span>
+  <div class="rv-track">
+    <div class="rv-inner">
+
+      <!-- ── 8 review cards ── -->
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Clear answers, not guesswork."</p>
+        <p class="rv-text">Dallas finally had a clear diagnosis, treatment plan, and mobility guidance from Dr Priya — from the very first visit.</p>
+        <div class="rv-author">Dallas Wong <span>· Senior dog</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Gentle care for anxious pets."</p>
+        <p class="rv-text">Kenji was anxious and snappy on arrival. Dr Fern gave him patience and calm — he left completely relaxed.</p>
+        <div class="rv-author">Shirleen Ksy <span>· Kenji</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Visible mobility progress."</p>
+        <p class="rv-text">Bonbon's grade 2–3 patella luxation improved significantly after weekly exercise and water treadmill sessions.</p>
+        <div class="rv-author">Wong Zhi Xin <span>· Bonbon (Maltese)</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Support beyond the clinic."</p>
+        <p class="rv-text">Kira's owners received detailed case notes, follow-up support, and home rehab guidance for her progressing osteoarthritis.</p>
+        <div class="rv-author">Vassanthha Samirr <span>· Kira</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Senior pets in skilled hands."</p>
+        <p class="rv-text">Ah Girl, 13, walks more freely after gentle acupuncture and moxibustion for stiff joints and spine discomfort.</p>
+        <div class="rv-author">Lisa Oei <span>· Ah Girl (Shih Tzu)</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Rehab that pets enjoy."</p>
+        <p class="rv-text">Tofu became genuinely excited for hydrotherapy sessions — Dr Fern and Dr Priya made rehab something she looked forward to.</p>
+        <div class="rv-author">Yy S <span>· Tofu (Westie)</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Real improvement after IVDD."</p>
+        <p class="rv-text">Fifi came in dragging her back leg after IVDD. With physiotherapy, hydrotherapy, and acupuncture — she now walks normally.</p>
+        <div class="rv-author">Jean G <span>· Fifi</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"A team owners can trust."</p>
+        <p class="rv-text">The ARK team is knowledgeable, caring, and attentive — Pixie's treatment was always adjusted to her individual needs.</p>
+        <div class="rv-author">Kan Wei Chong <span>· Pixie</span></div>
+      </div>
+
+      <!-- ── duplicate for seamless loop ── -->
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Clear answers, not guesswork."</p>
+        <p class="rv-text">Dallas finally had a clear diagnosis, treatment plan, and mobility guidance from Dr Priya — from the very first visit.</p>
+        <div class="rv-author">Dallas Wong <span>· Senior dog</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Gentle care for anxious pets."</p>
+        <p class="rv-text">Kenji was anxious and snappy on arrival. Dr Fern gave him patience and calm — he left completely relaxed.</p>
+        <div class="rv-author">Shirleen Ksy <span>· Kenji</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Visible mobility progress."</p>
+        <p class="rv-text">Bonbon's grade 2–3 patella luxation improved significantly after weekly exercise and water treadmill sessions.</p>
+        <div class="rv-author">Wong Zhi Xin <span>· Bonbon (Maltese)</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Support beyond the clinic."</p>
+        <p class="rv-text">Kira's owners received detailed case notes, follow-up support, and home rehab guidance for her progressing osteoarthritis.</p>
+        <div class="rv-author">Vassanthha Samirr <span>· Kira</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Senior pets in skilled hands."</p>
+        <p class="rv-text">Ah Girl, 13, walks more freely after gentle acupuncture and moxibustion for stiff joints and spine discomfort.</p>
+        <div class="rv-author">Lisa Oei <span>· Ah Girl (Shih Tzu)</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Rehab that pets enjoy."</p>
+        <p class="rv-text">Tofu became genuinely excited for hydrotherapy sessions — Dr Fern and Dr Priya made rehab something she looked forward to.</p>
+        <div class="rv-author">Yy S <span>· Tofu (Westie)</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"Real improvement after IVDD."</p>
+        <p class="rv-text">Fifi came in dragging her back leg after IVDD. With physiotherapy, hydrotherapy, and acupuncture — she now walks normally.</p>
+        <div class="rv-author">Jean G <span>· Fifi</span></div>
+      </div>
+
+      <div class="rv-card">
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <p class="rv-hook">"A team owners can trust."</p>
+        <p class="rv-text">The ARK team is knowledgeable, caring, and attentive — Pixie's treatment was always adjusted to her individual needs.</p>
+        <div class="rv-author">Kan Wei Chong <span>· Pixie</span></div>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -590,26 +663,6 @@
   <button class="lb-arrow lb-next" onclick="shiftLb(1,event)" aria-label="Next">&#8594;</button>
 </div>
 
-<script>
-(function(){
-  var imgs=[
-    './images/1arkvetrehab.jpg','./images/2arkvetrehab.jpg',
-    './images/3arkvetrehab.jpg','./images/4arkvetrehab.jpg',
-    './images/5arkvetrehab.jpg','./images/6arkvetrehab.jpg',
-    './images/7arkvetrehab.jpg','./images/8arkvetrehab.jpg'
-  ], cur=0, lb=document.getElementById('lightbox'), li=document.getElementById('lbImg');
-  window.openLightbox=function(i){cur=i;li.src=imgs[cur];lb.classList.add('open');document.body.style.overflow='hidden';};
-  window.closeLightbox=function(){lb.classList.remove('open');document.body.style.overflow='';};
-  window.shiftLb=function(d,e){if(e)e.stopPropagation();cur=(cur+d+imgs.length)%imgs.length;li.src=imgs[cur];};
-  window.handleLbClick=function(e){if(e.target===lb)closeLightbox();};
-  document.addEventListener('keydown',function(e){
-    if(!lb.classList.contains('open'))return;
-    if(e.key==='ArrowLeft')shiftLb(-1);
-    else if(e.key==='ArrowRight')shiftLb(1);
-    else if(e.key==='Escape')closeLightbox();
-  });
-})();
-</script>
 
 <!-- ================= FOOTER ================= -->
 <footer>
@@ -669,25 +722,7 @@
   </div>
 </footer>
 
-<script>
-  // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Smooth nav close on click
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-    });
-  });
-</script>
-
+<script src="script.js"></script>
 <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/2f53abceec0411cbbcd592f88/88538bbf13c08ae05ef2374b7.js");</script>
 
 </body>
