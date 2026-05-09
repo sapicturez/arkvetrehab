@@ -952,12 +952,12 @@ nav {
 }
 
 /* Shared slide container + img base */
-.laser-slide, .tens-slide, .acu-slide, .house-slide {
+.hydro-slide, .laser-slide, .tens-slide, .acu-slide, .house-slide {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: 0;
 }
-.laser-slide img, .tens-slide img, .acu-slide img, .house-slide img {
+.hydro-slide img, .laser-slide img, .tens-slide img, .acu-slide img, .house-slide img {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   width: 100%; height: 100%;
@@ -988,11 +988,18 @@ nav {
 
 /* --- Acupuncture (3-img, 7.5s) --- */
 .service-visual.v-acu { background: var(--cream); }
+.hydro-slide img { opacity:0; will-change:opacity,transform; }
+.hydro-slide img:nth-child(1) { -webkit-animation:sv3-xfade 7.5s ease-in-out 0s    infinite; animation:sv3-xfade 7.5s ease-in-out 0s    infinite; }
+.hydro-slide img:nth-child(2) { -webkit-animation:sv3-xfade 7.5s ease-in-out -5s   infinite; animation:sv3-xfade 7.5s ease-in-out -5s   infinite; }
+.hydro-slide img:nth-child(3) { -webkit-animation:sv3-xfade 7.5s ease-in-out -2.5s infinite; animation:sv3-xfade 7.5s ease-in-out -2.5s infinite; }
+
 .acu-slide img { opacity:0; will-change:opacity,transform; }
 .acu-slide img:nth-child(1) { -webkit-animation:sv3-xfade 7.5s ease-in-out 0s    infinite; animation:sv3-xfade 7.5s ease-in-out 0s    infinite; }
 .acu-slide img:nth-child(2) { -webkit-animation:sv3-xfade 7.5s ease-in-out -5s   infinite; animation:sv3-xfade 7.5s ease-in-out -5s   infinite; }
 .acu-slide img:nth-child(3) { -webkit-animation:sv3-xfade 7.5s ease-in-out -2.5s infinite; animation:sv3-xfade 7.5s ease-in-out -2.5s infinite; }
 @media(prefers-reduced-motion:reduce){
+  .hydro-slide img:nth-child(1){animation:none;opacity:1}
+  .hydro-slide img:nth-child(2),.hydro-slide img:nth-child(3){display:none}
   .acu-slide img:nth-child(1){animation:none;opacity:1}
   .acu-slide img:nth-child(2),.acu-slide img:nth-child(3){display:none}
 }
