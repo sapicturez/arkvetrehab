@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Price List — Services &amp; Packages | ARK Veterinary Rehabilitation Singapore</title>
+<meta name="description" content="Full price list for ARK Vet Rehab Singapore — Rehab services, nutrition consultations, health tests, and loyalty packages. All prices in SGD." />
+
+<link rel="icon" type="image/png" href="./images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arkvetrehab.com/prices.html">
+<meta property="og:title" content="Price List | ARK Vet Rehab Singapore">
+<meta property="og:description" content="Rehab, nutrition, health testing and loyalty packages. Transparent pricing, all in SGD.">
+<meta property="og:image" content="https://arkvetrehab.com/images/1packages.jpg">
+<meta property="og:site_name" content="ARK Veterinary Rehabilitation">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ================================================================
+   PRICES PAGE — SERVICE MENU
+================================================================ */
+
+/* --- HERO --- */
+.pr-hero {
+  background: var(--sage-deep);
+  padding: 100px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.pr-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -100px;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122,189,200,0.15), transparent 70%);
+  pointer-events: none;
+}
+.pr-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -40px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192,98,82,0.10), transparent 70%);
+  pointer-events: none;
+}
+.pr-hero-inner { position: relative; z-index: 1; }
+.pr-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(246,241,232,0.48);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pr-eyebrow::before, .pr-eyebrow::after {
+  content: '';
+  flex: 0 0 28px;
+  height: 1px;
+  background: rgba(246,241,232,0.22);
+}
+.pr-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  font-variation-settings: "opsz" 144;
+  margin-bottom: 14px;
+}
+.pr-hero h1 em { color: var(--terracotta-soft); font-style: italic; font-weight: 300; }
+.pr-hero-sub {
+  font-size: 15px;
+  color: rgba(246,241,232,0.58);
+  max-width: 500px;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+.pr-hero-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(192,98,82,0.14);
+  border: 1px solid rgba(192,98,82,0.28);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  color: var(--terracotta-soft);
+  font-weight: 500;
+}
+.pr-hero-note svg { flex-shrink: 0; }
+
+/* --- MENU CHAPTER HEADERS --- */
+.menu-chapter {
+  text-align: center;
+  padding: 72px 0 50px;
+}
+.menu-chapter-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.menu-chapter-rule span {
+  height: 1px;
+  background: rgba(28,61,74,0.13);
+  flex: 0 0 60px;
+}
+.menu-chapter h2 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 600;
+  color: var(--sage-deep);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.menu-chapter-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ================================================================
+   PRICE TABLE SHARED STYLES
+================================================================ */
+.price-section {
+  padding-bottom: 80px;
+}
+.price-section.alt { background: var(--cream); }
+.price-section.paper { background: var(--paper); }
+
+/* Sub-section label (Rehab Center / Housecall) */
+.price-sub-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+  margin-top: 44px;
+}
+.price-sub-head:first-of-type { margin-top: 0; }
+.price-sub-head h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+}
+.price-sub-head::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(28,61,74,0.10);
+}
+
+/* Column headers for VET / SENIOR VET */
+.price-col-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  gap: 12px;
+  padding: 8px 0 8px 0;
+  border-bottom: 2px solid rgba(28,61,74,0.12);
+  margin-bottom: 2px;
+}
+.price-col-header span {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.price-col-header .col-price { text-align: right; }
+
+/* Single-price column header */
+.price-col-header.single {
+  grid-template-columns: 80px 1fr 120px;
+}
+
+/* Price row */
+.price-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(28,61,74,0.06);
+  align-items: baseline;
+}
+.price-row:last-child { border-bottom: none; }
+
+/* Single price row */
+.price-row.single {
+  grid-template-columns: 80px 1fr 120px;
+}
+
+/* Duration badge */
+.dur {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--sage);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* Service name */
+.svc-name {
+  font-size: 14px;
+  color: var(--sage-deep);
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.svc-sub {
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Price value */
+.pr-val {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--sage-deep);
+  text-align: right;
+  letter-spacing: -0.01em;
+}
+.pr-val .sgd-sym {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+.pr-val.senior { color: var(--terracotta); }
+.pr-val.empty { color: rgba(28,61,74,0.18); font-size: 13px; }
+
+/* Dotted leader line */
+.svc-name::after {
+  display: none; /* we use grid, no need */
+}
+
+/* Notice banner */
+.price-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(192,98,82,0.07);
+  border: 1px solid rgba(192,98,82,0.20);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 36px;
+  font-size: 13px;
+  color: var(--terracotta);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.price-notice svg { flex-shrink: 0; margin-top: 1px; }
+
+.price-notice.info {
+  background: rgba(122,189,200,0.08);
+  border-color: rgba(122,189,200,0.25);
+  color: var(--sage-deep);
+}
+.price-notice.info svg { color: var(--sage); }
+
+/* ================================================================
+   HEALTH TESTS — No duration col, just name + price
+================================================================ */
+.health-col-header {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 2px solid rgba(28,61,74,0.12);
+  margin-bottom: 2px;
+}
+.health-col-header span {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.health-col-header .col-price { text-align: right; }
+
+.health-row {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(28,61,74,0.06);
+  align-items: baseline;
+}
+.health-row:last-child { border-bottom: none; }
+
+.test-name {
+  font-size: 14px;
+  color: var(--sage-deep);
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.test-markers {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+/* ================================================================
+   LOYALTY PACKAGES
+================================================================ */
+.packages-section {
+  background: var(--sage-deep);
+  padding: 0 0 80px;
+}
+.packages-section .menu-chapter h2 { color: var(--cream); }
+.packages-section .menu-chapter-desc { color: rgba(246,241,232,0.52); }
+.packages-section .menu-chapter-rule span { background: rgba(246,241,232,0.15); }
+
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.pkg-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(246,241,232,0.10);
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pkg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.20);
+}
+
+/* Tier colours */
+.pkg-card.loyalty { border-color: rgba(122,189,200,0.30); }
+.pkg-card.silver  { border-color: rgba(180,180,200,0.35); }
+.pkg-card.gold    { border-color: rgba(240,180,41,0.40); }
+
+.pkg-card-head {
+  padding: 26px 24px 20px;
+  text-align: center;
+  position: relative;
+}
+.pkg-card.loyalty .pkg-card-head { background: rgba(122,189,200,0.12); }
+.pkg-card.silver  .pkg-card-head { background: rgba(180,180,200,0.12); }
+.pkg-card.gold    .pkg-card-head { background: rgba(240,180,41,0.12); }
+
+.pkg-tier-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.pkg-card.loyalty .pkg-tier-name { color: #7ab9c8; }
+.pkg-card.silver  .pkg-tier-name { color: #b4b4c8; }
+.pkg-card.gold    .pkg-tier-name { color: #f0b429; }
+
+.pkg-invest {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 600;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.pkg-invest sup {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(246,241,232,0.55);
+  vertical-align: super;
+  margin-right: 2px;
+}
+.pkg-invest-label {
+  font-size: 11px;
+  color: rgba(246,241,232,0.40);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.pkg-card-body {
+  padding: 22px 24px 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pkg-benefit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(246,241,232,0.07);
+}
+.pkg-benefit-row:last-of-type { border-bottom: none; }
+
+.pkg-benefit-label {
+  font-size: 12px;
+  color: rgba(246,241,232,0.55);
+  letter-spacing: 0.03em;
+}
+.pkg-benefit-val {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cream);
+  text-align: right;
+}
+.pkg-card.loyalty .pkg-benefit-val.disc { color: #7ab9c8; }
+.pkg-card.silver  .pkg-benefit-val.disc { color: #c8c8e0; }
+.pkg-card.gold    .pkg-benefit-val.disc { color: #f0b429; }
+
+.pkg-card-footer {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(246,241,232,0.07);
+  text-align: center;
+}
+
+/* discount scope note */
+.packages-note {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 13px;
+  color: rgba(246,241,232,0.42);
+  letter-spacing: 0.04em;
+}
+
+/* ================================================================
+   CTA BANNER
+================================================================ */
+.pr-cta {
+  background: var(--cream);
+  padding: 72px 0;
+  text-align: center;
+}
+.pr-cta .section-eyebrow { color: var(--terracotta); }
+.pr-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 42px);
+  color: var(--sage-deep);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 10px 0 14px;
+}
+.pr-cta h2 em { font-style: italic; }
+.pr-cta p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 430px;
+  margin: 0 auto 30px;
+  line-height: 1.65;
+}
+.pr-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
+@media (max-width: 880px) {
+  .pr-hero { padding: 80px 0 60px; }
+
+  /* Collapse 4-col grid to 3-col (merge senior vet or stack) */
+  .price-col-header,
+  .price-row { grid-template-columns: 68px 1fr 90px 90px; }
+  .price-col-header.single,
+  .price-row.single { grid-template-columns: 68px 1fr 90px; }
+
+  .pkg-grid { grid-template-columns: 1fr; max-width: 420px; }
+}
+
+@media (max-width: 640px) {
+  /* On very small screens drop duration col and senior col */
+  .price-col-header {
+    grid-template-columns: 1fr 80px 80px;
+  }
+  .price-col-header > span:first-child { display: none; }
+  .price-row {
+    grid-template-columns: 1fr 80px 80px;
+  }
+  .price-row > .dur { display: none; }
+
+  .price-col-header.single { grid-template-columns: 1fr 80px; }
+  .price-row.single { grid-template-columns: 1fr 80px; }
+  .price-row.single > .dur { display: none; }
+
+  .health-col-header, .health-row { grid-template-columns: 1fr 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="./images/ark-logo.png" alt="ARK Vet Rehab" class="nav-logo-img">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#why">Why Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#team">Team</a></li>
+      <li><a href="index.html#space">Our Space</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="https://wa.me/6588286875" class="btn btn-primary">Book Now
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+
+
+<!-- ================================================================
+     SECTION 1 — REHAB SERVICES
+================================================================ -->
+<section class="price-section paper" id="rehab">
+  <div class="container">
+
+    <div class="menu-chapter">
+      <div class="menu-chapter-rule">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 64 64" fill="currentColor" style="color:var(--terracotta-soft);opacity:0.7">
+          <ellipse cx="12" cy="20" rx="7" ry="9"/><ellipse cx="28" cy="12" rx="7" ry="9"/>
+          <ellipse cx="44" cy="12" rx="7" ry="9"/><ellipse cx="56" cy="20" rx="7" ry="9"/>
+          <path d="M32 28c-12 0-20 8-16 20 2 7 8 10 16 10s14-3 16-10c4-12-4-20-16-20z"/>
+        </svg>
+        <span></span>
+      </div>
+      <h2>Rehab Services</h2>
+      <p class="menu-chapter-desc">In-clinic rehabilitation and housecall sessions by our certified rehab veterinarians.</p>
+    </div>
+
+    <!-- ── REHAB CENTER ── -->
+    <div class="price-sub-head"><h3>Rehab Center</h3></div>
+
+    <div class="price-col-header">
+      <span>Duration</span>
+      <span>Service</span>
+      <span class="col-price">Vet (SGD)</span>
+      <span class="col-price">Senior Vet</span>
+    </div>
+
+    <!-- 30 mins group -->
+    <div class="price-row">
+      <div class="dur">30 mins</div>
+      <div class="svc-name">Rehab Consultation</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>150</div>
+      <div class="pr-val senior"><span class="sgd-sym">$</span>200</div>
+    </div>
+
+    <div class="price-row">
+      <div class="dur"></div>
+      <div class="svc-name">Pain Management</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>150</div>
+      <div class="pr-val empty">—</div>
+    </div>
+
+    <div class="price-row">
+      <div class="dur"></div>
+      <div class="svc-name">Hydrotherapy</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>150</div>
+      <div class="pr-val empty">—</div>
+    </div>
+
+    <div class="price-row">
+      <div class="dur"></div>
+      <div class="svc-name">Gym Exercise</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>150</div>
+      <div class="pr-val empty">—</div>
+    </div>
+
+    <!-- 30-45 mins -->
+    <div class="price-row">
+      <div class="dur">30–45 mins</div>
+      <div class="svc-name">Comprehensive Rehab</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>200</div>
+      <div class="pr-val senior"><span class="sgd-sym">$</span>240</div>
+    </div>
+
+    <!-- 45-60 mins -->
+    <div class="price-row">
+      <div class="dur">45–60 mins</div>
+      <div class="svc-name">Comprehensive Rehab</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>230</div>
+      <div class="pr-val senior"><span class="sgd-sym">$</span>276</div>
+    </div>
+
+
+    <!-- ── HOUSECALL ── -->
+    <div class="price-sub-head"><h3>Housecall</h3></div>
+
+    <div class="price-col-header">
+      <span>Duration</span>
+      <span>Service</span>
+      <span class="col-price">Vet (SGD)</span>
+      <span class="col-price">Senior Vet</span>
+    </div>
+
+    <div class="price-row">
+      <div class="dur">45–60 mins</div>
+      <div class="svc-name">
+        Rehab Consultation
+        <span class="svc-sub">+ Short Therapy included</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>300</div>
+      <div class="pr-val senior"><span class="sgd-sym">$</span>360</div>
+    </div>
+
+    <div class="price-row">
+      <div class="dur"></div>
+      <div class="svc-name">Rehab Therapy</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>250</div>
+      <div class="pr-val senior"><span class="sgd-sym">$</span>300</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 2 — NUTRITION SERVICES
+================================================================ -->
+<section class="price-section alt" id="nutrition">
+  <div class="container">
+
+    <div class="menu-chapter">
+      <div class="menu-chapter-rule">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 64 64" fill="currentColor" style="color:var(--terracotta-soft);opacity:0.7">
+          <ellipse cx="12" cy="20" rx="7" ry="9"/><ellipse cx="28" cy="12" rx="7" ry="9"/>
+          <ellipse cx="44" cy="12" rx="7" ry="9"/><ellipse cx="56" cy="20" rx="7" ry="9"/>
+          <path d="M32 28c-12 0-20 8-16 20 2 7 8 10 16 10s14-3 16-10c4-12-4-20-16-20z"/>
+        </svg>
+        <span></span>
+      </div>
+      <h2>Nutrition Services</h2>
+      <p class="menu-chapter-desc">Personalised nutrition consultations, food formulation, and chronic disease dietary management.</p>
+    </div>
+
+    <div class="price-col-header single">
+      <span>Duration</span>
+      <span>Service</span>
+      <span class="col-price">Price (SGD)</span>
+    </div>
+
+    <div class="price-row single">
+      <div class="dur">30 mins</div>
+      <div class="svc-name">Nutrition Consultation</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>170</div>
+    </div>
+
+    <div class="price-row single">
+      <div class="dur"></div>
+      <div class="svc-name">
+        Food Formulation
+        <span class="svc-sub">includes 1 edit / revision</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>50</div>
+    </div>
+
+    <div class="price-row single">
+      <div class="dur">60 mins</div>
+      <div class="svc-name">Chronic Disease Management Consultation</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>250</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 3 — HEALTH TESTS
+================================================================ -->
+<section class="price-section paper" id="health-tests">
+  <div class="container">
+
+    <div class="menu-chapter">
+      <div class="menu-chapter-rule">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 64 64" fill="currentColor" style="color:var(--terracotta-soft);opacity:0.7">
+          <ellipse cx="12" cy="20" rx="7" ry="9"/><ellipse cx="28" cy="12" rx="7" ry="9"/>
+          <ellipse cx="44" cy="12" rx="7" ry="9"/><ellipse cx="56" cy="20" rx="7" ry="9"/>
+          <path d="M32 28c-12 0-20 8-16 20 2 7 8 10 16 10s14-3 16-10c4-12-4-20-16-20z"/>
+        </svg>
+        <span></span>
+      </div>
+      <h2>Health Tests</h2>
+      <p class="menu-chapter-desc">Advanced diagnostic panels to support nutrition, immunity, and long-term health planning.</p>
+    </div>
+
+    <div class="price-notice info">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Prices listed are exclusive of shipping and handling — an additional <strong>SGD 50–80 per lab</strong> applies.
+    </div>
+
+    <div class="health-col-header">
+      <span>Test / Panel</span>
+      <span class="col-price">Price (SGD)</span>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">
+        Complete Wellness Profile
+        <span class="test-markers">CRP or HPT · VitD · B12 · Mg · Folate · CRA · HA</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>270</div>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">
+        Essential Vitamins
+        <span class="test-markers">Vit D · B12 · Folate · Magnesium</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>165</div>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">Hair Mineral Test</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>196</div>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">
+        Cancer Panel
+        <span class="test-markers">TK1 · CRP or HPT</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>200</div>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">
+        Advanced GI Panel
+        <span class="test-markers">TK1 · CRP or HPT · NI · cPL or fPL · B12 · Folate · VitD · Mg · Total Protein · Albumin · Globulin · A/G</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>350</div>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">
+        Allergy Panel — 125 Allergens
+        <span class="test-markers">72 food allergens · 53 environmental allergens</span>
+      </div>
+      <div class="pr-val"><span class="sgd-sym">$</span>260</div>
+    </div>
+
+    <div class="health-row">
+      <div class="test-name">Gut Microbiome Testing</div>
+      <div class="pr-val"><span class="sgd-sym">$</span>170</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 4 — LOYALTY PACKAGES
+================================================================ -->
+<section class="packages-section" id="packages">
+  <div class="container">
+
+    <div class="menu-chapter">
+      <div class="menu-chapter-rule">
+        <span></span>
+        <svg width="20" height="20" viewBox="0 0 64 64" fill="currentColor" style="color:rgba(246,241,232,0.40)">
+          <ellipse cx="12" cy="20" rx="7" ry="9"/><ellipse cx="28" cy="12" rx="7" ry="9"/>
+          <ellipse cx="44" cy="12" rx="7" ry="9"/><ellipse cx="56" cy="20" rx="7" ry="9"/>
+          <path d="M32 28c-12 0-20 8-16 20 2 7 8 10 16 10s14-3 16-10c4-12-4-20-16-20z"/>
+        </svg>
+        <span></span>
+      </div>
+      <h2>Packages</h2>
+      <p class="menu-chapter-desc">Load credit and save — discounts apply to all sessions and any retail purchase.</p>
+    </div>
+
+    <div class="pkg-grid reveal">
+
+      <!-- LOYALTY -->
+      <div class="pkg-card loyalty">
+        <div class="pkg-card-head">
+          <div class="pkg-tier-name">Loyalty</div>
+          <div class="pkg-invest"><sup>SGD</sup>1,000</div>
+          <div class="pkg-invest-label">one-time top-up</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Credit received</span>
+            <span class="pkg-benefit-val">SGD 1,000</span>
+          </div>
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Discount on all services</span>
+            <span class="pkg-benefit-val disc">5%</span>
+          </div>
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Applies to</span>
+            <span class="pkg-benefit-val" style="font-size:12px;color:rgba(246,241,232,0.55)">Sessions &amp; retail</span>
+          </div>
+        </div>
+        <div class="pkg-card-footer">
+          <a href="https://wa.me/6588286875" class="btn btn-outline" style="width:100%;justify-content:center;border-color:rgba(122,189,200,0.35);color:var(--cream)">Get Loyalty</a>
+        </div>
+      </div>
+
+      <!-- SILVER -->
+      <div class="pkg-card silver">
+        <div class="pkg-card-head">
+          <div class="pkg-tier-name">Silver</div>
+          <div class="pkg-invest"><sup>SGD</sup>2,000</div>
+          <div class="pkg-invest-label">one-time top-up</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Credit received</span>
+            <span class="pkg-benefit-val">SGD 2,000</span>
+          </div>
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Discount on all services</span>
+            <span class="pkg-benefit-val disc">7%</span>
+          </div>
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Applies to</span>
+            <span class="pkg-benefit-val" style="font-size:12px;color:rgba(246,241,232,0.55)">Sessions &amp; retail</span>
+          </div>
+        </div>
+        <div class="pkg-card-footer">
+          <a href="https://wa.me/6588286875" class="btn btn-outline" style="width:100%;justify-content:center;border-color:rgba(180,180,200,0.35);color:var(--cream)">Get Silver</a>
+        </div>
+      </div>
+
+      <!-- GOLD -->
+      <div class="pkg-card gold">
+        <div class="pkg-card-head">
+          <div class="pkg-tier-name">Gold</div>
+          <div class="pkg-invest"><sup>SGD</sup>3,000</div>
+          <div class="pkg-invest-label">one-time top-up</div>
+        </div>
+        <div class="pkg-card-body">
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Credit received</span>
+            <span class="pkg-benefit-val">SGD 3,000</span>
+          </div>
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Discount on all services</span>
+            <span class="pkg-benefit-val disc">10%</span>
+          </div>
+          <div class="pkg-benefit-row">
+            <span class="pkg-benefit-label">Applies to</span>
+            <span class="pkg-benefit-val" style="font-size:12px;color:rgba(246,241,232,0.55)">Sessions &amp; retail</span>
+          </div>
+        </div>
+        <div class="pkg-card-footer">
+          <a href="https://wa.me/6588286875" class="btn btn-primary" style="width:100%;justify-content:center;background:linear-gradient(135deg,#c8a020,#f0b429);border-color:transparent;color:#1c3d4a">Get Gold</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="packages-note">Discount applies to all sessions and any retail purchase at ARK Vet Rehab</p>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     CTA
+================================================================ -->
+<div class="pr-cta">
+  <div class="container">
+    <span class="section-eyebrow">Ready to book?</span>
+    <h2>Questions about our<br><em>services or pricing?</em></h2>
+    <p>Message us on WhatsApp or send an email — we're happy to recommend the right plan for your pet.</p>
+    <div class="pr-cta-actions">
+      <a href="https://wa.me/6588286875" class="btn btn-primary">
+        WhatsApp Us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="mailto:arkvetrehab@gmail.com" class="btn btn-outline">Send an email</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="./images/ark-logo.svg" alt="ARK Vet Rehab" class="logo-img">
+        </a>
+        <p>A holistic veterinary rehabilitation practice in Singapore — where clinical expertise meets a serene, healing environment.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/arkvetrehab/" target="_blank" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.facebook.com/arkvetrehab/" target="_blank" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/in/priya-streram-18b3066a/" target="_blank" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://wa.me/6588286875" target="_blank" class="social-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.421A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 01-4.054-1.107l-.29-.172-2.956.844.878-2.878-.19-.302A7.95 7.95 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.406-5.994c-.242-.121-1.432-.707-1.654-.788-.222-.08-.384-.121-.545.121-.162.242-.626.788-.768.95-.141.162-.282.182-.525.061-.242-.121-1.022-.376-1.947-1.2-.72-.641-1.205-1.433-1.347-1.675-.141-.242-.015-.373.106-.494.109-.109.242-.283.363-.424.121-.142.162-.243.242-.404.081-.162.04-.303-.02-.424-.061-.121-.545-1.313-.747-1.797-.196-.471-.396-.407-.545-.415l-.465-.008c-.162 0-.424.06-.646.303s-.848.828-.848 2.02.868 2.343.989 2.504c.12.162 1.707 2.606 4.137 3.654.579.25 1.03.399 1.381.51.581.185 1.109.159 1.526.097.465-.069 1.432-.586 1.634-1.152.202-.565.202-1.05.141-1.151z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html#why">Why Choose Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#space">Our Space</a></li>
+          <li><a href="index.html#packages">Packages</a></li>
+          <li><a href="treatmill-club.html">Treat-mill Club</a></li>
+          <li><a href="prices.html">Price List</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Hours</h5>
+        <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+        <div class="hours-row"><span>Tue–Fri</span><span>10:00–18:30</span></div>
+        <div class="hours-row"><span>Saturday</span><span>10:00–18:30</span></div>
+        <div class="hours-row"><span>Sunday</span><span>9:00–13:00*</span></div>
+        <p style="font-size:11px;margin-top:8px;color:rgba(246,241,232,0.4)">*Hydrotherapy only</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>7d Crane Rd<br/>Singapore 429356</li>
+          <li><a href="tel:+6588286875">+65 8828 6875</a></li>
+          <li><a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 ARK Veterinary Rehabilitation. All rights reserved.</div>
+      <div style="display:flex;gap:24px">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
