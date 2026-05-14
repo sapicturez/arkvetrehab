@@ -2,13 +2,13 @@
   --sage-deep: #1c3d4a;      /* deep ocean */
   --sage: #3a7d8c;            /* ocean teal */
   --sage-light: #7abdc8;      /* light seafoam */
-  --cream: #f3ede0;           /* warm sand */
-  --cream-warm: #e6d8c0;      /* driftwood sand */
+  --cream: #f5f1e6;           /* warm sand +20% white */
+  --cream-warm: #ebe0cd;      /* driftwood sand +20% white */
   --terracotta: #c06252;      /* sea coral */
   --terracotta-soft: #d8907a; /* soft coral blush */
   --ink: #1a2830;             /* deep ocean shadow */
   --ink-soft: #3a4d58;        /* ocean slate */
-  --paper: #f8f2e4;           /* sea-washed sand */
+  --paper: #f9f5e9;           /* sea-washed sand +20% white */
   --moss: #1e5060;            /* deep kelp */
   --gold: #c4a05a;            /* sea-glass amber */
 
@@ -547,6 +547,13 @@ nav {
   background: linear-gradient(to right, rgba(20,50,65,0.80) 0%, rgba(20,50,65,0.48) 60%, rgba(20,50,65,0.32) 100%);
   transition: background 0.4s ease 0s;
 }
+.why-h3-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
 .why-icon {
   position: relative;
   flex-shrink: 0;
@@ -562,7 +569,6 @@ nav {
 .why-icon svg { width: 22px; height: 22px; }
 .why-summary h3 {
   position: relative; z-index: 1;
-  flex: 1;
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 500;
@@ -688,22 +694,26 @@ nav {
     z-index: 2;
   }
 
-  /* Icon chip on the gradient */
+  /* Icon chip — restored box style, now inline with h3 */
+  .why-h3-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2px;
+  }
   .why-icon {
     background: rgba(246,241,232,0.92);
     color: var(--terracotta);
-    top: auto; left: auto; bottom: auto;
     width: 44px; height: 44px;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(28,61,74,0.10);
   }
   .why-icon svg { width: 22px; height: 22px; }
 
-  /* Title below icon */
   .why-summary h3 {
     color: var(--sage-deep);
     font-size: 21px;
-    margin-top: 2px;
+    margin-top: 0;
   }
   .why-chevron { display: none; }
 
@@ -1146,20 +1156,22 @@ nav {
   gap: 8px;
   margin-bottom: 20px;
 }
+.service-h2-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.service-h2-row h2 { margin-bottom: 0; }
 .service-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(192,98,82,0.09);
-  border-radius: 12px;
   display: grid;
   place-items: center;
-  color: var(--terracotta);
-  margin-bottom: 24px;
+  color: var(--sage-deep);
   flex-shrink: 0;
 }
 .service-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
 }
 .service-num { display: none; }
 
