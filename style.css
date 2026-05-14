@@ -164,13 +164,35 @@ nav {
   border: none;
   cursor: pointer;
   padding: 8px;
+  position: relative;
+  width: 40px; height: 40px;
 }
 .mobile-toggle span {
   display: block;
   width: 24px; height: 2px;
   background: var(--sage-deep);
   margin: 5px 0;
-  transition: 0.3s;
+  transition: transform 0.32s ease, opacity 0.22s ease, top 0.32s ease;
+  position: absolute;
+  left: 8px;
+  transform-origin: center;
+}
+.mobile-toggle span:nth-child(1) { top: 11px; }
+.mobile-toggle span:nth-child(2) { top: 18px; }
+.mobile-toggle span:nth-child(3) { top: 25px; }
+
+/* Animate to × when nav is open */
+.nav-links.open ~ .mobile-toggle span:nth-child(1) {
+  top: 18px;
+  transform: rotate(45deg);
+}
+.nav-links.open ~ .mobile-toggle span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-links.open ~ .mobile-toggle span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-45deg);
 }
 
 /* ---------- HERO ---------- */
