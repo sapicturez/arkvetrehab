@@ -1,0 +1,29 @@
+# ARK Veterinary Rehabilitation — .htaccess
+
+# ── Allow social media crawlers (fix 403 for link previews) ──
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase User-Agent "facebookexternalhit" social_crawler=1
+  SetEnvIfNoCase User-Agent "Facebot"             social_crawler=1
+  SetEnvIfNoCase User-Agent "WhatsApp"             social_crawler=1
+  SetEnvIfNoCase User-Agent "Twitterbot"           social_crawler=1
+  SetEnvIfNoCase User-Agent "LinkedInBot"          social_crawler=1
+  SetEnvIfNoCase User-Agent "Googlebot"            social_crawler=1
+  SetEnvIfNoCase User-Agent "TelegramBot"          social_crawler=1
+  SetEnvIfNoCase User-Agent "Instagrambot"         social_crawler=1
+</IfModule>
+
+# ── Enable GZIP compression ──
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
+</IfModule>
+
+# ── Browser caching ──
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg   "access plus 1 month"
+  ExpiresByType image/jpeg  "access plus 1 month"
+  ExpiresByType image/png   "access plus 1 month"
+  ExpiresByType image/webp  "access plus 1 month"
+  ExpiresByType text/css    "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
