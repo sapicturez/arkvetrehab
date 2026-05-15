@@ -607,10 +607,11 @@
   ────────────────────────────────────────── */
   .price-row,
   .price-row.single {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto;
-    gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 4px;
     padding: 14px 16px;
     background: var(--paper);
     border-radius: 14px;
@@ -619,11 +620,22 @@
     box-shadow: 0 1px 0 rgba(28,61,74,0.08), 0 3px 10px rgba(28,61,74,0.05);
   }
 
-  /* Duration badge — full-width top row */
+  /* Service name — first, left */
+  .price-row .svc-name,
+  .price-row.single .svc-name {
+    order: 1;
+    flex: 0 1 auto;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--sage-deep);
+  }
+  .svc-sub { font-size: 11.5px; margin-top: 3px; }
+
+  /* Duration badge — inline right after service name */
   .price-row .dur,
   .price-row.single .dur {
-    grid-column: 1 / -1;
-    grid-row: 1;
+    order: 2;
+    flex: 0 0 auto;
     display: inline-flex;
     font-size: 9.5px;
     font-weight: 700;
@@ -633,47 +645,27 @@
     background: rgba(58,125,140,0.10);
     border-radius: 100px;
     padding: 3px 11px;
-    width: fit-content;
-    margin-bottom: 9px;
   }
-  /* Collapse empty duration rows */
   .price-row .dur:empty,
-  .price-row.single .dur:empty {
-    display: none;
-    margin: 0;
-  }
+  .price-row.single .dur:empty { display: none; }
 
-  /* Service name — left, row 2 */
-  .price-row .svc-name,
-  .price-row.single .svc-name {
-    grid-column: 1;
-    grid-row: 2;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--sage-deep);
-    padding-right: 14px;
-    align-self: center;
-  }
-  .svc-sub { font-size: 11.5px; margin-top: 3px; }
-
-  /* Vet price — right, row 2 */
+  /* Vet price — pushed to far right */
   .price-row .pr-val:not(.senior):not(.empty),
   .price-row.single .pr-val {
-    grid-column: 2;
-    grid-row: 2;
+    order: 3;
+    flex: 0 0 auto;
+    margin-left: auto;
     font-size: 19px;
     text-align: right;
-    align-self: center;
   }
 
-  /* Senior vet price — right, row 3, with label */
+  /* Senior vet price — own line, right-aligned */
   .price-row .pr-val.senior {
-    grid-column: 2;
-    grid-row: 3;
+    order: 4;
+    flex: 0 0 100%;
     font-size: 12.5px;
     color: var(--terracotta);
     text-align: right;
-    margin-top: 4px;
     white-space: nowrap;
   }
   .price-row .pr-val.senior .sgd-sym { font-size: 10px; }

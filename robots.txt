@@ -1,0 +1,36 @@
+# robots.txt — ARK Veterinary Rehabilitation
+# https://arkvetrehab.com/
+
+# Allow all standard crawlers
+User-agent: *
+Allow: /
+
+# Facebook / Meta crawler — required for WhatsApp & Messenger link previews
+User-agent: facebookexternalhit
+Allow: /
+
+# WhatsApp link preview crawler
+User-agent: WhatsApp
+Allow: /
+
+# Instagram crawler
+User-agent: Instagrambot
+Allow: /
+
+# Twitter / X
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://arkvetrehab.com/sitemap.xml
