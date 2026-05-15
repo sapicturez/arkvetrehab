@@ -133,4 +133,39 @@
     else if (e.key === 'ArrowRight') shiftLb(1);
     else if (e.key === 'Escape')     closeLightbox();
   });
+
+  /* ── Touch swipe in lightbox ── */
+  var tsX = 0;
+  lb.addEventListener('touchstart', function (e) {
+    tsX = e.touches[0].clientX;
+  }, { passive: true });
+
+  lb.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - tsX;
+    if (Math.abs(dx) < 40) return;   /* ignore tiny taps */
+    shiftLb(dx < 0 ? 1 : -1);
+  }, { passive: true });
+})();
+
+
+/* ----------------------------------------------------------
+   5. GALLERY TAP HINT
+   Shows a pulsing "tap to view" hint on the first gallery
+   thumb, fades out after 2.5s or on first tap
+---------------------------------------------------------- */
+(function () {
+  var thumbs = document.querySelectorAll('.gallery-thumb');
+  if (!thumbs.length) return;
+
+  /* Animate hint out once any thumb is tapped/clicked */
+  function dismissHint() {
+    var hint = document.querySelector('.gallery-hint');
+    if (hint) { hint.classList.add('gone'); }
+    thumbs.forEach(function (t) { t.removeEventListener('click', dismissHint); });
+  }
+
+  thumbs.forEach(function (t) { t.addEventListener('click', dismissHint); });
+
+  /* Auto-fade after 3s */
+  setTimeout(dismissHint, 3000);
 })();

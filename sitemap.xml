@@ -1,32 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ═══════════════════════════════════════════
+       ARK Veterinary Rehabilitation Singapore
+       Sitemap — updated 2026-05-15
+       https://arkvetrehab.com
+  ════════════════════════════════════════════ -->
+
+  <!-- HOME -->
   <url>
     <loc>https://arkvetrehab.com/</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/2arkvetrehab.jpg</image:loc>
+      <image:title>ARK Veterinary Rehabilitation — Singapore's Premier Pet Rehab Clinic</image:title>
+      <image:caption>ARK Vet Rehab clinic interior — hydrotherapy, laser therapy and rehabilitation for dogs and cats in Singapore</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/arkvetrehab-home.jpg</image:loc>
+      <image:title>Dr. Priya Streram — Senior Rehabilitation Veterinarian at ARK Vet Rehab Singapore</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/1arkvetrehab.jpg</image:loc>
+      <image:title>ARK Vet Rehab clinic exterior — 7d Crane Road Singapore</image:title>
+    </image:image>
   </url>
 
+  <!-- SERVICES -->
   <url>
     <loc>https://arkvetrehab.com/services.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/hydrotherapy-thumb.jpg</image:loc>
+      <image:title>Hydrotherapy for dogs — aquatic treadmill sessions at ARK Vet Rehab Singapore</image:title>
+      <image:caption>Canine hydrotherapy using an underwater treadmill for rehabilitation and fitness</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/laser-thumb.jpg</image:loc>
+      <image:title>Laser therapy for pets at ARK Veterinary Rehabilitation Singapore</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/acupuncture-thumb.jpg</image:loc>
+      <image:title>Veterinary acupuncture for dogs and cats — ARK Vet Rehab Singapore</image:title>
+    </image:image>
   </url>
 
+  <!-- TREAT-MILL CLUB -->
   <url>
     <loc>https://arkvetrehab.com/treatmill-club.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/2packages.jpg</image:loc>
+      <image:title>Treat-mill Club — Hydrotherapy Membership for Dogs in Singapore</image:title>
+      <image:caption>Monthly hydrotherapy treadmill membership for dogs — ARK Vet Rehab Singapore</image:caption>
+    </image:image>
   </url>
 
+  <!-- PRICE LIST -->
   <url>
     <loc>https://arkvetrehab.com/prices.html</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://arkvetrehab.com/images/1packages.jpg</image:loc>
+      <image:title>ARK Vet Rehab Singapore — Service Prices and Membership Packages</image:title>
+    </image:image>
   </url>
 
 </urlset>
