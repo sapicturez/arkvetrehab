@@ -84,7 +84,7 @@ nav {
   display: block;
 }
 .nav-logo-img {
-  height: 66px;
+  height: clamp(50px, 5.2vw, 66px);
   width: auto;
   display: block;
 }
@@ -95,20 +95,22 @@ nav {
 }
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: clamp(10px, 2vw, 36px);
   list-style: none;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .nav-links a.btn-primary,
 .nav-links a.btn-primary:hover { color: var(--cream); }
 .nav-links a {
   color: var(--ink-soft);
   text-decoration: none;
-  font-size: 14px;
+  font-size: clamp(11px, 1.15vw, 14px);
   font-weight: 500;
   letter-spacing: 0.02em;
   transition: color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--sage-deep); }
 .nav-links a::after {

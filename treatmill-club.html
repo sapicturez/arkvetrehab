@@ -811,31 +811,114 @@
    RESPONSIVE
 ================================================================ */
 @media (max-width: 880px) {
-  .tm-hero { padding: 80px 0 60px; }
+
+  /* ── Flexi Options: Apple-style cards ── */
+  .flexi-list-wrap { max-width: 100%; }
+
   .flexi-item {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    display: block;
+    background: var(--paper);
+    border-radius: 18px;
+    border: 1px solid rgba(28,61,74,0.09) !important;
+    box-shadow: 0 2px 14px rgba(28,61,74,0.07);
+    padding: 0;
+    margin-bottom: 16px;
+    overflow: hidden;
   }
+  .flexi-item:last-of-type { margin-bottom: 0; }
+
+  /* Card header: option number + name */
   .flexi-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    background: rgba(28,61,74,0.04);
+    border-right: none;
+    border-bottom: 1px solid rgba(28,61,74,0.08);
+    padding: 14px 18px 13px;
+    gap: 3px;
+  }
+
+  /* Hide paw icon on mobile — saves space */
+  .flexi-label .flexi-paw-icon { display: none; }
+
+  .flexi-num {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .flexi-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--sage-deep);
+    line-height: 1.2;
+  }
+  .flexi-badge-best {
+    margin-top: 6px;
+    font-size: 9px;
+    padding: 3px 10px;
+  }
+
+  /* Card body */
+  .flexi-content {
+    padding: 18px 18px 20px;
+  }
+
+  /* Title + price on same row */
+  .flexi-heading-row {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: left;
-    border-right: none;
-    border-bottom: 1px dashed rgba(28,61,74,0.12);
-    padding-right: 0;
-    padding-bottom: 18px;
-    gap: 14px;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
   }
-  .flexi-paw-icon { margin-bottom: 0; width: 36px; height: 36px; }
-  .flexi-content { padding-left: 0; }
+  .flexi-title {
+    font-size: 17px;
+    letter-spacing: 0.02em;
+  }
+  .flexi-price-pill {
+    font-size: 14px;
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+
+  .flexi-bundle-note {
+    font-size: 12px;
+    margin-bottom: 14px;
+    margin-top: 2px;
+  }
+  .flexi-includes-lbl {
+    font-size: 9px;
+    margin-bottom: 10px;
+    margin-top: 14px;
+  }
+  .flexi-ul { gap: 10px; }
+  .flexi-ul li { font-size: 13.5px; }
+
+  .flexi-ideal-note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+  }
+
+  /* ── Membership cards ── */
   .memberships-grid { grid-template-columns: 1fr; }
   .mc-body { grid-template-columns: 1fr; }
   .mc-features { border-right: none; border-bottom: 1px solid rgba(28,61,74,0.08); }
   .tm-schedule-inner { gap: 28px; }
   .tm-sch-divider { display: none; }
 }
+
 @media (max-width: 560px) {
-  .flexi-heading-row { flex-direction: column; gap: 8px; }
+  .flexi-name { font-size: 15px; }
+  .flexi-title { font-size: 15px; }
   .mc-footer { flex-direction: column; align-items: stretch; }
 }
 </style>
