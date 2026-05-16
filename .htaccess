@@ -1,24 +1,46 @@
 # ARK Veterinary Rehabilitation — .htaccess
 
-# ── Force HTTPS ──
+Options -Indexes
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteEngine On
+
+# Force HTTPS and canonical non-www for EVERYONE, including Meta/Facebook/WhatsApp crawlers.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.arkvetrehab\.com$ [NC]
+RewriteRule ^ https://arkvetrehab.com%{REQUEST_URI} [R=301,L]
+
 </IfModule>
 
-# ── Enable GZIP compression ──
+# Enable GZIP compression
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
+AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
 </IfModule>
 
-# ── Browser caching ──
+# MIME types
+AddType text/css .css
+AddType application/javascript .js
+
+# Cache control
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
+# Browser caching
 <IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/jpg   "access plus 1 month"
-  ExpiresByType image/jpeg  "access plus 1 month"
-  ExpiresByType image/png   "access plus 1 month"
-  ExpiresByType image/webp  "access plus 1 month"
-  ExpiresByType text/css    "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType application/javascript "access plus 1 week"
 </IfModule>

@@ -1,31 +1,47 @@
 # robots.txt — ARK Veterinary Rehabilitation
-# https://arkvetrehab.com/
+# Allow search engines and social media crawlers
 
-# Allow all standard crawlers
 User-agent: *
 Allow: /
 
-# Facebook / Meta crawler — required for WhatsApp & Messenger link previews
+# Meta / Facebook / Instagram / WhatsApp link previews
 User-agent: facebookexternalhit
 Allow: /
 
-# WhatsApp link preview crawler
-User-agent: WhatsApp
+User-agent: Facebot
 Allow: /
 
-# Instagram crawler
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: InstagramBot
+Allow: /
+
 User-agent: Instagrambot
 Allow: /
 
-# Twitter / X
+User-agent: WhatsApp
+Allow: /
+
+# Other social preview crawlers
 User-agent: Twitterbot
 Allow: /
 
-# LinkedIn
 User-agent: LinkedInBot
 Allow: /
 
-# Telegram
 User-agent: TelegramBot
 Allow: /
 
