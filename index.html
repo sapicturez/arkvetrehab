@@ -251,24 +251,52 @@
   .pk3-ribbon { font-size: 7px; padding: 4px 9px; top: 10px; right: 10px; }
 }
 
-/* ── Mobile: still 3 columns, minimal footprint ── */
+/* ── Mobile: Rehab + Nutrition side-by-side, Treat-mill full-width below ── */
 @media (max-width: 560px) {
-  .pk3-grid { gap: 5px; margin-top: 20px; }
-  .pk3-img { height: 100px; }
-  .pk3-body { padding: 10px 10px 12px; }
-  .pk3-top-row { margin-bottom: 5px; }
-  .pk3-tag { font-size: 6px; letter-spacing: 0.09em; }
-  .pk3-num { display: none; }
-  .pk3-title { font-size: clamp(10px, 3vw, 13px); margin-bottom: 6px; line-height: 1.15; }
-  .pk3-desc { display: none; }
-  .pk3-stat { padding: 6px 8px; margin-bottom: 9px; border-radius: 6px; }
-  .pk3-stat-val { font-size: 11px; }
-  .pk3-stat-note { display: none; }
-  .pk3-cta-row { padding-top: 8px; }
-  .pk3-cta-label { font-size: 10px; }
-  .pk3-arrow { width: 22px; height: 22px; }
-  .pk3-arrow svg { width: 10px; height: 10px; }
-  .pk3-ribbon { font-size: 6px; padding: 3px 7px; top: 7px; right: 7px; }
+  .pk3-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  /* Reorder: Rehab left, Nutrition right, Treat-mill full-width row 2 */
+  .pk3-card:nth-child(1) { order: 1; }
+  .pk3-card:nth-child(3) { order: 2; }
+  .pk3-card.pk3-featured { order: 3; grid-column: 1 / -1; }
+
+  /* Small cards — compact */
+  .pk3-card:not(.pk3-featured) .pk3-img        { height: 110px; }
+  .pk3-card:not(.pk3-featured) .pk3-body       { padding: 10px 10px 12px; }
+  .pk3-card:not(.pk3-featured) .pk3-top-row    { margin-bottom: 5px; }
+  .pk3-card:not(.pk3-featured) .pk3-tag        { font-size: 6px; letter-spacing: 0.09em; }
+  .pk3-card:not(.pk3-featured) .pk3-num        { display: none; }
+  .pk3-card:not(.pk3-featured) .pk3-title      { font-size: clamp(11px, 3.2vw, 13px); margin-bottom: 6px; line-height: 1.15; }
+  .pk3-card:not(.pk3-featured) .pk3-desc       { display: none; }
+  .pk3-card:not(.pk3-featured) .pk3-stat       { padding: 6px 8px; margin-bottom: 9px; border-radius: 6px; }
+  .pk3-card:not(.pk3-featured) .pk3-stat-val   { font-size: 11px; }
+  .pk3-card:not(.pk3-featured) .pk3-stat-note  { display: none; }
+  .pk3-card:not(.pk3-featured) .pk3-cta-row    { padding-top: 8px; }
+  .pk3-card:not(.pk3-featured) .pk3-cta-label  { font-size: 10px; }
+  .pk3-card:not(.pk3-featured) .pk3-arrow      { width: 22px; height: 22px; }
+  .pk3-card:not(.pk3-featured) .pk3-arrow svg  { width: 10px; height: 10px; }
+
+  /* Treat-mill Club — full-width, spacious, premium */
+  .pk3-card.pk3-featured .pk3-img        { height: 180px; }
+  .pk3-card.pk3-featured .pk3-body       { padding: 18px 20px 20px; }
+  .pk3-card.pk3-featured .pk3-top-row    { margin-bottom: 10px; }
+  .pk3-card.pk3-featured .pk3-tag        { font-size: 8.5px; letter-spacing: 0.12em; }
+  .pk3-card.pk3-featured .pk3-num        { font-size: 9px; }
+  .pk3-card.pk3-featured .pk3-title      { font-size: clamp(18px, 5vw, 22px); margin-bottom: 10px; line-height: 1.1; }
+  .pk3-card.pk3-featured .pk3-desc       { display: block; font-size: 13px; line-height: 1.6; margin-bottom: 14px; }
+  .pk3-card.pk3-featured .pk3-stat       { padding: 11px 14px; margin-bottom: 14px; border-radius: 9px; }
+  .pk3-card.pk3-featured .pk3-stat-val   { font-size: 16px; }
+  .pk3-card.pk3-featured .pk3-stat-note  { display: block; font-size: 10px; }
+  .pk3-card.pk3-featured .pk3-cta-row    { padding-top: 14px; }
+  .pk3-card.pk3-featured .pk3-cta-label  { font-size: 13px; }
+  .pk3-card.pk3-featured .pk3-arrow      { width: 32px; height: 32px; }
+  .pk3-card.pk3-featured .pk3-arrow svg  { width: 14px; height: 14px; }
+
+  .pk3-ribbon { font-size: 7px; padding: 4px 9px; top: 10px; right: 10px; }
 }
 </style>
 <!-- Microsoft Clarity heatmap -->
@@ -835,7 +863,6 @@
           <p class="pk3-desc">Monthly aquatic treadmill membership with onboarding training, consultation discounts, and flexi one-time packs from $250.</p>
           <div class="pk3-stat">
             <span class="pk3-stat-val">From $120 / mo</span>
-            <span class="pk3-stat-note">50% off first month</span>
           </div>
           <div class="pk3-cta-row">
             <span class="pk3-cta-label">View membership</span>

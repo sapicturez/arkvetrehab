@@ -1771,9 +1771,107 @@ footer a:hover { color: var(--terracotta-soft); }
   .container { padding: 0 24px; }
   .hero-grid { grid-template-columns: 1fr; gap: 60px; }
   .hero-visual { max-width: 83vw; width: 83vw; margin: 0 auto; transform: none; aspect-ratio: 5/6; }
-  .why { padding: 70px 32px; margin: 0 16px; }
-  .why-summary { height: 100px; }
-  .why-summary h3 { font-size: 18px; }
+  /* ---------- WHY US — mobile / tablet reveal-card redesign ---------- */
+  .why { padding: 56px 20px; margin: 0 12px; }
+  .why-accordion { gap: 10px; }
+
+  .why-item {
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(28,61,74,0.07);
+    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  .why-item[open] {
+    box-shadow: 0 8px 32px rgba(28,61,74,0.13);
+    border-color: rgba(58,125,140,0.22);
+  }
+
+  /* Closed: compact 70px strip — image hidden behind opaque overlay */
+  .why-summary {
+    height: 70px;
+    padding: 0 18px;
+    gap: 14px;
+    transition: height 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Opaque overlay hides the background photo when closed */
+  .why-summary::before {
+    background: var(--paper);
+    transition: background 0.42s ease;
+  }
+  /* Dark text on light background when closed */
+  .why-summary h3 {
+    font-size: 15px;
+    color: var(--sage-deep);
+    transition: color 0.35s ease;
+  }
+  /* Icon chip: terracotta tint */
+  .why-icon {
+    background: rgba(192,98,82,0.10);
+    color: var(--terracotta);
+    transition: background 0.35s ease, color 0.35s ease;
+  }
+  /* Chevron always visible, terracotta, points down */
+  .why-chevron {
+    display: block;
+    color: var(--terracotta);
+    transition: transform 0.45s cubic-bezier(0.34, 1.0, 0.64, 1), color 0.35s ease;
+  }
+  /* Push chevron to the far right; min-width:0 lets h3 wrap within bounds */
+  .why-h3-row { flex: 1; min-width: 0; }
+
+  /* Open: expand to 200px, reveal photo with dark gradient */
+  .why-item[open] .why-summary {
+    height: 200px;
+  }
+  .why-item[open] .why-summary::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(20,50,65,0.72) 0%,
+      rgba(20,50,65,0.42) 52%,
+      rgba(20,50,65,0.74) 100%
+    );
+  }
+  .why-item[open] .why-summary h3 { color: #fff; }
+  .why-item[open] .why-icon {
+    background: rgba(255,255,255,0.15);
+    color: var(--cream-warm);
+  }
+  .why-item[open] .why-chevron {
+    transform: rotate(180deg);
+    color: rgba(255,255,255,0.72);
+  }
+
+  /* Closing: snap back to closed appearance while height animates */
+  .why-item.closing .why-summary { height: 70px; }
+  .why-item.closing .why-summary::before { background: var(--paper); }
+  .why-item.closing .why-summary h3 { color: var(--sage-deep); }
+  .why-item.closing .why-icon {
+    background: rgba(192,98,82,0.10);
+    color: var(--terracotta);
+  }
+  .why-item.closing .why-chevron {
+    transform: rotate(0deg) !important;
+    color: var(--terracotta);
+  }
+
+  /* Body: slide + fade in from just above */
+  .why-body {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      max-height 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease 0.1s,
+      transform 0.38s ease 0.08s;
+  }
+  .why-item[open] .why-body {
+    max-height: 520px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .why-item.closing .why-body {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    transform: translateY(-6px) !important;
+  }
   .services-grid { grid-template-columns: 1fr; }
   .srv-card { border-right: none; }
   .srv-card:nth-last-child(-n+2) { border-bottom: 1px solid rgba(28,61,74,0.10); }
@@ -1989,7 +2087,6 @@ footer a:hover { color: var(--terracotta-soft); }
   animation: hint-pulse 1.8s ease-in-out infinite;
 }
 .gallery-thumb { position: relative; }
-.gallery-hint.gone { opacity: 0; }
 @keyframes hint-pulse {
   0%, 100% { background: rgba(28,61,74,0.52); }
   50%       { background: rgba(28,61,74,0.70); }

@@ -186,22 +186,5 @@
 
 /* ----------------------------------------------------------
    5. GALLERY TAP HINT
-   Shows a pulsing "tap to view" hint on the first gallery
-   thumb, fades out after 2.5s or on first tap
+   Pulsing "tap to view" hint — stays visible permanently
 ---------------------------------------------------------- */
-(function () {
-  var thumbs = document.querySelectorAll('.gallery-thumb');
-  if (!thumbs.length) return;
-
-  /* Animate hint out once any thumb is tapped/clicked */
-  function dismissHint() {
-    var hint = document.querySelector('.gallery-hint');
-    if (hint) { hint.classList.add('gone'); }
-    thumbs.forEach(function (t) { t.removeEventListener('click', dismissHint); });
-  }
-
-  thumbs.forEach(function (t) { t.addEventListener('click', dismissHint); });
-
-  /* Auto-fade after 3s */
-  setTimeout(dismissHint, 3000);
-})();
