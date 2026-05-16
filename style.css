@@ -1780,8 +1780,11 @@ footer a:hover { color: var(--terracotta-soft); }
   .srv-card:last-child { border-bottom: none; }
   .srv-arrow { opacity: 1; transform: translateX(0); }
   .srv-thumb { display: block; }
-  .service-block { grid-template-columns: 1fr; gap: 40px; }
+  .service-block { grid-template-columns: 1fr; gap: 32px; }
   .service-block.reverse { direction: ltr; }
+  .service-visual { aspect-ratio: 4/3; }
+  .acu-slide img:nth-child(3) { object-position: center 20%; }
+  .laser-slide img:nth-child(2) { object-position: center 80%; }
   .team-grid { grid-template-columns: 1fr; }
   .team-card { grid-template-columns: 120px 1fr; gap: 28px; padding: 28px; }
   .team-avatar { width: 120px; height: 120px; }
