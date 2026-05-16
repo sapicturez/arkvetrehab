@@ -4,6 +4,42 @@
    ============================================================ */
 
 /* ----------------------------------------------------------
+   0. COOKIE NOTICE BANNER
+   Shown once per browser. Dismissed choice stored in
+   localStorage so it never appears again on return visits.
+   Injected dynamically — zero HTML changes needed per page.
+---------------------------------------------------------- */
+(function () {
+  if (localStorage.getItem('ark_cookie_ok')) return;
+
+  var banner = document.createElement('div');
+  banner.id = 'ark-cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Cookie notice');
+  banner.innerHTML =
+    '<p>We use cookies to improve your experience and analyse site traffic. ' +
+    'By clicking Accept, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>' +
+    '<div class="ark-cookie-actions">' +
+      '<button class="ark-cookie-decline" id="arkCookieDecline">Decline</button>' +
+      '<button class="ark-cookie-accept" id="arkCookieAccept">Accept</button>' +
+    '</div>';
+
+  document.body.appendChild(banner);
+
+  /* Slide up after short delay so it doesn't compete with page load */
+  setTimeout(function () { banner.classList.add('visible'); }, 900);
+
+  function dismiss() {
+    banner.classList.remove('visible');
+    setTimeout(function () { banner.remove(); }, 450);
+    localStorage.setItem('ark_cookie_ok', '1');
+  }
+
+  document.getElementById('arkCookieAccept').addEventListener('click', dismiss);
+  document.getElementById('arkCookieDecline').addEventListener('click', dismiss);
+})();
+
+/* ----------------------------------------------------------
    1. REVEAL ON SCROLL
    Adds .in to any .reveal element when it enters the viewport
 ---------------------------------------------------------- */
