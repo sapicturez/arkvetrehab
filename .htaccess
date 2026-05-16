@@ -4,13 +4,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP_USER_AGENT} !facebookexternalhit [NC]
-  RewriteCond %{HTTP_USER_AGENT} !Facebot [NC]
-  RewriteCond %{HTTP_USER_AGENT} !WhatsApp [NC]
-  RewriteCond %{HTTP_USER_AGENT} !Twitterbot [NC]
-  RewriteCond %{HTTP_USER_AGENT} !LinkedInBot [NC]
-  RewriteCond %{HTTP_USER_AGENT} !Googlebot [NC]
-  RewriteCond %{HTTP_USER_AGENT} !TelegramBot [NC]
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
