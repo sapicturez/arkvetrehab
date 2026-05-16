@@ -9,6 +9,7 @@
 <link rel="icon" type="image/png" href="./images/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arkvetrehab.com/treatmill-club.html">
+<link rel="canonical" href="https://arkvetrehab.com/treatmill-club.html">
 <meta property="og:title" content="Treat-mill Club Menu | ARK Vet Rehab Singapore">
 <meta property="og:description" content="Hydrotherapy & fitness packages for your dog. Flexi packs from $250 · Memberships from $120/month.">
 <meta property="og:site_name" content="ARK Veterinary Rehabilitation">
@@ -840,8 +841,20 @@
     gap: 3px;
   }
 
-  /* Hide paw icon on mobile — saves space */
-  .flexi-label .flexi-paw-icon { display: none; }
+  /* Paw — small decorative accent, top-right corner */
+  .flexi-label { position: relative; }
+  .flexi-label .flexi-paw-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    opacity: 0.18;
+    color: var(--sage-deep);
+    flex-shrink: 0;
+  }
 
   .flexi-num {
     font-size: 9px;
@@ -849,11 +862,11 @@
     letter-spacing: 0.16em;
     color: var(--ink-soft);
     text-transform: uppercase;
-    margin-bottom: 2px;
+    margin-bottom: 0;
   }
   .flexi-name {
     font-family: var(--font-display);
-    font-size: 17px;
+    font-size: 15px;
     font-style: italic;
     font-weight: 500;
     color: var(--sage-deep);
@@ -1426,22 +1439,30 @@
           <li><a href="prices.html">Price List</a></li>
         </ul>
       </div>
-      <div>
-        <h5>Hours</h5>
-        <div class="hours-row"><span>Monday</span><span>Closed</span></div>
-        <div class="hours-row"><span>Tue–Fri</span><span>10:00 AM – 6:30 PM</span></div>
-        <div class="hours-row"><span>Saturday</span><span>10:00 AM – 6:30 PM</span></div>
-        <div class="hours-row"><span>Sunday</span><span>9:00 AM – 5:00 PM</span></div>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li>7d Crane Rd<br/>Singapore 429356</li>
-          <li><a href="tel:+6588286875">+65 8828 6875</a></li>
-          <li><a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a></li>
-        </ul>
+      <div class="footer-right-col">
+        <div class="footer-right-top">
+          <div>
+            <h5>Hours</h5>
+            <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+            <div class="hours-row"><span>Tue–Fri</span><span>10:00 AM – 6:30 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span>10:00 AM – 6:30 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span>9:00 AM – 5:00 PM</span></div>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>7d Crane Rd<br/>Singapore 429356</li>
+              <li><a href="tel:+6588286875">+65 8828 6875</a></li>
+              <li><a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
+        </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <div>© 2026 ARK Veterinary Rehabilitation. All rights reserved.</div>
       <div style="display:flex;gap:24px">

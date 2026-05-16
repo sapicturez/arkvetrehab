@@ -11,6 +11,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arkvetrehab.com/">
+<link rel="canonical" href="https://arkvetrehab.com/">
 <meta property="og:title" content="ARK Veterinary Rehabilitation — Caring with love, just like home">
 <meta property="og:description" content="Singapore's premier veterinary rehabilitation clinic. Hydrotherapy, acupuncture, laser therapy, and holistic care for pets at every stage of life.">
 <meta property="og:image" content="https://arkvetrehab.com/images/2arkvetrehab.jpg?v=3">
@@ -217,9 +218,43 @@
   transform: translateX(4px);
 }
 
+/* ── Tablet: always 3 columns, everything scales down ── */
 @media (max-width: 880px) {
-  .pk3-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
-  .pk3-img { height: 210px; }
+  .pk3-grid { gap: 10px; margin-top: 32px; }
+  .pk3-img { height: 160px; }
+  .pk3-body { padding: 14px 14px 16px; }
+  .pk3-top-row { margin-bottom: 8px; }
+  .pk3-tag { font-size: 7.5px; letter-spacing: 0.12em; }
+  .pk3-num { font-size: 9px; }
+  .pk3-title { font-size: clamp(14px, 3.2vw, 20px); margin-bottom: 8px; }
+  .pk3-desc { font-size: 11.5px; line-height: 1.55; margin-bottom: 12px; }
+  .pk3-stat { padding: 8px 10px; margin-bottom: 12px; border-radius: 7px; }
+  .pk3-stat-val { font-size: 14px; }
+  .pk3-stat-note { font-size: 9px; }
+  .pk3-cta-row { padding-top: 12px; }
+  .pk3-cta-label { font-size: 11.5px; }
+  .pk3-arrow { width: 28px; height: 28px; }
+  .pk3-ribbon { font-size: 7px; padding: 4px 9px; top: 10px; right: 10px; }
+}
+
+/* ── Mobile: still 3 columns, minimal footprint ── */
+@media (max-width: 560px) {
+  .pk3-grid { gap: 5px; margin-top: 20px; }
+  .pk3-img { height: 100px; }
+  .pk3-body { padding: 10px 10px 12px; }
+  .pk3-top-row { margin-bottom: 5px; }
+  .pk3-tag { font-size: 6px; letter-spacing: 0.09em; }
+  .pk3-num { display: none; }
+  .pk3-title { font-size: clamp(10px, 3vw, 13px); margin-bottom: 6px; line-height: 1.15; }
+  .pk3-desc { display: none; }
+  .pk3-stat { padding: 6px 8px; margin-bottom: 9px; border-radius: 6px; }
+  .pk3-stat-val { font-size: 11px; }
+  .pk3-stat-note { display: none; }
+  .pk3-cta-row { padding-top: 8px; }
+  .pk3-cta-label { font-size: 10px; }
+  .pk3-arrow { width: 22px; height: 22px; }
+  .pk3-arrow svg { width: 10px; height: 10px; }
+  .pk3-ribbon { font-size: 6px; padding: 3px 7px; top: 7px; right: 7px; }
 }
 </style>
 </head>
@@ -939,21 +974,27 @@
         </ul>
       </div>
 
-      <div>
-        <h5>Hours</h5>
-        <div class="hours-row"><span>Monday</span><span>Closed</span></div>
-        <div class="hours-row"><span>Tue–Fri</span><span>10:00 AM – 6:30 PM</span></div>
-        <div class="hours-row"><span>Saturday</span><span>10:00 AM – 6:30 PM</span></div>
-        <div class="hours-row"><span>Sunday</span><span>9:00 AM – 5:00 PM</span></div>
-      </div>
-
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li>7d Crane Rd<br/>Singapore 429356</li>
-          <li><a href="tel:+6588286875">+65 8828 6875</a></li>
-          <li><a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a></li>
-        </ul>
+      <div class="footer-right-col">
+        <div class="footer-right-top">
+          <div>
+            <h5>Hours</h5>
+            <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+            <div class="hours-row"><span>Tue–Fri</span><span>10:00 AM – 6:30 PM</span></div>
+            <div class="hours-row"><span>Saturday</span><span>10:00 AM – 6:30 PM</span></div>
+            <div class="hours-row"><span>Sunday</span><span>9:00 AM – 5:00 PM</span></div>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>7d Crane Rd<br/>Singapore 429356</li>
+              <li><a href="tel:+6588286875">+65 8828 6875</a></li>
+              <li><a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
+        </div>
       </div>
     </div>
 
