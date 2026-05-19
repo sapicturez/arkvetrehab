@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<style>html{background:#f6f1e8;}body{margin:0;visibility:hidden;}</style>
-<link rel="stylesheet" href="./style.css?v=20260517-fix1">
+<style>html{background:#f6f1e8;}body{margin:0;opacity:0;transition:opacity 0.3s;}</style>
+<link id="mainCss" rel="stylesheet" href="./style.css?v=20260518">
 <script>
-  window.addEventListener('DOMContentLoaded',function(){document.body.style.visibility='visible';});
-  setTimeout(function(){document.body.style.visibility='visible';},1200);
+  document.getElementById('mainCss').addEventListener('error',function(){document.body.style.opacity='1';});
+  setTimeout(function(){document.body.style.opacity='1';},5000);
 </script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
@@ -45,7 +45,8 @@
 <link rel="preload" as="image" href="./images/arkvetrehab-home.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap"></noscript>
 
 <style>
 /* ── Packages Section — clean card design ── */

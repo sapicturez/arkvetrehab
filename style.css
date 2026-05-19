@@ -33,6 +33,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   font-weight: 400;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 /* Subtle grain overlay */
