@@ -6,14 +6,19 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Force HTTPS and canonical non-www for EVERYONE, including Meta/Facebook/WhatsApp crawlers.
+# Force HTTPS + canonical non-www in one redirect (no chain)
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\.arkvetrehab\.com$ [NC]
 RewriteRule ^ https://arkvetrehab.com%{REQUEST_URI} [R=301,L]
 
 </IfModule>
 
-# Enable GZIP compression
+# Enable Brotli (preferred over GZIP, Hostinger supports it)
+<IfModule mod_brotli.c>
+AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript image/svg+xml
+</IfModule>
+
+# Enable GZIP as fallback
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript image/svg+xml
 </IfModule>
@@ -21,26 +26,41 @@ AddOutputFilterByType DEFLATE text/html text/css text/javascript application/jav
 # MIME types
 AddType text/css .css
 AddType application/javascript .js
+AddType image/webp .webp
 
-# Cache control
+# Cache control — 1 year for versioned assets, no-cache for HTML
 <IfModule mod_headers.c>
+  # HTML — always revalidate so content changes show immediately
   <FilesMatch "\.(html)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
   </FilesMatch>
+
+  # CSS + JS — 1 year (safe: versioned with ?v= query string)
   <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=3600"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images + fonts — 1 year
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 </IfModule>
 
-# Browser caching
+# Expires (belt-and-suspenders for older proxies)
 <IfModule mod_expires.c>
 ExpiresActive On
-ExpiresByType image/jpg "access plus 1 month"
-ExpiresByType image/jpeg "access plus 1 month"
-ExpiresByType image/png "access plus 1 month"
-ExpiresByType image/webp "access plus 1 month"
-ExpiresByType text/css "access plus 1 week"
-ExpiresByType application/javascript "access plus 1 week"
+ExpiresByType text/html                "access plus 0 seconds"
+ExpiresByType text/css                 "access plus 1 year"
+ExpiresByType application/javascript   "access plus 1 year"
+ExpiresByType image/jpeg               "access plus 1 year"
+ExpiresByType image/jpg                "access plus 1 year"
+ExpiresByType image/png                "access plus 1 year"
+ExpiresByType image/webp               "access plus 1 year"
+ExpiresByType image/gif                "access plus 1 year"
+ExpiresByType image/svg+xml            "access plus 1 year"
+ExpiresByType image/x-icon             "access plus 1 year"
+ExpiresByType font/woff2               "access plus 1 year"
+ExpiresByType font/woff                "access plus 1 year"
 </IfModule>
