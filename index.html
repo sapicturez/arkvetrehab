@@ -38,7 +38,7 @@
 <meta name="twitter:title" content="ARK Veterinary Rehabilitation — Caring with love, just like home">
 <meta name="twitter:description" content="Singapore's premier veterinary rehabilitation clinic. Hydrotherapy, acupuncture, laser therapy, and holistic care for pets at every stage of life.">
 <meta name="twitter:image" content="https://arkvetrehab.com/images/2arkvetrehab.jpg">
-<link rel="preload" as="image" href="./images/arkvetrehab-home.webp" fetchpriority="high">
+<link rel="preload" as="image" href="./images/arkvetrehab-home-video.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" onload="this.rel='stylesheet'">
@@ -248,50 +248,34 @@
   .pk3-ribbon { font-size: 7px; padding: 4px 9px; top: 10px; right: 10px; }
 }
 
-/* ── Mobile: Rehab + Nutrition side-by-side, Treat-mill full-width below ── */
+/* ── Mobile: All 3 cards full-width, same size as Treat-mill Club ── */
 @media (max-width: 560px) {
   .pk3-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 12px;
     margin-top: 20px;
   }
 
-  /* Reorder: Rehab left, Nutrition right, Treat-mill full-width row 2 */
-  .pk3-card:nth-child(1) { order: 1; }
-  .pk3-card:nth-child(3) { order: 2; }
-  .pk3-card.pk3-featured { order: 3; grid-column: 1 / -1; }
+  /* Reset order — stack naturally */
+  .pk3-card:nth-child(1) { order: unset; }
+  .pk3-card:nth-child(3) { order: unset; }
+  .pk3-card.pk3-featured { order: unset; grid-column: unset; }
 
-  /* Small cards — compact */
-  .pk3-card:not(.pk3-featured) .pk3-img        { height: 110px; }
-  .pk3-card:not(.pk3-featured) .pk3-body       { padding: 10px 10px 12px; }
-  .pk3-card:not(.pk3-featured) .pk3-top-row    { margin-bottom: 5px; }
-  .pk3-card:not(.pk3-featured) .pk3-tag        { font-size: 6px; letter-spacing: 0.09em; }
-  .pk3-card:not(.pk3-featured) .pk3-num        { display: none; }
-  .pk3-card:not(.pk3-featured) .pk3-title      { font-size: clamp(11px, 3.2vw, 13px); margin-bottom: 6px; line-height: 1.15; }
-  .pk3-card:not(.pk3-featured) .pk3-desc       { display: none; }
-  .pk3-card:not(.pk3-featured) .pk3-stat       { padding: 6px 8px; margin-bottom: 9px; border-radius: 6px; }
-  .pk3-card:not(.pk3-featured) .pk3-stat-val   { font-size: 11px; }
-  .pk3-card:not(.pk3-featured) .pk3-stat-note  { display: none; }
-  .pk3-card:not(.pk3-featured) .pk3-cta-row    { padding-top: 8px; }
-  .pk3-card:not(.pk3-featured) .pk3-cta-label  { font-size: 10px; }
-  .pk3-card:not(.pk3-featured) .pk3-arrow      { width: 22px; height: 22px; }
-  .pk3-card:not(.pk3-featured) .pk3-arrow svg  { width: 10px; height: 10px; }
-
-  /* Treat-mill Club — full-width, spacious, premium */
-  .pk3-card.pk3-featured .pk3-img        { height: 180px; }
-  .pk3-card.pk3-featured .pk3-body       { padding: 18px 20px 20px; }
-  .pk3-card.pk3-featured .pk3-top-row    { margin-bottom: 10px; }
-  .pk3-card.pk3-featured .pk3-tag        { font-size: 8.5px; letter-spacing: 0.12em; }
-  .pk3-card.pk3-featured .pk3-num        { font-size: 9px; }
-  .pk3-card.pk3-featured .pk3-title      { font-size: clamp(18px, 5vw, 22px); margin-bottom: 10px; line-height: 1.1; }
-  .pk3-card.pk3-featured .pk3-desc       { display: block; font-size: 13px; line-height: 1.6; margin-bottom: 14px; }
-  .pk3-card.pk3-featured .pk3-stat       { padding: 11px 14px; margin-bottom: 14px; border-radius: 9px; }
-  .pk3-card.pk3-featured .pk3-stat-val   { font-size: 16px; }
-  .pk3-card.pk3-featured .pk3-stat-note  { display: block; font-size: 10px; }
-  .pk3-card.pk3-featured .pk3-cta-row    { padding-top: 14px; }
-  .pk3-card.pk3-featured .pk3-cta-label  { font-size: 13px; }
-  .pk3-card.pk3-featured .pk3-arrow      { width: 32px; height: 32px; }
-  .pk3-card.pk3-featured .pk3-arrow svg  { width: 14px; height: 14px; }
+  /* All cards — same spacious treatment */
+  .pk3-card .pk3-img        { height: 180px; }
+  .pk3-card .pk3-body       { padding: 18px 20px 20px; }
+  .pk3-card .pk3-top-row    { margin-bottom: 10px; }
+  .pk3-card .pk3-tag        { font-size: 8.5px; letter-spacing: 0.12em; }
+  .pk3-card .pk3-num        { font-size: 9px; }
+  .pk3-card .pk3-title      { font-size: clamp(18px, 5vw, 22px); margin-bottom: 10px; line-height: 1.1; }
+  .pk3-card .pk3-desc       { display: block; font-size: 13px; line-height: 1.6; margin-bottom: 14px; }
+  .pk3-card .pk3-stat       { padding: 11px 14px; margin-bottom: 14px; border-radius: 9px; }
+  .pk3-card .pk3-stat-val   { font-size: 16px; }
+  .pk3-card .pk3-stat-note  { display: block; font-size: 10px; }
+  .pk3-card .pk3-cta-row    { padding-top: 14px; }
+  .pk3-card .pk3-cta-label  { font-size: 13px; }
+  .pk3-card .pk3-arrow      { width: 32px; height: 32px; }
+  .pk3-card .pk3-arrow svg  { width: 14px; height: 14px; }
 
   .pk3-ribbon { font-size: 7px; padding: 4px 9px; top: 10px; right: 10px; }
 }
@@ -304,8 +288,419 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wrzh4olbi6");
 </script>
+<style>
+  /* ====== Why-section image highlights (index.html only) ====== */
+  .why-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* 4-in-a-row on every screen */
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+  .why-hl {
+    margin: 0;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(28,61,74,0.08);
+    box-shadow: 0 4px 28px rgba(28,61,74,0.08);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, outline-color 0.2s ease;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  .why-hl:hover { box-shadow: 0 14px 36px -14px rgba(28,61,74,0.4); }
+  .why-hl:focus-visible { outline-color: var(--terracotta); }
+  /* Highlight the tile whose tab is currently active */
+  .why-hl.is-active {
+    outline-color: var(--terracotta);
+    box-shadow: 0 14px 36px -14px rgba(28,61,74,0.45);
+  }
+  .why-hl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .why-hl:hover img { transform: scale(1.06); }
+  @media (max-width: 860px) {
+    .why-highlights { gap: 12px; margin-bottom: 30px; }
+    .why-hl { border-radius: 14px; }
+  }
+  @media (max-width: 560px) {
+    .why-highlights { gap: 8px; margin-bottom: 24px; }
+    .why-hl { border-radius: 10px; }
+  }
+  /* Mobile/tablet: a collapsed panel still draws its terracotta border as a
+     thin orange line between tabs — hide it until the panel is open. */
+  @media (max-width: 880px) {
+    .why-panel:not(.is-active) { border-color: transparent !important; }
+  }
+
+  /* ====== Our Services: square card images + creamy tone (index.html only) ====== */
+  .services-grid .srv-thumb {
+    width: clamp(100px, 11.5vw, 131px);   /* ~20% smaller overall */
+    height: auto;
+    aspect-ratio: 6 / 5;                  /* ~20% longer in width (landscape) */
+    border-radius: 16px;
+    margin-left: 16px;
+  }
+  .services-grid .srv-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .services-grid .srv-card:hover .srv-thumb img,
+  .services-grid .srv-card:focus-visible .srv-thumb img {
+    transform: scale(1.06);
+  }
+  /* Tablet / mobile (single-column, full-width cards) */
+  @media (max-width: 880px) {
+    .services-grid .srv-thumb { width: clamp(96px, 21vw, 122px); margin-left: 14px; }
+  }
+  @media (max-width: 460px) {
+    .services-grid .srv-thumb { width: clamp(78px, 23vw, 100px); margin-left: 10px; border-radius: 13px; }
+  }
+
+  /* ====== Meet the team: warm terracotta glow (moved here) ====== */
+  .team-section { position: relative; overflow: hidden; }
+  .team-section::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -180px; left: auto;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(216,144,120,0.22) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .team-section > .container { position: relative; z-index: 1; }
+
+  /* ====== Get in touch: align content to centered site column ====== */
+  #contact { background: var(--cream); margin-top: -7%; }   /* match Packages bg; pulled up 7% */
+  #contact::before { display: none; }   /* terracotta glow moved to the Meet the team section */
+  #contact .cta-section { display: block; }   /* neutralize style.css grid so the inner container spans full width */
+  #contact .cta-section > .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  /* Pin the contact block to the right edge of its cell, then nudge 15% back toward the left */
+  #contact .contact-info { justify-self: end; margin-right: 15%; }
+  @media (max-width: 880px) {
+    #contact .cta-section > .container { grid-template-columns: 1fr; gap: 36px; }
+    #contact .contact-info { justify-self: start; margin-right: 0; }
+  }
+
+  /* ====== Find-us map: independent full-width band above the newsletter (index.html only) ====== */
+  .map-section {
+    position: relative;
+    background: var(--cream);
+  }
+  .map-section .map-embed {
+    position: relative;
+    height: clamp(320px, 42vw, 460px);
+    overflow: hidden;
+  }
+  .map-section .map-embed iframe {
+    position: absolute;
+    left: 0;
+    /* Shift up to crop the My Maps title/attribution bar (clipped by .map-embed overflow:hidden) */
+    top: -69px;
+    width: 100%;
+    height: calc(100% + 69px);
+    border: 0;
+    display: block;
+    z-index: 0;
+  }
+  /* Transparent guard intercepts the mouse wheel so the page scrolls instead of the map zooming.
+     A click activates the map; leaving the area re-arms the guard. */
+  .map-section .map-guard {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+  }
+  .map-section .map-embed.is-active .map-guard { display: none; }
+  .map-section .map-guard-hint {
+    padding: 8px 16px;
+    border-radius: 100px;
+    background: rgba(28, 61, 74, 0.78);
+    color: var(--cream);
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+  .map-section .map-guard:hover .map-guard-hint { opacity: 1; transform: translateY(0); }
+  .map-section .map-pill {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    max-width: calc(100% - 32px);
+    padding: 12px 20px;
+    border-radius: 100px;
+    background: rgba(245, 241, 230, 0.94);
+    backdrop-filter: blur(8px);
+    color: var(--sage-deep);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 30px -12px rgba(28, 61, 74, 0.55);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .map-section .map-pill:hover {
+    background: var(--cream);
+    transform: translateX(-50%) translateY(-2px);
+  }
+  .map-section .map-pill svg { color: var(--terracotta); flex-shrink: 0; }
+  .map-section .map-pill-cta {
+    padding-left: 12px;
+    margin-left: 3px;
+    border-left: 1px solid rgba(28, 61, 74, 0.18);
+    color: var(--terracotta);
+  }
+  @media (max-width: 560px) {
+    .map-section .map-pill { font-size: 13px; padding: 10px 16px; bottom: 18px; }
+    .map-section .map-pill-cta { display: none; }
+  }
+
+  /* ====== Interactive video feature — special immersive band under "Why Us" (index.html only) ====== */
+  .video-feature {
+    position: relative;
+    overflow: hidden;
+    background: var(--sage-deep);
+  }
+  .video-feature > .container { position: relative; z-index: 1; }
+
+  /* Two columns: video | text */
+  .video-feature-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(40px, 5vw, 76px);
+    align-items: center;
+  }
+
+  /* Text column (right), cream tones, left-aligned, nudged 15% to the right */
+  .video-feature-head {
+    text-align: left;
+    max-width: 460px;
+    margin-left: 15%;
+  }
+  .video-feature-head .section-eyebrow { color: var(--terracotta-soft); }
+  .video-feature-head .section-title { color: var(--cream); }
+  .video-feature-head .section-title em { color: var(--terracotta-soft); }
+  .video-feature-head .section-intro { color: rgba(245,241,230,0.82); margin-bottom: 26px; }
+  .video-feature-points {
+    list-style: none;
+    margin: 0 0 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .video-feature-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(245,241,230,0.9);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .video-feature-points .vf-pt-icon {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: rgba(216,144,120,0.18);
+    color: var(--terracotta-soft);
+    margin-top: 1px;
+  }
+
+  /* Button: subtle translucent pill on the dark bg, fills with terracotta on hover */
+  .video-feature-head .btn-primary {
+    background: rgba(245, 241, 230, 0.10);
+    border: 1px solid rgba(245, 241, 230, 0.22);
+    color: var(--cream);
+  }
+  .video-feature-head .btn-primary:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -10px rgba(192, 98, 82, 0.6);
+  }
+
+  /* Video stage (left), framed, room for floating badges */
+  .video-feature-stage { min-width: 0; }
+  .video-feature .hero-visual.hero-visual--inline {
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .video-feature .hero-photo-frame {
+    box-shadow: 0 40px 90px -30px rgba(0,0,0,0.55);
+    border: 1px solid rgba(245,241,230,0.12);
+  }
+
+  @media (max-width: 880px) {
+    .video-feature-grid { grid-template-columns: 1fr; gap: 40px; }
+    .video-feature-head { max-width: 100%; margin-left: 0; }
+    /* keep floating badges from spilling off-screen */
+    .video-feature .hero-badge.bdg-1 { left: 10px; }
+    .video-feature .hero-badge.bdg-2 { right: 10px; }
+  }
+
+  /* Booking: hide the status subtitle when empty so the paragraph sits up against the title */
+  .bk-subtitle:empty { display: none; }
+
+  /* Booking calendar iframe: full width so the calendar is never cropped. */
+  .bk-plato-iframe { width: 100%; max-width: 100%; }
+  /* Plato centers its content vertically and never reports its height, so the iframe height
+     is set to hug the day-selected state (calendar + time slots ≈ 975px) plus a small buffer.
+     This removes the empty top/bottom gaps while still fitting the slots without a scrollbar. */
+  #bkPlato .bk-plato-iframe { min-height: 1050px; }
+
+  /* Fix: .bk-visit-step{display:flex} was overriding the [hidden] attribute, so picking a
+     visit type left the cards visible and stacked the calendar below them (very tall).
+     Make hidden actually hide, so the calendar replaces the cards. */
+  #bkPlato .bk-visit-step[hidden],
+  #bkPlato .bk-cal-step[hidden] { display: none; }
+
+  /* MOBILE ONLY (≤600px): give the booking widget edge-to-edge width (10px gutters) so the
+     calendar and visit-type cards get the full screen width, and add height to kill the scrollbar.
+     Desktop/tablet (>600px) is unchanged. */
+  @media (max-width: 600px) {
+    #bkPlato.booking-widget {
+      width: calc(100vw - 20px);
+      margin-left: calc(50% - 50vw + 10px);   /* full-bleed to 10px from each screen edge */
+      max-width: none;
+      box-sizing: border-box;
+      padding: 22px 10px 16px;                 /* slim side padding so content sits near the edges */
+      border-radius: 16px;
+    }
+    /* let the calendar + cards use the whole widget width */
+    #bkPlato .bk-plato-embed { border-radius: 10px; }
+    #bkPlato .bk-plato-iframe { min-height: 1110px; }   /* a touch taller on mobile: text wraps more */
+    /* keep paragraphs/back-link readable, not flush to the edge */
+    #bkPlato .bk-visit-lead,
+    #bkPlato .bk-visit-note,
+    #bkPlato .bk-visit-back { padding-left: 4px; padding-right: 4px; }
+  }
+
+  /* ====== ARK Learning Center — flat cream, two-column (logo left) ====== */
+  .alc-section { position: relative; overflow: hidden; background: var(--cream); }
+  /* dynamic clinic-training image as the section backdrop */
+  .alc-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .alc-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.55;
+    filter: saturate(0.96);
+    transform: scale(1.12);            /* overscan so the parallax shift never reveals edges */
+    transition: transform 0.9s ease-out;
+    will-change: transform;
+  }
+  /* cream wash + edge feather keeps the typography crisp on top */
+  .alc-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, var(--cream) 0%, rgba(245,241,230,0.50) 20%, rgba(245,241,230,0.38) 55%, rgba(245,241,230,0.62) 90%, var(--cream) 100%),
+      linear-gradient(180deg, rgba(245,241,230,0.86) 0%, rgba(245,241,230,0.52) 50%, rgba(245,241,230,0.9) 100%);
+  }
+  .alc-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(36px, 5vw, 72px);
+    align-items: center;
+  }
+  /* left column — small transparent logo on cream */
+  .alc-logo-col { text-align: center; }
+  .alc-logo-link { display: inline-block; transition: transform 0.25s ease, opacity 0.25s ease; }
+  .alc-logo-link:hover { transform: translateY(-2px); opacity: 0.9; }
+  .alc-logo { width: 100%; max-width: 288px; height: auto; display: inline-block; }
+  /* tagline + url under the logo — minimal, matching the logotype */
+  .alc-tag {
+    display: block;
+    margin: 14px 0 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .alc-url {
+    display: inline-block;
+    margin-top: 3px;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #000;
+    text-decoration: none;
+  }
+  .alc-url:hover { text-decoration: underline; }
+  /* right column — reuses site .section-eyebrow / .section-title / .section-intro */
+  .alc-text-col { text-align: left; }
+  .alc-text-col .section-title { margin-top: 8px; }
+  .alc-text-col .section-intro { margin-bottom: 26px; }
+  .alc-points {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .alc-points li { display: flex; align-items: flex-start; gap: 14px; text-align: left; }
+  .alc-pt-icon {
+    flex: none;
+    width: 40px; height: 40px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    background: rgba(58,125,140,0.10);
+    color: var(--sage);
+  }
+  .alc-pt-icon svg { width: 20px; height: 20px; }
+  .alc-pt-text strong {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 15.5px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .alc-pt-text span {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .alc-cta { gap: 8px; }
+  .alc-cta svg { width: 16px; height: 16px; }
+  @media (max-width: 880px) {
+    .alc-grid { grid-template-columns: 1fr; gap: 36px; }
+    .alc-logo { max-width: 264px; }
+  }
+</style>
 </head>
 <body>
+
 
 <!-- ================= NAV ================= -->
 <nav>
@@ -319,11 +714,22 @@
       <li><a href="#team">Team</a></li>
       <li><a href="#space">Our Space</a></li>
       <li><a href="#packages">Packages</a></li>
-      <li><a href="treatmill-club.html">Treat-mill Club</a></li>
       <li><a href="prices.html">Price List</a></li>
-      <li><a href="https://wa.me/6588286875" class="btn btn-primary">Book Now
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <li class="nav-shop-item"><a href="https://shop.arkvetrehab.com" class="nav-shop" aria-label="Visit our shop">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span>Shop</span>
       </a></li>
+      <li class="nav-contact-group">
+        <a href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" class="nav-greviews" target="_blank" rel="noopener" aria-label="5.0 stars · 39 Google reviews">
+          <span class="nav-stars">★★★★★</span>
+          <span class="nav-rscore">5.0</span>
+          <span class="nav-rcount">(39 reviews)</span>
+        </a>
+        <a href="https://wa.me/6588286875" class="nav-wa" target="_blank" rel="noopener" aria-label="WhatsApp +65 8828 6875">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.404A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.118l-.292-.173-3.032.854.854-3.032-.19-.302A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+          <span class="nav-wa-num">+65 8828 6875</span>
+        </a>
+      </li>
     </ul>
     <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
       <span></span><span></span><span></span>
@@ -352,7 +758,7 @@
           </a>
           <a href="#services" class="btn btn-outline">Explore services</a>
         </div>
-        <div class="hero-stats">
+        <div class="hero-stats hero-scroll-reveal">
           <div>
             <div class="stat-num">20+</div>
             <div class="stat-label">Years combined<br>experience</div>
@@ -370,63 +776,153 @@
             <div class="stat-label">Hybrid practice<br>locations</div>
           </div>
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="hero-photo-frame">
-          <img src="./images/arkvetrehab-home.webp" alt="Dr. Priya Streram providing laser therapy to a dog at ARK Vet Rehab" class="hero-photo" fetchpriority="high" width="900" height="1125">
-          <div class="hero-photo-overlay"></div>
-          <button class="hero-play" aria-label="Watch our story" onclick="alert('Video coming soon.')">
-            <span class="hero-play-ring">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-            </span>
-            <span class="hero-play-label">Watch our story</span>
+      </div><!-- /hero-text -->
+
+      <!-- ── PLATO ONLINE BOOKING (visit-type selector → native calendar embed) ── -->
+      <div class="booking-widget" id="bkPlato">
+        <div class="bk-head">
+          <div class="bk-title">Book Your Assessment</div>
+          <div class="bk-subtitle" id="bkPlatoSub"></div>
+        </div>
+
+        <!-- STEP 1: choose visit type -->
+        <div class="bk-visit-step" id="bkVisitStep">
+          <p class="bk-visit-lead">How would you like to see us? Choose the option that suits you and your pet best — you'll pick a date and time next.</p>
+          <div class="bk-visit-cards">
+            <!-- On-site  ▼ paste the On-site calendar URL into data-cal below -->
+            <button type="button" class="bk-visit-card" data-label="On-site visit"
+              data-cal="https://clinic.platomedical.com/book/YXJrdmV0cmVoYWI=/a04d0818bd7e4869b273ed414209c919/qAqt9n4">
+              <span class="bk-visit-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+              <span class="bk-visit-text">
+                <span class="bk-visit-name">On-site</span>
+                <span class="bk-visit-desc">Hands-on care at our clinic.</span>
+              </span>
+              <span class="bk-visit-go">Choose &rarr;</span>
+            </button>
+            <!-- House visit  ▼ live (Housecalls calendar) -->
+            <button type="button" class="bk-visit-card" data-label="House visit"
+              data-cal="https://clinic.platomedical.com/book/YXJrdmV0cmVoYWI=/a04d0818bd7e4869b273ed414209c919/D8jjOsK">
+              <span class="bk-visit-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span class="bk-visit-text">
+                <span class="bk-visit-name">House Visit</span>
+                <span class="bk-visit-desc">We come to your home.</span>
+              </span>
+              <span class="bk-visit-go">Choose &rarr;</span>
+            </button>
+            <!-- Online consultation  ▼ paste the Online calendar URL into data-cal below -->
+            <button type="button" class="bk-visit-card" data-label="Online consultation"
+              data-cal="https://clinic.platomedical.com/book/YXJrdmV0cmVoYWI=/a04d0818bd7e4869b273ed414209c919/rD2T71n">
+              <span class="bk-visit-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+              <span class="bk-visit-text">
+                <span class="bk-visit-name">Online</span>
+                <span class="bk-visit-desc">A video call from anywhere.</span>
+              </span>
+              <span class="bk-visit-go">Choose &rarr;</span>
+            </button>
+          </div>
+          <p class="bk-visit-note">Not sure which is right? <a href="https://wa.me/6588286875" target="_blank" rel="noopener">Message us on WhatsApp</a> and we'll help you choose.</p>
+        </div>
+
+        <!-- STEP 2: Plato calendar for chosen visit type -->
+        <div class="bk-cal-step" id="bkCalStep" hidden>
+          <button type="button" class="bk-visit-back" id="bkVisitBack">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Choose a different visit type
           </button>
-        </div>
-        <div class="hero-badge bdg-1">
-          <div class="badge-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.5 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg>
-          </div>
-          <div class="badge-text">
-            <strong>CCRP Certified</strong>
-            Rehab specialists
-          </div>
-        </div>
-        <div class="hero-badge bdg-2">
-          <div class="badge-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <div class="badge-text">
-            <strong>Housecalls</strong>
-            Care at your door
+          <div class="bk-plato-embed">
+            <iframe
+              class="bk-plato-iframe"
+              id="bkPlatoFrame"
+              src="about:blank"
+              title="Book an appointment with ARK Veterinary Rehabilitation"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-      </div>
-    </div>
+
+        <div class="bk-trust">🔒 <span class="bk-trust-text">Secure booking &nbsp;·&nbsp; Powered by Plato</span></div>
+      </div><!-- /booking-widget -->
+
+
+    </div><!-- /hero-grid -->
+
   </div>
 </section>
 
 <!-- ================= WHY CHOOSE US ================= -->
-<section class="section" id="why" style="padding-top:40px;padding-bottom:35px">
-  <div class="why">
-    <div class="container" style="padding:0">
+<section class="section why-section" id="why">
+  <div class="container">
+
+    <div class="why-head">
       <span class="section-eyebrow">Why families choose us</span>
       <h2 class="section-title">Where clinical care meets <em>genuine warmth.</em></h2>
+    </div>
 
-      <div class="why-accordion">
+    <!-- ── Image highlights (click to open matching tab) ── -->
+    <div class="why-highlights reveal">
+      <figure class="why-hl" data-idx="0" role="button" tabindex="0" aria-label="Complete Services"><img src="./images/ark_choose1.jpg" alt="Complete rehabilitation services at ARK Vet Rehab" loading="lazy"></figure>
+      <figure class="why-hl" data-idx="1" role="button" tabindex="0" aria-label="Trusted Veterinarians"><img src="./images/ark_choose2.jpg" alt="Trusted, experienced veterinarians at ARK Vet Rehab" loading="lazy"></figure>
+      <figure class="why-hl" data-idx="2" role="button" tabindex="0" aria-label="Rehab At Your Doorstep"><img src="./images/ark_choose3.webp" alt="In-clinic and house-call rehab at your doorstep" loading="lazy" style="object-position:center 20%"></figure>
+      <figure class="why-hl" data-idx="3" role="button" tabindex="0" aria-label="Wellness Begins Here"><img src="./images/ark_choose4.jpg" alt="A calming wellness space designed to heal" loading="lazy"></figure>
+    </div>
 
-        <details class="why-item reveal">
-          <summary class="why-summary" style="background-image:url('./images/ark_choose1.jpg')">
-            <div class="why-img" style="background-image:url('./images/ark_choose1.jpg')"></div>
-            <div class="why-bar">
-              <div class="why-h3-row">
-                <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 18h8"/></svg></div>
-                <h3>Complete Services</h3>
-              </div>
-              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </summary>
-          <div class="why-body">
+    <div class="why-layout">
+
+      <!-- ── Tab list ── -->
+      <div class="why-tab-list" role="tablist" aria-label="Why choose ARK Vet Rehab">
+
+        <button class="why-tab is-active" data-idx="0" role="tab" aria-selected="true" aria-controls="why-panel-0">
+          <div class="why-tab-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 18h8"/></svg>
+          </div>
+          <div class="why-tab-text">
+            <span class="why-tab-title">Complete Services</span>
+            <span class="why-tab-desc">Holistic care at every life stage</span>
+          </div>
+          <div class="why-tab-progress"><span class="why-prog-fill"></span></div>
+        </button>
+
+        <button class="why-tab" data-idx="1" role="tab" aria-selected="false" aria-controls="why-panel-1">
+          <div class="why-tab-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14v7"/><path d="M5 10v6c0 2 3 4 7 4s7-2 7-4v-6"/></svg>
+          </div>
+          <div class="why-tab-text">
+            <span class="why-tab-title">Trusted Veterinarians</span>
+            <span class="why-tab-desc">20+ years of combined expertise</span>
+          </div>
+          <div class="why-tab-progress"><span class="why-prog-fill"></span></div>
+        </button>
+
+        <button class="why-tab" data-idx="2" role="tab" aria-selected="false" aria-controls="why-panel-2">
+          <div class="why-tab-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+          </div>
+          <div class="why-tab-text">
+            <span class="why-tab-title">Rehab At Your Doorstep</span>
+            <span class="why-tab-desc">In-clinic and house-call services</span>
+          </div>
+          <div class="why-tab-progress"><span class="why-prog-fill"></span></div>
+        </button>
+
+        <button class="why-tab" data-idx="3" role="tab" aria-selected="false" aria-controls="why-panel-3">
+          <div class="why-tab-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2z"/><path d="M12 14v8"/><path d="M5 22h14"/></svg>
+          </div>
+          <div class="why-tab-text">
+            <span class="why-tab-title">Wellness Begins Here</span>
+            <span class="why-tab-desc">A space designed to calm and heal</span>
+          </div>
+          <div class="why-tab-progress"><span class="why-prog-fill"></span></div>
+        </button>
+
+      </div>
+
+      <!-- ── Panels ── -->
+      <div class="why-panels" aria-live="polite">
+
+        <div class="why-panel is-active" id="why-panel-0" role="tabpanel" tabindex="0">
+          <div class="why-panel-body">
             <ul>
               <li><strong>Personalised rehabilitation</strong> and mobility care to help your pet move with greater comfort.</li>
               <li><strong>Trusted second opinions</strong> for complex mobility concerns — clarity and peace of mind.</li>
@@ -436,20 +932,10 @@
               <li>A <strong>holistic, whole-pet approach</strong> at every stage of life.</li>
             </ul>
           </div>
-        </details>
+        </div>
 
-        <details class="why-item reveal">
-          <summary class="why-summary" style="background-image:url('./images/ark_choose2.jpg')">
-            <div class="why-img" style="background-image:url('./images/ark_choose2.jpg')"></div>
-            <div class="why-bar">
-              <div class="why-h3-row">
-                <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14v7"/><path d="M5 10v6c0 2 3 4 7 4s7-2 7-4v-6"/></svg></div>
-                <h3>Trusted Veterinarians</h3>
-              </div>
-              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </summary>
-          <div class="why-body">
+        <div class="why-panel" id="why-panel-1" role="tabpanel" tabindex="0">
+          <div class="why-panel-body">
             <ul>
               <li>Care from a <strong>highly experienced team</strong> with 20+ years of combined clinical expertise.</li>
               <li>Consultants are <strong>qualified clinical veterinarians</strong>; therapists are trained small animal rehab practitioners.</li>
@@ -458,20 +944,10 @@
               <li>Every plan guided by <strong>experience, precision, and genuine care.</strong></li>
             </ul>
           </div>
-        </details>
+        </div>
 
-        <details class="why-item reveal">
-          <summary class="why-summary" style="background-image:url('./images/ark_choose3.webp');background-position:center 20%">
-            <div class="why-img" style="background-image:url('./images/ark_choose3.webp');background-position:center 20%"></div>
-            <div class="why-bar">
-              <div class="why-h3-row">
-                <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
-                <h3>Rehab At Your Doorstep</h3>
-              </div>
-              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </summary>
-          <div class="why-body">
+        <div class="why-panel" id="why-panel-2" role="tabpanel" tabindex="0">
+          <div class="why-panel-body">
             <ul>
               <li>A <strong>hybrid practice</strong> — both in-clinic and house-call services.</li>
               <li>Travel can be hard with multiple pets, mobility issues, or unwell animals — we come to you.</li>
@@ -480,20 +956,10 @@
               <li>Just <strong>book an appointment</strong> and we'll arrange a time that suits.</li>
             </ul>
           </div>
-        </details>
+        </div>
 
-        <details class="why-item reveal">
-          <summary class="why-summary" style="background-image:url('./images/ark_choose4.jpg')">
-            <div class="why-img" style="background-image:url('./images/ark_choose4.jpg')"></div>
-            <div class="why-bar">
-              <div class="why-h3-row">
-                <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 6 8 10 12 14C16 10 16 6 12 2z"/><path d="M12 14v8"/><path d="M5 22h14"/></svg></div>
-                <h3>Wellness Begins Here</h3>
-              </div>
-              <svg class="why-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </summary>
-          <div class="why-body">
+        <div class="why-panel" id="why-panel-3" role="tabpanel" tabindex="0">
+          <div class="why-panel-body">
             <ul>
               <li>Step into our <strong>serene, thoughtfully designed space</strong> — built to calm the nervous system.</li>
               <li>Open layouts, warm lighting, plants, and essential oils create a <strong>relaxing, stress-free environment.</strong></li>
@@ -501,9 +967,113 @@
               <li>Every detail is considered to make visits <strong>comfortable, cozy, and restorative</strong> for you and your pet.</li>
             </ul>
           </div>
-        </details>
+        </div>
 
       </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* Why-section image highlights → open matching tab + keep tile in sync (index.html only) */
+(function () {
+  var hls  = Array.prototype.slice.call(document.querySelectorAll('.why-hl[data-idx]'));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.why-tab[data-idx]'));
+  if (!hls.length || !tabs.length) return;
+
+  function activate(idx) {
+    var tab = document.querySelector('.why-tab[data-idx="' + idx + '"]');
+    if (tab) tab.click();   // reuse existing tab logic (desktop rotate / mobile accordion)
+  }
+
+  hls.forEach(function (hl) {
+    var idx = hl.getAttribute('data-idx');
+    hl.addEventListener('click', function () { activate(idx); });
+    hl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        activate(idx);
+      }
+    });
+  });
+
+  /* Mirror the active tab onto the highlight tile (covers clicks + auto-rotation) */
+  function syncRing() {
+    tabs.forEach(function (tab) {
+      var i = tab.getAttribute('data-idx');
+      var hl = document.querySelector('.why-hl[data-idx="' + i + '"]');
+      if (hl) hl.classList.toggle('is-active', tab.classList.contains('is-active'));
+    });
+  }
+  syncRing();
+  var mo = new MutationObserver(syncRing);
+  tabs.forEach(function (tab) {
+    mo.observe(tab, { attributes: true, attributeFilter: ['class'] });
+  });
+})();
+</script>
+
+<!-- ================= WATCH / INTERACTIVE VIDEO ================= -->
+<section class="section video-feature" id="watch">
+  <div class="container">
+    <div class="video-feature-grid">
+    <div class="video-feature-stage reveal">
+      <!-- Interactive video player -->
+      <div class="hero-visual hero-visual--inline hero-scroll-reveal">
+        <div class="hero-photo-frame">
+          <img src="./images/arkvetrehab-home-video.webp" alt="Dr. Priya Streram providing laser therapy to a dog at ARK Vet Rehab" class="hero-photo" loading="lazy" width="1280" height="720">
+          <div class="hero-photo-overlay"></div>
+          <button class="hero-play" aria-label="Watch our story" onclick="alert('Video coming soon.')">
+            <span class="hero-play-ring">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            </span>
+            <span class="hero-play-label">Watch our story</span>
+          </button>
+          <div class="hero-player-bar">
+            <div class="hero-player-progress">
+              <div class="hero-player-fill"></div>
+              <div class="hero-player-dot"></div>
+            </div>
+            <div class="hero-player-meta">
+              <span>▶&nbsp; 0:42</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="hero-badge bdg-1">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.5 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg></div>
+          <div class="badge-text"><strong>CCRP Certified</strong> Rehab specialists</div>
+        </div>
+        <div class="hero-badge bdg-2">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="badge-text"><strong>Housecalls</strong> Care at your door</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-feature-head reveal">
+      <span class="section-eyebrow">See it in action</span>
+      <h2 class="section-title">Step inside <em>a session</em> at ARK.</h2>
+      <p class="section-intro">Watch how our team blends clinical expertise with a calm, healing environment — press play for the full story.</p>
+      <ul class="video-feature-points">
+        <li>
+          <span class="vf-pt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6L9 17l-5-5"/></svg></span>
+          A real look at our hands-on rehabilitation approach.
+        </li>
+        <li>
+          <span class="vf-pt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6L9 17l-5-5"/></svg></span>
+          See the calm, healing environment we've designed.
+        </li>
+        <li>
+          <span class="vf-pt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6L9 17l-5-5"/></svg></span>
+          Meet the team caring for your pet.
+        </li>
+      </ul>
+      <a href="https://wa.me/6588286875" class="btn btn-primary">
+        Book an assessment
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
     </div>
   </div>
 </section>
@@ -589,56 +1159,56 @@
 
       <!-- ── 8 review cards ── -->
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Clear answers, not guesswork."</p>
         <p class="rv-text">Dallas finally had a clear diagnosis, treatment plan, and mobility guidance from Dr Priya — from the very first visit.</p>
         <div class="rv-author">Dallas Wong <span>· Senior dog</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Gentle care for anxious pets."</p>
         <p class="rv-text">Kenji was anxious and snappy on arrival. Dr Fern gave him patience and calm — he left completely relaxed.</p>
         <div class="rv-author">Shirleen Ksy <span>· Kenji</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Visible mobility progress."</p>
         <p class="rv-text">Bonbon's grade 2–3 patella luxation improved significantly after weekly exercise and water treadmill sessions.</p>
-        <div class="rv-author">Wong Zhi Xin <span>· Bonbon (Maltese)</span></div>
+        <div class="rv-author">Wong Zhi Xin <span>· Bonbon</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Support beyond the clinic."</p>
         <p class="rv-text">Kira's owners received detailed case notes, follow-up support, and home rehab guidance for her progressing osteoarthritis.</p>
         <div class="rv-author">Vassanthha Samirr <span>· Kira</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Senior pets in skilled hands."</p>
         <p class="rv-text">Ah Girl, 13, walks more freely after gentle acupuncture and moxibustion for stiff joints and spine discomfort.</p>
-        <div class="rv-author">Lisa Oei <span>· Ah Girl (Shih Tzu)</span></div>
+        <div class="rv-author">Lisa Oei <span>· Ah Girl</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Rehab that pets enjoy."</p>
         <p class="rv-text">Tofu became genuinely excited for hydrotherapy sessions — Dr Fern and Dr Priya made rehab something she looked forward to.</p>
-        <div class="rv-author">Yy S <span>· Tofu (Westie)</span></div>
+        <div class="rv-author">Yy S <span>· Tofu</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Real improvement after IVDD."</p>
         <p class="rv-text">Fifi came in dragging her back leg after IVDD. With physiotherapy, hydrotherapy, and acupuncture — she now walks normally.</p>
         <div class="rv-author">Jean G <span>· Fifi</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"A team owners can trust."</p>
         <p class="rv-text">The ARK team is knowledgeable, caring, and attentive — Pixie's treatment was always adjusted to her individual needs.</p>
         <div class="rv-author">Kan Wei Chong <span>· Pixie</span></div>
@@ -646,56 +1216,56 @@
 
       <!-- ── duplicate for seamless loop ── -->
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Clear answers, not guesswork."</p>
         <p class="rv-text">Dallas finally had a clear diagnosis, treatment plan, and mobility guidance from Dr Priya — from the very first visit.</p>
         <div class="rv-author">Dallas Wong <span>· Senior dog</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Gentle care for anxious pets."</p>
         <p class="rv-text">Kenji was anxious and snappy on arrival. Dr Fern gave him patience and calm — he left completely relaxed.</p>
         <div class="rv-author">Shirleen Ksy <span>· Kenji</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Visible mobility progress."</p>
         <p class="rv-text">Bonbon's grade 2–3 patella luxation improved significantly after weekly exercise and water treadmill sessions.</p>
-        <div class="rv-author">Wong Zhi Xin <span>· Bonbon (Maltese)</span></div>
+        <div class="rv-author">Wong Zhi Xin <span>· Bonbon</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Support beyond the clinic."</p>
         <p class="rv-text">Kira's owners received detailed case notes, follow-up support, and home rehab guidance for her progressing osteoarthritis.</p>
         <div class="rv-author">Vassanthha Samirr <span>· Kira</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Senior pets in skilled hands."</p>
         <p class="rv-text">Ah Girl, 13, walks more freely after gentle acupuncture and moxibustion for stiff joints and spine discomfort.</p>
-        <div class="rv-author">Lisa Oei <span>· Ah Girl (Shih Tzu)</span></div>
+        <div class="rv-author">Lisa Oei <span>· Ah Girl</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Rehab that pets enjoy."</p>
         <p class="rv-text">Tofu became genuinely excited for hydrotherapy sessions — Dr Fern and Dr Priya made rehab something she looked forward to.</p>
-        <div class="rv-author">Yy S <span>· Tofu (Westie)</span></div>
+        <div class="rv-author">Yy S <span>· Tofu</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"Real improvement after IVDD."</p>
         <p class="rv-text">Fifi came in dragging her back leg after IVDD. With physiotherapy, hydrotherapy, and acupuncture — she now walks normally.</p>
         <div class="rv-author">Jean G <span>· Fifi</span></div>
       </div>
 
       <div class="rv-card">
-        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source">Google Review</span></div>
+        <div class="rv-top"><span class="rv-stars">★★★★★</span><span class="rv-source"><img src="./images/google.ico" alt="Google" width="14" height="14" style="vertical-align:middle;margin-right:4px;">Google Review</span></div>
         <p class="rv-hook">"A team owners can trust."</p>
         <p class="rv-text">The ARK team is knowledgeable, caring, and attentive — Pixie's treatment was always adjusted to her individual needs.</p>
         <div class="rv-author">Kan Wei Chong <span>· Pixie</span></div>
@@ -902,6 +1472,7 @@
 <!-- ================= CONTACT CTA ================= -->
 <section id="contact">
   <div class="cta-section">
+    <div class="container" style="padding:0">
     <div class="cta-content">
       <span class="section-eyebrow">Get in touch</span>
       <h2>Ready to give your pet <em>the care they deserve?</em></h2>
@@ -953,8 +1524,34 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
+
+<!-- ================= MAP ================= -->
+<section class="map-section" id="map" aria-label="Find us">
+  <div class="map-embed">
+    <iframe src="https://www.google.com/maps/d/embed?mid=19G4C7CcRlj1y_i7WvKXC4jPID_uYhT4" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation — location & client parking"></iframe>
+    <div class="map-guard" aria-hidden="true"><span class="map-guard-hint">Click to interact</span></div>
+    <a class="map-pill" href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      7d Crane Road, Singapore 429356
+      <span class="map-pill-cta">Open in Google Maps</span>
+    </a>
+  </div>
+</section>
+<script>
+  (function () {
+    var embed = document.querySelector('.map-section .map-embed');
+    if (!embed) return;
+    var guard = embed.querySelector('.map-guard');
+    if (!guard) return;
+    // Click the guard to enable map interaction (scroll-zoom only happens after a deliberate click)
+    guard.addEventListener('click', function () { embed.classList.add('is-active'); });
+    // Re-arm the guard when the pointer leaves, so plain page scrolling never zooms the map
+    embed.addEventListener('mouseleave', function () { embed.classList.remove('is-active'); });
+  })();
+</script>
 
 <!-- ================= NEWSLETTER ================= -->
 <section class="newsletter">
@@ -990,6 +1587,81 @@
 </div>
 
 
+<!-- ================= ARK LEARNING CENTER ================= -->
+<section class="section alc-section" id="learning-center" aria-label="ARK Learning Center">
+  <div class="alc-bg" aria-hidden="true">
+    <img src="./images/learning-clinic.jpg" alt="" loading="lazy">
+  </div>
+  <div class="container alc-grid">
+
+    <!-- Left: small transparent logo -->
+    <div class="alc-logo-col reveal">
+      <a href="https://learn.arkvetrehab.com" class="alc-logo-link" aria-label="Go to the ARK Learning Center">
+        <img src="./images/ark-learning-center-logo.png" alt="ARK Learning Center" class="alc-logo">
+      </a>
+      <span class="alc-tag">All our courses in one place.</span>
+    </div>
+
+    <!-- Right: text -->
+    <div class="alc-text-col reveal" style="transition-delay:0.1s">
+      <span class="section-eyebrow">ARK Learning Center</span>
+      <h2 class="section-title">Empowering <em>pet owners</em> in canine rehabilitation.</h2>
+      <p class="section-intro">A growing library of high-quality, affordable courses — created by our clinical team — giving pet owners the knowledge and skills to help their pet recover stronger and pain-free.</p>
+
+      <ul class="alc-points">
+        <li>
+          <span class="alc-pt-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3V8Z"/><path d="M8 21h8M12 17v4"/></svg>
+          </span>
+          <span class="alc-pt-text"><strong>Self-paced online courses</strong><span>Learn anytime, anywhere — every ARK course gathered in one place.</span></span>
+        </li>
+        <li>
+          <span class="alc-pt-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v6a6 6 0 0 0 12 0V4"/><path d="M4 4H2m14 0h2"/><path d="M10 16v3a4 4 0 0 0 8 0v-1"/><circle cx="20" cy="16" r="2"/></svg>
+          </span>
+          <span class="alc-pt-text"><strong>Expert-led &amp; clinical</strong><span>Built by ARK's rehabilitation veterinary team.</span></span>
+        </li>
+        <li>
+          <span class="alc-pt-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </span>
+          <span class="alc-pt-text"><strong>For different pet owners</strong><span>Courses tailored to different pets, conditions, and stages of recovery.</span></span>
+        </li>
+      </ul>
+
+      <a href="https://learn.arkvetrehab.com" class="btn btn-primary alc-cta" target="_blank" rel="noopener">
+        Explore the ARK Learning Center
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+<script>
+(function(){
+  var section = document.querySelector('.alc-section');
+  if(!section) return;
+  var img = section.querySelector('.alc-bg img');
+  if(!img) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia('(hover: none)').matches) return;  /* skip on touch devices */
+  var MAX = 11, raf = null;
+  function move(e){
+    var r = section.getBoundingClientRect();
+    var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+    var dy = (e.clientY - (r.top  + r.height/2)) / (r.height/2);
+    dx = Math.max(-1, Math.min(1, dx)); dy = Math.max(-1, Math.min(1, dy));
+    if(raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function(){
+      img.style.transform = 'scale(1.12) translate3d(' + (dx*MAX).toFixed(1) + 'px,' + (dy*MAX).toFixed(1) + 'px,0)';
+    });
+  }
+  function reset(){ img.style.transform = 'scale(1.12) translate3d(0,0,0)'; }
+  section.addEventListener('mousemove', move, { passive: true });
+  section.addEventListener('mouseleave', reset);
+})();
+</script>
+
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
@@ -1015,7 +1687,6 @@
           <li><a href="#team">Team</a></li>
           <li><a href="#space">Our Space</a></li>
           <li><a href="#packages">Packages</a></li>
-          <li><a href="treatmill-club.html">Treat-mill Club</a></li>
           <li><a href="prices.html">Price List</a></li>
         </ul>
       </div>
@@ -1037,9 +1708,6 @@
               <li><a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a></li>
             </ul>
           </div>
-        </div>
-        <div class="footer-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
         </div>
       </div>
     </div>
