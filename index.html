@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>html{background:#f6f1e8;}body{margin:0;}</style>
-<link rel="stylesheet" href="./style.css?v=20260606">
+<link rel="stylesheet" href="./style.css?v=20260829">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
 <script>
@@ -13,8 +13,8 @@
   gtag('js', new Date());
   gtag('config', 'G-MQ59ZFM9GW');
 </script>
-<title>ARK Veterinary Rehabilitation — Caring with love, just like home</title>
-<meta name="description" content="Singapore's premier veterinary rehabilitation clinic. Hydrotherapy, acupuncture, laser therapy, and holistic care for pets at every stage of life." />
+<title>Veterinary Rehabilitation Singapore | ARK Vet Rehab</title>
+<meta name="description" content="Veterinary rehabilitation in Singapore with hydrotherapy, physiotherapy, laser, acupuncture and personalised mobility care for dogs and cats." />
 
 <link rel="icon" type="image/png" href="./images/favicon.png">
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://arkvetrehab.com/">
 <link rel="canonical" href="https://arkvetrehab.com/">
-<meta property="og:title" content="ARK Veterinary Rehabilitation — Caring with love, just like home">
-<meta property="og:description" content="Singapore's premier veterinary rehabilitation clinic. Hydrotherapy, acupuncture, laser therapy, and holistic care for pets at every stage of life.">
+<meta property="og:title" content="Veterinary Rehabilitation Singapore | ARK Vet Rehab">
+<meta property="og:description" content="Veterinary rehabilitation in Singapore with hydrotherapy, physiotherapy, laser, acupuncture and personalised mobility care for dogs and cats.">
 <meta property="og:image" content="https://arkvetrehab.com/images/2arkvetrehab.jpg">
 <meta property="og:image:secure_url" content="https://arkvetrehab.com/images/2arkvetrehab.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -35,9 +35,62 @@
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ARK Veterinary Rehabilitation — Caring with love, just like home">
-<meta name="twitter:description" content="Singapore's premier veterinary rehabilitation clinic. Hydrotherapy, acupuncture, laser therapy, and holistic care for pets at every stage of life.">
+<meta name="twitter:title" content="Veterinary Rehabilitation Singapore | ARK Vet Rehab">
+<meta name="twitter:description" content="Veterinary rehabilitation in Singapore with hydrotherapy, physiotherapy, laser, acupuncture and personalised mobility care for dogs and cats.">
 <meta name="twitter:image" content="https://arkvetrehab.com/images/2arkvetrehab.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VeterinaryCare",
+      "@id": "https://arkvetrehab.com/#veterinarycare",
+      "name": "ARK Veterinary Rehabilitation",
+      "url": "https://arkvetrehab.com/",
+      "logo": "https://arkvetrehab.com/images/ark-logo.png",
+      "image": "https://arkvetrehab.com/images/2arkvetrehab.jpg",
+      "telephone": "+65 8828 6875",
+      "email": "arkvetrehab@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7D Crane Road",
+        "addressLocality": "Singapore",
+        "postalCode": "429356",
+        "addressCountry": "SG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 1.3125117,
+        "longitude": 103.8991506
+      },
+      "openingHoursSpecification": [
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"18:30"},
+        {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"17:00"}
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "47",
+        "bestRating": "5"
+      },
+      "sameAs": [
+        "https://www.instagram.com/arkvetrehab/",
+        "https://www.facebook.com/arkvetrehab/",
+        "https://www.linkedin.com/in/priya-streram/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://arkvetrehab.com/#website",
+      "url": "https://arkvetrehab.com/",
+      "name": "ARK Veterinary Rehabilitation",
+      "inLanguage": "en-SG",
+      "publisher": {"@id":"https://arkvetrehab.com/#veterinarycare"}
+    }
+  ]
+}
+</script>
 <link rel="preload" as="image" href="./images/arkvetrehab-home-video.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -600,102 +653,318 @@
     #bkPlato .bk-visit-back { padding-left: 4px; padding-right: 4px; }
   }
 
-  /* ====== ARK Learning Center — flat cream, two-column (logo left) ====== */
-  .alc-section { position: relative; overflow: hidden; background: var(--cream); }
-  /* dynamic clinic-training image as the section backdrop */
-  .alc-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-  .alc-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.55;
-    filter: saturate(0.96);
-    transform: scale(1.12);            /* overscan so the parallax shift never reveals edges */
-    transition: transform 0.9s ease-out;
-    will-change: transform;
+  /* ====== ARK Learning Center — online learning showcase ====== */
+  .alc-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--cream);
   }
-  /* cream wash + edge feather keeps the typography crisp on top */
-  .alc-bg::after {
+  .alc-section::before,
+  .alc-section::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, var(--cream) 0%, rgba(245,241,230,0.50) 20%, rgba(245,241,230,0.38) 55%, rgba(245,241,230,0.62) 90%, var(--cream) 100%),
-      linear-gradient(180deg, rgba(245,241,230,0.86) 0%, rgba(245,241,230,0.52) 50%, rgba(245,241,230,0.9) 100%);
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(2px);
   }
-  .alc-grid {
-    position: relative;
-    z-index: 1;
+  .alc-section::before {
+    width: 52vw;
+    height: 52vw;
+    right: -18vw;
+    top: -26vw;
+    background: radial-gradient(circle, rgba(122,189,200,0.20) 0%, rgba(122,189,200,0) 70%);
+  }
+  .alc-section::after {
+    width: 42vw;
+    height: 42vw;
+    left: -20vw;
+    bottom: -26vw;
+    background: radial-gradient(circle, rgba(216,144,122,0.12) 0%, rgba(216,144,122,0) 72%);
+  }
+  .alc-webapp-grid {
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: clamp(36px, 5vw, 72px);
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(44px, 6vw, 88px);
     align-items: center;
   }
-  /* left column — small transparent logo on cream */
-  .alc-logo-col { text-align: center; }
-  .alc-logo-link { display: inline-block; transition: transform 0.25s ease, opacity 0.25s ease; }
-  .alc-logo-link:hover { transform: translateY(-2px); opacity: 0.9; }
-  .alc-logo { width: 100%; max-width: 288px; height: auto; display: inline-block; }
-  /* tagline + url under the logo — minimal, matching the logotype */
-  .alc-tag {
-    display: block;
-    margin: 14px 0 0;
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: var(--ink-soft);
+  .alc-copy { min-width: 0; text-align: left; }
+  .alc-copy .section-title { margin-top: 10px; max-width: 620px; }
+  .alc-copy .section-intro { max-width: 600px; margin-bottom: 30px; }
+  .alc-webapp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
-  .alc-url {
-    display: inline-block;
-    margin-top: 3px;
-    font-family: var(--font-body);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: #000;
-    text-decoration: none;
+  .alc-webapp-label::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--coral);
+    box-shadow: 0 0 0 5px rgba(216,144,122,0.12);
   }
-  .alc-url:hover { text-decoration: underline; }
-  /* right column — reuses site .section-eyebrow / .section-title / .section-intro */
-  .alc-text-col { text-align: left; }
-  .alc-text-col .section-title { margin-top: 8px; }
-  .alc-text-col .section-intro { margin-bottom: 26px; }
-  .alc-points {
+  .alc-benefits {
     list-style: none;
     margin: 0 0 32px;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    gap: 14px;
   }
-  .alc-points li { display: flex; align-items: flex-start; gap: 14px; text-align: left; }
-  .alc-pt-icon {
-    flex: none;
-    width: 40px; height: 40px;
-    display: grid; place-items: center;
-    border-radius: 12px;
-    background: rgba(58,125,140,0.10);
+  .alc-benefits li {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 13px;
+    align-items: start;
+  }
+  .alc-benefit-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: rgba(58,125,140,0.11);
     color: var(--sage);
   }
-  .alc-pt-icon svg { width: 20px; height: 20px; }
-  .alc-pt-text strong {
+  .alc-benefit-icon svg { width: 18px; height: 18px; }
+  .alc-benefit-copy strong {
     display: block;
-    font-family: var(--font-body);
-    font-size: 15.5px;
-    color: var(--ink);
     margin-bottom: 2px;
-  }
-  .alc-pt-text span {
+    color: var(--ink);
     font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--ink-soft);
+    font-size: 15px;
   }
+  .alc-benefit-copy span {
+    display: block;
+    color: var(--ink-soft);
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .alc-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .alc-cta { gap: 8px; }
   .alc-cta svg { width: 16px; height: 16px; }
-  @media (max-width: 880px) {
-    .alc-grid { grid-template-columns: 1fr; gap: 36px; }
-    .alc-logo { max-width: 264px; }
+  .alc-device-note {
+    color: var(--ink-soft);
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  .alc-app-preview {
+    min-width: 0;
+    display: block;
+    overflow: hidden;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid rgba(28,61,74,0.13);
+    border-radius: 24px;
+    background: rgba(255,255,255,0.72);
+    box-shadow: 0 30px 80px rgba(28,61,74,0.14), 0 3px 12px rgba(28,61,74,0.06);
+    transform: translateZ(0);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+  .alc-app-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 36px 90px rgba(28,61,74,0.18), 0 5px 16px rgba(28,61,74,0.07);
+  }
+  .alc-app-preview:focus-visible { outline: 3px solid rgba(58,125,140,0.42); outline-offset: 4px; }
+  .alc-browser-bar {
+    height: 47px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 17px;
+    border-bottom: 1px solid rgba(28,61,74,0.09);
+    background: rgba(247,244,236,0.92);
+  }
+  .alc-browser-dots { display: flex; gap: 6px; flex: none; }
+  .alc-browser-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(28,61,74,0.18); }
+  .alc-browser-dots i:first-child { background: rgba(216,144,122,0.78); }
+  .alc-browser-url {
+    min-width: 0;
+    flex: 1;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.85);
+    color: rgba(28,61,74,0.62);
+    font-family: var(--font-body);
+    font-size: 10.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .alc-browser-badge {
+    flex: none;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(58,125,140,0.10);
+    color: var(--sage);
+    font-family: var(--font-body);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  .alc-app-screen { padding: clamp(18px, 2.2vw, 28px); background: rgba(251,249,244,0.94); }
+  .alc-app-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+  .alc-app-logo { width: clamp(112px, 11vw, 150px); height: auto; display: block; }
+  .alc-app-nav { display: flex; align-items: center; gap: 14px; color: var(--ink-soft); font-family: var(--font-body); font-size: 9.5px; }
+  .alc-app-nav span:last-child { padding: 6px 9px; border: 1px solid rgba(28,61,74,0.13); border-radius: 999px; }
+  .alc-app-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, 0.72fr); gap: 22px; align-items: end; margin-bottom: 17px; }
+  .alc-app-kicker {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--coral);
+    font-family: var(--font-body);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+  .alc-app-heading h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(25px, 2.45vw, 36px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+  .alc-app-heading p { margin: 0; color: var(--ink-soft); font-family: var(--font-body); font-size: 10.5px; line-height: 1.45; }
+  .alc-path-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .alc-path-card {
+    min-width: 0;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(28,61,74,0.09);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(219,235,234,0.82), rgba(255,251,244,0.95));
+  }
+  .alc-path-card:nth-child(2) { background: linear-gradient(145deg, rgba(241,221,208,0.88), rgba(255,251,244,0.95)); }
+  .alc-path-card:nth-child(3) { background: linear-gradient(145deg, rgba(224,229,218,0.86), rgba(255,251,244,0.95)); }
+  .alc-path-visual { position: relative; height: 80px; overflow: hidden; }
+  .alc-path-visual::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 32px;
+    background: linear-gradient(180deg, rgba(255,251,244,0), rgba(255,251,244,0.78));
+    pointer-events: none;
+  }
+  .alc-path-visual img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .alc-path-copy { padding: 9px 12px 12px; }
+  .alc-path-status {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    right: 8px;
+    padding: 4px 6px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.88);
+    color: var(--sage);
+    font-family: var(--font-body);
+    font-size: 6.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .alc-path-card small { display: block; margin-bottom: 3px; color: var(--ink-soft); font-family: var(--font-body); font-size: 7px; letter-spacing: 0.07em; text-transform: uppercase; }
+  .alc-path-card strong { display: block; color: var(--ink); font-family: var(--font-display); font-size: 15px; font-weight: 500; line-height: 1.15; }
+  .alc-app-dashboard {
+    margin-top: 11px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 10px;
+    align-items: stretch;
+  }
+  .alc-academy {
+    margin: 0;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-content: start;
+    border: 1px solid rgba(28,61,74,0.09);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.77);
+  }
+  .alc-academy-head { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; color: var(--ink); font-family: var(--font-body); font-size: 9px; font-weight: 600; }
+  .alc-academy-head span:last-child { color: var(--coral); }
+  .alc-progress-track { height: 6px; overflow: hidden; border-radius: 99px; background: rgba(28,61,74,0.10); }
+  .alc-progress-track span { display: block; width: 42%; height: 100%; border-radius: inherit; background: var(--sage); }
+  .alc-lesson { min-width: 0; padding-top: 11px; border-top: 1px solid rgba(28,61,74,0.10); }
+  .alc-lesson small { display: block; margin-bottom: 3px; color: var(--coral); font-family: var(--font-body); font-size: 7px; font-weight: 600; letter-spacing: 0.08em; }
+  .alc-lesson strong { display: block; color: var(--ink); font-family: var(--font-body); font-size: 10px; line-height: 1.3; }
+  .alc-lesson-meta { display: flex; gap: 5px; margin-top: 7px; }
+  .alc-lesson-meta span { padding: 3px 6px; border-radius: 999px; background: rgba(58,125,140,0.08); color: var(--sage); font-family: var(--font-body); font-size: 6.5px; }
+  .alc-rewards {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid rgba(28,61,74,0.09);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.77);
+  }
+  .alc-rewards-title { margin-bottom: 8px; color: var(--ink); font-family: var(--font-body); font-size: 9px; font-weight: 600; }
+  .alc-achievement-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .alc-achievement {
+    min-width: 0;
+    padding: 7px 4px;
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    border: 1px solid rgba(28,61,74,0.08);
+    border-radius: 9px;
+    background: rgba(255,255,255,0.70);
+    text-align: center;
+  }
+  .alc-achievement svg { width: 17px; height: 17px; color: #e7a827; }
+  .alc-achievement strong { color: var(--ink); font-family: var(--font-body); font-size: 11px; line-height: 1; }
+  .alc-achievement span { color: var(--ink-soft); font-family: var(--font-body); font-size: 6.5px; line-height: 1.2; }
+  .alc-certificate {
+    margin-top: 7px;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 8px;
+    align-items: center;
+    border: 1px solid rgba(231,168,39,0.22);
+    border-radius: 10px;
+    background: rgba(255,249,232,0.72);
+  }
+  .alc-certificate-icon { width: 30px; height: 30px; color: #e7a827; }
+  .alc-certificate strong { display: block; color: var(--ink); font-family: var(--font-body); font-size: 8.5px; line-height: 1.2; }
+  .alc-certificate span { display: block; margin-top: 2px; color: var(--ink-soft); font-family: var(--font-body); font-size: 7px; line-height: 1.25; }
+  .alc-certificate em { display: block; margin-top: 4px; color: var(--sage); font-family: var(--font-body); font-size: 7px; font-style: normal; font-weight: 600; }
+  @media (max-width: 980px) {
+    .alc-webapp-grid { grid-template-columns: 1fr; gap: 42px; }
+    .alc-copy { max-width: 720px; }
+    .alc-copy .section-title, .alc-copy .section-intro { max-width: none; }
+    .alc-app-preview { max-width: 760px; width: 100%; }
+  }
+  @media (max-width: 600px) {
+    .alc-webapp-grid { gap: 34px; }
+    .alc-actions { align-items: flex-start; flex-direction: column; }
+    .alc-app-preview { border-radius: 18px; }
+    .alc-browser-bar { padding: 0 12px; gap: 9px; }
+    .alc-browser-badge { display: none; }
+    .alc-app-screen { padding: 16px 13px; }
+    .alc-app-top { margin-bottom: 18px; }
+    .alc-app-nav span:not(:last-child) { display: none; }
+    .alc-app-heading { grid-template-columns: 1fr; gap: 7px; align-items: start; }
+    .alc-app-heading p { max-width: 250px; }
+    .alc-path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .alc-path-card:nth-child(3) { grid-column: 1 / -1; min-height: 130px; }
+    .alc-path-card:nth-child(3) .alc-path-visual { height: 72px; }
+    .alc-app-dashboard { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .alc-app-preview { transition: none; }
+    .alc-app-preview:hover { transform: none; }
   }
 </style>
 </head>
@@ -720,10 +989,10 @@
         <span>Shop</span>
       </a></li>
       <li class="nav-contact-group">
-        <a href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" class="nav-greviews" target="_blank" rel="noopener" aria-label="5.0 stars · 39 Google reviews">
+        <a href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" class="nav-greviews" target="_blank" rel="noopener" aria-label="5.0 stars · 47 Google reviews">
           <span class="nav-stars">★★★★★</span>
           <span class="nav-rscore">5.0</span>
-          <span class="nav-rcount">(39 reviews)</span>
+          <span class="nav-rcount">(47 reviews)</span>
         </a>
         <a href="https://wa.me/6588286875" class="nav-wa" target="_blank" rel="noopener" aria-label="WhatsApp +65 8828 6875">
           <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.404A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.118l-.292-.173-3.032.854.854-3.032-.19-.302A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
@@ -749,8 +1018,8 @@
           <span class="eyebrow-sep"></span>
           <span class="eyebrow-accent">6 yrs</span> trusted
         </div>
-        <h1>Caring with love, <em>just like home.</em></h1>
-        <p class="hero-sub">Your one-stop sanctuary for animal wellness — combining clinical expertise, hydrotherapy, and holistic healing for pets at every stage of life.</p>
+        <h1>Veterinary rehabilitation in Singapore. <em>Care that feels like home.</em></h1>
+        <p class="hero-sub">Personalised physiotherapy, hydrotherapy and holistic veterinary care for dogs and cats at every stage of recovery.</p>
         <div class="hero-actions">
           <a href="https://wa.me/6588286875" class="btn btn-primary">
             Book an appointment
@@ -758,6 +1027,7 @@
           </a>
           <a href="#services" class="btn btn-outline">Explore services</a>
         </div>
+        <div class="hero-stats-art" aria-hidden="true"></div>
         <div class="hero-stats hero-scroll-reveal">
           <div>
             <div class="stat-num">20+</div>
@@ -1094,58 +1364,58 @@
     </div>
 
     <div class="services-grid reveal">
-      <a href="services.html#hydrotherapy" class="srv-card">
+      <a href="dog-hydrotherapy-singapore.html" class="srv-card">
         <div class="service-icon"><svg viewBox="0 0 100 100" fill="currentColor"><path d="M50 15c-15 20-25 35-25 50a25 25 0 0050 0c0-15-10-30-25-50z"/></svg></div>
         <div class="srv-info">
           <h3>Hydrotherapy</h3>
           <p>Water-based therapy to rebuild strength without joint stress</p>
         </div>
-        <span class="srv-thumb"><img src="./images/hydrotherapy-thumb.jpg" alt="Dog hydrotherapy Singapore" loading="lazy"></span>
+        <span class="srv-thumb"><img src="./images/service-icon-hydrotherapy-v2.webp" alt="Dog hydrotherapy Singapore" loading="lazy"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="services.html#laser-therapy" class="srv-card">
+      <a href="pet-laser-therapy-singapore.html" class="srv-card">
         <div class="service-icon"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="8"/><path d="M50 20v15M50 65v15M20 50h15M65 50h15M28 28l11 11M61 61l11 11M72 28L61 39M39 61L28 72" stroke="currentColor" stroke-width="4" fill="none"/></svg></div>
         <div class="srv-info">
           <h3>Laser Therapy</h3>
           <p>Photobiomodulation to reduce pain, inflammation, and aid healing</p>
         </div>
-        <span class="srv-thumb"><img src="./images/laser-treatment-thumb.jpg" alt="Laser therapy for dogs Singapore" loading="lazy"></span>
+        <span class="srv-thumb"><img src="./images/service-icon-laser-therapy-v2.webp" alt="Laser therapy for dogs Singapore" loading="lazy"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="services.html#tens-nmes" class="srv-card">
+      <a href="pet-tens-nmes-singapore.html" class="srv-card">
         <div class="service-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><path d="M20 50 L35 50 L42 30 L52 70 L60 40 L68 60 L80 50"/></svg></div>
         <div class="srv-info">
           <h3>TENS &amp; NMES</h3>
           <p>Electrotherapy for pain relief and muscle re-education</p>
         </div>
-        <span class="srv-thumb"><img src="./images/tens-thumb.jpg" alt="TENS NMES electrotherapy pets" loading="lazy"></span>
+        <span class="srv-thumb"><img src="./images/service-icon-tens-nmes-v2.webp" alt="TENS NMES electrotherapy pets" loading="lazy"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="services.html#acupuncture" class="srv-card">
+      <a href="pet-acupuncture-singapore.html" class="srv-card">
         <div class="service-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="3" fill="currentColor"/><path d="M50 20v8M50 72v8M20 50h8M72 50h8"/></svg></div>
         <div class="srv-info">
           <h3>Acupuncture</h3>
           <p>TCM needle therapy to modulate pain and restore balance</p>
         </div>
-        <span class="srv-thumb"><img src="./images/acupuncture-thumb.jpg" alt="Pet acupuncture Singapore" loading="lazy"></span>
+        <span class="srv-thumb"><img src="./images/service-icon-acupuncture-v2.webp" alt="Pet acupuncture Singapore" loading="lazy"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="services.html#house-visits" class="srv-card">
+      <a href="veterinary-house-visits-singapore.html" class="srv-card">
         <div class="service-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><path d="M20 50 L50 25 L80 50 V80 H20 Z"/><path d="M40 80 V60 H60 V80"/></svg></div>
         <div class="srv-info">
           <h3>House Visits</h3>
           <p>Personalised rehabilitation care delivered at your home</p>
         </div>
-        <span class="srv-thumb"><img src="./images/housecall-thumb.jpg" alt="Veterinary house calls Singapore" loading="lazy"></span>
+        <span class="srv-thumb"><img src="./images/service-icon-house-visits-v2.webp" alt="Veterinary house calls Singapore" loading="lazy"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="services.html#nutrition-wellness" class="srv-card">
+      <a href="pet-nutrition-wellness-singapore.html" class="srv-card">
         <div class="service-icon"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M50 20 C30 30 25 55 35 75 C45 80 60 78 65 70 C75 55 70 30 50 20z"/><path d="M50 20 V75" stroke-width="3"/></svg></div>
         <div class="srv-info">
           <h3>Nutrition &amp; Wellness</h3>
           <p>Integrative dietary plans blending science and TCM food medicine</p>
         </div>
-        <span class="srv-thumb"><img src="./images/nutrition-wellness-thumb.jpg" alt="Pet nutrition consultation Singapore" loading="lazy"></span>
+        <span class="srv-thumb"><img src="./images/service-icon-nutrition-wellness-v2.webp" alt="Pet nutrition consultation Singapore" loading="lazy"></span>
         <svg class="srv-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -1589,78 +1859,125 @@
 
 <!-- ================= ARK LEARNING CENTER ================= -->
 <section class="section alc-section" id="learning-center" aria-label="ARK Learning Center">
-  <div class="alc-bg" aria-hidden="true">
-    <img src="./images/learning-clinic.jpg" alt="" loading="lazy">
-  </div>
-  <div class="container alc-grid">
+  <div class="container alc-webapp-grid">
+    <div class="alc-copy reveal">
+      <span class="section-eyebrow alc-webapp-label">ARK Learning Center · Online learning</span>
+      <h2 class="section-title">Learn. Progress. <em>Celebrate every win.</em></h2>
+      <p class="section-intro">Veterinarian-led learning paths help you understand selected rehabilitation techniques and use them at home as an additional layer of care for your pet.</p>
 
-    <!-- Left: small transparent logo -->
-    <div class="alc-logo-col reveal">
-      <a href="https://learn.arkvetrehab.com" class="alc-logo-link" aria-label="Go to the ARK Learning Center">
-        <img src="./images/ark-learning-center-logo.png" alt="ARK Learning Center" class="alc-logo">
-      </a>
-      <span class="alc-tag">All our courses in one place.</span>
-    </div>
-
-    <!-- Right: text -->
-    <div class="alc-text-col reveal" style="transition-delay:0.1s">
-      <span class="section-eyebrow">ARK Learning Center</span>
-      <h2 class="section-title">Empowering <em>pet owners</em> in canine rehabilitation.</h2>
-      <p class="section-intro">A growing library of high-quality, affordable courses — created by our clinical team — giving pet owners the knowledge and skills to help their pet recover stronger and pain-free.</p>
-
-      <ul class="alc-points">
+      <ul class="alc-benefits">
         <li>
-          <span class="alc-pt-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3V8Z"/><path d="M8 21h8M12 17v4"/></svg>
+          <span class="alc-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9Z"/><path d="M8 21h8"/></svg>
           </span>
-          <span class="alc-pt-text"><strong>Self-paced online courses</strong><span>Learn anytime, anywhere — every ARK course gathered in one place.</span></span>
+          <span class="alc-benefit-copy"><strong>Learn practical home-care skills</strong><span>Follow clear video guidance inspired by techniques used by veterinary rehabilitation professionals.</span></span>
         </li>
         <li>
-          <span class="alc-pt-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v6a6 6 0 0 0 12 0V4"/><path d="M4 4H2m14 0h2"/><path d="M10 16v3a4 4 0 0 0 8 0v-1"/><circle cx="20" cy="16" r="2"/></svg>
+          <span class="alc-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"/><path d="M4 19a2 2 0 0 1 2-2h14"/><path d="M9 7h6M9 11h4"/></svg>
           </span>
-          <span class="alc-pt-text"><strong>Expert-led &amp; clinical</strong><span>Built by ARK's rehabilitation veterinary team.</span></span>
+          <span class="alc-benefit-copy"><strong>Support your pet between appointments</strong><span>Build the confidence to continue appropriate care at home with lessons, checklists and practical resources.</span></span>
         </li>
         <li>
-          <span class="alc-pt-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="alc-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="m8.5 12 2 2 4-4"/></svg>
           </span>
-          <span class="alc-pt-text"><strong>For different pet owners</strong><span>Courses tailored to different pets, conditions, and stages of recovery.</span></span>
+          <span class="alc-benefit-copy"><strong>An addition to professional care</strong><span>Use your new skills as supportive home therapy alongside your pet's veterinary treatment plan.</span></span>
         </li>
       </ul>
 
-      <a href="https://learn.arkvetrehab.com" class="btn btn-primary alc-cta" target="_blank" rel="noopener">
-        Explore the ARK Learning Center
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="alc-actions">
+        <a href="https://learn.arkvetrehab.com" class="btn btn-primary alc-cta" target="_blank" rel="noopener">
+          Explore ARK Learning Center
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <span class="alc-device-note">No download required<br>Phone · tablet · desktop</span>
+      </div>
     </div>
 
+    <a href="https://learn.arkvetrehab.com" class="alc-app-preview reveal" target="_blank" rel="noopener" aria-label="Explore ARK Learning Center" style="transition-delay:0.1s">
+      <div class="alc-browser-bar" aria-hidden="true">
+        <span class="alc-browser-dots"><i></i><i></i><i></i></span>
+        <span class="alc-browser-url">learn.arkvetrehab.com</span>
+        <span class="alc-browser-badge">ONLINE</span>
+      </div>
+      <div class="alc-app-screen">
+        <div class="alc-app-top">
+          <img src="./images/ark-learning-center-logo.png" alt="" class="alc-app-logo" loading="lazy">
+          <span class="alc-app-nav" aria-hidden="true"><span>Courses</span><span>Your academy</span><span>Sign in</span></span>
+        </div>
+
+        <div class="alc-app-heading">
+          <div>
+            <span class="alc-app-kicker">START WITH WHAT YOU USE</span>
+            <h3>Select your device.</h3>
+          </div>
+          <p>Choose a learning path built around the therapy tool already in your hands.</p>
+        </div>
+
+        <div class="alc-path-grid" aria-hidden="true">
+          <div class="alc-path-card">
+            <div class="alc-path-visual">
+              <img src="./images/learning-course-laser-therapy-user-v1.png" alt="" loading="lazy">
+              <span class="alc-path-status">AVAILABLE</span>
+            </div>
+            <div class="alc-path-copy"><small>Pain management</small><strong>Laser Therapy</strong></div>
+          </div>
+          <div class="alc-path-card">
+            <div class="alc-path-visual">
+              <img src="./images/learning-course-digital-tens-user-v1.png" alt="" loading="lazy">
+              <span class="alc-path-status">AVAILABLE</span>
+            </div>
+            <div class="alc-path-copy"><small>Pain management</small><strong>Digital TENS</strong></div>
+          </div>
+          <div class="alc-path-card">
+            <div class="alc-path-visual">
+              <img src="./images/learning-course-train-to-move-user-v1.png" alt="" loading="lazy">
+              <span class="alc-path-status">AVAILABLE</span>
+            </div>
+            <div class="alc-path-copy"><small>Home exercise</small><strong>Train to Move</strong></div>
+          </div>
+        </div>
+
+        <div class="alc-app-dashboard" aria-hidden="true">
+          <div class="alc-academy">
+            <div>
+              <div class="alc-academy-head"><span>Your academy</span><span>42% complete</span></div>
+              <div class="alc-progress-track"><span></span></div>
+            </div>
+            <div class="alc-lesson">
+              <small>LASER THERAPY · YOUR DEVICE</small>
+              <strong>Getting to know your home laser</strong>
+              <span class="alc-lesson-meta"><span>Video</span><span>Transcript</span><span>E-book</span></span>
+            </div>
+          </div>
+
+          <div class="alc-rewards">
+            <div class="alc-rewards-title">Achievements</div>
+            <div class="alc-achievement-grid">
+              <div class="alc-achievement">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 2c.5 3-1 4.2-2.1 5.3C10 5.2 8.5 4 7.5 3.5 8 7 4 8.5 4 13a8 8 0 0 0 16 0c0-4.5-2.5-7.5-6.5-11Zm-1.4 18a4 4 0 0 1-4-4c0-2.1 1.4-3.3 2.4-4.4.4 1.3 1.2 2 1.8 2.7.8-1 1.4-2 1.3-3.6 1.5 1.4 2.5 3 2.5 5.3a4 4 0 0 1-4 4Z"/></svg>
+                <strong>7</strong><span>Day Streak</span>
+              </div>
+              <div class="alc-achievement">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M8 3h8l-1 7H9L8 3Z"/><circle cx="12" cy="14" r="5" fill="currentColor" stroke="none"/><path d="m12 11.5.8 1.6 1.8.3-1.3 1.2.3 1.8-1.6-.8-1.6.8.3-1.8-1.3-1.2 1.8-.3.8-1.6Z" fill="#fff" stroke="none"/></svg>
+                <strong>12</strong><span>Certificates</span>
+              </div>
+              <div class="alc-achievement">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.7 2.8 5.7 6.3.9-4.5 4.4 1.1 6.2-5.7-3-5.7 3 1.1-6.2-4.5-4.4 6.3-.9L12 2.7Z"/></svg>
+                <strong>420</strong><span>Points</span>
+              </div>
+            </div>
+            <div class="alc-certificate">
+              <svg class="alc-certificate-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="m12 25-2 12 7-4 3 5 2-13M28 25l2 12-7-4-3 5-2-13" fill="#c67d16"/><circle cx="20" cy="16" r="12" fill="#f4b832"/><circle cx="20" cy="16" r="8.5" stroke="#fff" stroke-width="1.5"/><path d="m20 10.5 1.7 3.4 3.8.6-2.8 2.7.7 3.8-3.4-1.8-3.4 1.8.7-3.8-2.8-2.7 3.8-.6 1.7-3.4Z" fill="#fff"/></svg>
+              <span><strong>Certificate Earned!</strong><span>Laser Therapy for Pain Relief</span><em>View Certificate</em></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
-<script>
-(function(){
-  var section = document.querySelector('.alc-section');
-  if(!section) return;
-  var img = section.querySelector('.alc-bg img');
-  if(!img) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if(window.matchMedia('(hover: none)').matches) return;  /* skip on touch devices */
-  var MAX = 11, raf = null;
-  function move(e){
-    var r = section.getBoundingClientRect();
-    var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
-    var dy = (e.clientY - (r.top  + r.height/2)) / (r.height/2);
-    dx = Math.max(-1, Math.min(1, dx)); dy = Math.max(-1, Math.min(1, dy));
-    if(raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(function(){
-      img.style.transform = 'scale(1.12) translate3d(' + (dx*MAX).toFixed(1) + 'px,' + (dy*MAX).toFixed(1) + 'px,0)';
-    });
-  }
-  function reset(){ img.style.transform = 'scale(1.12) translate3d(0,0,0)'; }
-  section.addEventListener('mousemove', move, { passive: true });
-  section.addEventListener('mouseleave', reset);
-})();
-</script>
 
 <!-- ================= FOOTER ================= -->
 <footer>
