@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>html{background:#f6f1e8;}body{margin:0;}</style>
-<link rel="stylesheet" href="./style.css?v=20260829">
+<link rel="stylesheet" href="./style.css?v=20260913">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
 <script>
@@ -71,7 +71,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "47",
+        "reviewCount": "52",
         "bestRating": "5"
       },
       "sameAs": [
@@ -448,7 +448,7 @@
     #contact .contact-info { justify-self: start; margin-right: 0; }
   }
 
-  /* ====== Find-us map: independent full-width band above the newsletter (index.html only) ====== */
+  /* ====== Find-us map: independent full-width band immediately above the footer (index.html only) ====== */
   .map-section {
     position: relative;
     background: var(--cream);
@@ -742,16 +742,28 @@
     font-size: 13.5px;
     line-height: 1.5;
   }
-  .alc-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .alc-cta { gap: 8px; }
-  .alc-cta svg { width: 16px; height: 16px; }
-  .alc-device-note {
-    color: var(--ink-soft);
-    font-family: var(--font-body);
-    font-size: 11.5px;
-    line-height: 1.4;
+  .alc-actions { display: flex; align-items: flex-start; gap: 14px; flex-direction: column; }
+  .alc-store-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+  .alc-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 5px 11px;
+    border: 1px solid #767676;
+    border-radius: 6px;
+    background: #171717;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    cursor: default;
+    opacity: 1;
   }
+  .alc-store-badge svg { width: 22px; height: 25px; flex: none; }
+  .alc-store-badge small { display: block; font-size: 8px; line-height: 1.2; letter-spacing: 0.02em; }
+  .alc-store-badge strong { display: block; font-size: 16px; line-height: 1.2; font-weight: 400; white-space: nowrap; }
   .alc-app-preview {
+    position: relative;
     min-width: 0;
     display: block;
     overflow: hidden;
@@ -764,11 +776,37 @@
     transform: translateZ(0);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
   }
-  .alc-app-preview:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 36px 90px rgba(28,61,74,0.18), 0 5px 16px rgba(28,61,74,0.07);
+  .alc-construction-badge {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    width: clamp(180px, 17vw, 230px);
+    padding: 22px 18px;
+    overflow: hidden;
+    border: 1px solid #c98d53;
+    border-radius: 10px;
+    background: #fff8eb;
+    color: #1c3d4a;
+    box-shadow: 0 8px 24px rgba(28,61,74,0.22);
+    text-align: center;
+    font-family: var(--font-body);
+    pointer-events: none;
   }
-  .alc-app-preview:focus-visible { outline: 3px solid rgba(58,125,140,0.42); outline-offset: 4px; }
+  .alc-construction-badge::before,
+  .alc-construction-badge::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(135deg, #d8907a 0 9px, #fff0d8 9px 18px);
+  }
+  .alc-construction-badge::before { top: 0; }
+  .alc-construction-badge::after { bottom: 0; }
+  .alc-construction-badge strong { display: block; font-size: clamp(23px, 2vw, 28px); line-height: 1.2; }
+  .alc-construction-badge small { display: block; margin-top: 6px; font-size: 9px; letter-spacing: 0.13em; text-transform: uppercase; }
   .alc-browser-bar {
     height: 47px;
     display: flex;
@@ -989,10 +1027,10 @@
         <span>Shop</span>
       </a></li>
       <li class="nav-contact-group">
-        <a href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" class="nav-greviews" target="_blank" rel="noopener" aria-label="5.0 stars · 47 Google reviews">
+        <a href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" class="nav-greviews" target="_blank" rel="noopener" aria-label="5.0 stars · 52 Google reviews">
           <span class="nav-stars">★★★★★</span>
           <span class="nav-rscore">5.0</span>
-          <span class="nav-rcount">(47 reviews)</span>
+          <span class="nav-rcount">(52 reviews)</span>
         </a>
         <a href="https://wa.me/6588286875" class="nav-wa" target="_blank" rel="noopener" aria-label="WhatsApp +65 8828 6875">
           <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.404A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.118l-.292-.173-3.032.854.854-3.032-.19-.302A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
@@ -1283,6 +1321,8 @@
 })();
 </script>
 
+<!-- Video section preserved until the finished video is ready. Restore by removing this template wrapper. -->
+<template id="watch-section-saved">
 <!-- ================= WATCH / INTERACTIVE VIDEO ================= -->
 <section class="section video-feature" id="watch">
   <div class="container">
@@ -1347,6 +1387,8 @@
     </div>
   </div>
 </section>
+
+</template>
 
 <!-- ================= SERVICES PREVIEW ================= -->
 <section class="section services-preview" id="services">
@@ -1798,55 +1840,6 @@
   </div>
 </section>
 
-<!-- ================= MAP ================= -->
-<section class="map-section" id="map" aria-label="Find us">
-  <div class="map-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=19G4C7CcRlj1y_i7WvKXC4jPID_uYhT4" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation — location & client parking"></iframe>
-    <div class="map-guard" aria-hidden="true"><span class="map-guard-hint">Click to interact</span></div>
-    <a class="map-pill" href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      7d Crane Road, Singapore 429356
-      <span class="map-pill-cta">Open in Google Maps</span>
-    </a>
-  </div>
-</section>
-<script>
-  (function () {
-    var embed = document.querySelector('.map-section .map-embed');
-    if (!embed) return;
-    var guard = embed.querySelector('.map-guard');
-    if (!guard) return;
-    // Click the guard to enable map interaction (scroll-zoom only happens after a deliberate click)
-    guard.addEventListener('click', function () { embed.classList.add('is-active'); });
-    // Re-arm the guard when the pointer leaves, so plain page scrolling never zooms the map
-    embed.addEventListener('mouseleave', function () { embed.classList.remove('is-active'); });
-  })();
-</script>
-
-<!-- ================= NEWSLETTER ================= -->
-<section class="newsletter">
-  <div class="container">
-    <div class="newsletter-inner">
-      <div>
-        <span class="section-eyebrow" style="color:var(--terracotta-soft)">Stay connected</span>
-        <h3>Advance your knowledge — <em>monthly insights</em> straight to your inbox.</h3>
-        <p>Educating and empowering professionals and pet owners in canine rehabilitation. Tips, events, courses, and workshops.</p>
-      </div>
-      <div>
-        <form class="newsletter-form" action="https://getlearnworlds.us21.list-manage.com/subscribe/post?u=2f53abceec0411cbbcd592f88&amp;id=f7e56a8ded&amp;f_id=00ba9ce6f0" method="post" target="_blank">
-          <input type="email" name="EMAIL" placeholder="Your email address" required>
-          <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_2f53abceec0411cbbcd592f88_f7e56a8ded" tabindex="-1" value=""></div>
-          <button type="submit">Join us</button>
-        </form>
-        <label class="newsletter-consent">
-          <input type="checkbox" checked>
-          I'd like to receive news, tips, and other updates
-        </label>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= GALLERY ================= -->
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="handleLbClick(event)">
@@ -1887,19 +1880,25 @@
       </ul>
 
       <div class="alc-actions">
-        <a href="https://learn.arkvetrehab.com" class="btn btn-primary alc-cta" target="_blank" rel="noopener">
-          Explore ARK Learning Center
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <span class="alc-device-note">No download required<br>Phone · tablet · desktop</span>
+        <div class="alc-store-badges" role="group" aria-label="Mobile apps coming soon">
+          <button class="alc-store-badge" type="button" disabled aria-label="Coming soon on the App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.77 3.08.83 1.18-.24 2.31-.96 3.57-.87 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01ZM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25Z"/></svg>
+            <span><small>Coming soon on the</small><strong>App Store</strong></span>
+          </button>
+          <button class="alc-store-badge" type="button" disabled aria-label="Coming soon on Google Play">
+            <svg viewBox="0 0 24 26" aria-hidden="true"><path fill="#4285f4" d="M1 1.5v23L13 13Z"/><path fill="#34a853" d="m1 1.5 15 8.7-3 2.8Z"/><path fill="#fbbc04" d="m16 10.2 5 2.1c.8.4.8 1 0 1.4L16 16l-3-3Z"/><path fill="#ea4335" d="m1 24.5 15-8.5-3-3Z"/></svg>
+            <span><small>Coming soon on</small><strong>Google Play</strong></span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <a href="https://learn.arkvetrehab.com" class="alc-app-preview reveal" target="_blank" rel="noopener" aria-label="Explore ARK Learning Center" style="transition-delay:0.1s">
+    <div class="alc-app-preview reveal" role="img" aria-label="Preview of ARK Learning Center — coming soon" style="transition-delay:0.1s">
+      <div class="alc-construction-badge" aria-hidden="true"><strong>Coming soon</strong><small>Under construction</small></div>
       <div class="alc-browser-bar" aria-hidden="true">
         <span class="alc-browser-dots"><i></i><i></i><i></i></span>
         <span class="alc-browser-url">learn.arkvetrehab.com</span>
-        <span class="alc-browser-badge">ONLINE</span>
+        <span class="alc-browser-badge">COMING SOON</span>
       </div>
       <div class="alc-app-screen">
         <div class="alc-app-top">
@@ -1919,21 +1918,21 @@
           <div class="alc-path-card">
             <div class="alc-path-visual">
               <img src="./images/learning-course-laser-therapy-user-v1.png" alt="" loading="lazy">
-              <span class="alc-path-status">AVAILABLE</span>
+              <span class="alc-path-status">COMING SOON</span>
             </div>
             <div class="alc-path-copy"><small>Pain management</small><strong>Laser Therapy</strong></div>
           </div>
           <div class="alc-path-card">
             <div class="alc-path-visual">
               <img src="./images/learning-course-digital-tens-user-v1.png" alt="" loading="lazy">
-              <span class="alc-path-status">AVAILABLE</span>
+              <span class="alc-path-status">COMING SOON</span>
             </div>
             <div class="alc-path-copy"><small>Pain management</small><strong>Digital TENS</strong></div>
           </div>
           <div class="alc-path-card">
             <div class="alc-path-visual">
               <img src="./images/learning-course-train-to-move-user-v1.png" alt="" loading="lazy">
-              <span class="alc-path-status">AVAILABLE</span>
+              <span class="alc-path-status">COMING SOON</span>
             </div>
             <div class="alc-path-copy"><small>Home exercise</small><strong>Train to Move</strong></div>
           </div>
@@ -1975,9 +1974,34 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section class="map-section" id="map" aria-label="Find us">
+  <div class="map-embed">
+    <iframe src="https://www.google.com/maps/d/embed?mid=19G4C7CcRlj1y_i7WvKXC4jPID_uYhT4" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation — location & client parking"></iframe>
+    <div class="map-guard" aria-hidden="true"><span class="map-guard-hint">Click to interact</span></div>
+    <a class="map-pill" href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      7d Crane Road, Singapore 429356
+      <span class="map-pill-cta">Open in Google Maps</span>
     </a>
   </div>
 </section>
+<script>
+  (function () {
+    var embed = document.querySelector('.map-section .map-embed');
+    if (!embed) return;
+    var guard = embed.querySelector('.map-guard');
+    if (!guard) return;
+    // Click the guard to enable map interaction (scroll-zoom only happens after a deliberate click)
+    guard.addEventListener('click', function () { embed.classList.add('is-active'); });
+    // Re-arm the guard when the pointer leaves, so plain page scrolling never zooms the map
+    embed.addEventListener('mouseleave', function () { embed.classList.remove('is-active'); });
+  })();
+</script>
 
 <!-- ================= FOOTER ================= -->
 <footer>

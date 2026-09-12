@@ -3340,3 +3340,28 @@ button.bk-visit-card:focus-visible .bk-visit-go { opacity: 1; transform: none; }
   .seo-service-actions { align-items: stretch; flex-direction: column; }
   .seo-service-actions .btn { justify-content: center; }
 }
+
+/* Service-page WhatsApp CTA: cream pill on the existing deep-teal band. */
+.seo-service-cta .btn-whatsapp,
+.seo-service-cta .btn-whatsapp:visited {
+  justify-content: center;
+  gap: 12px;
+  min-height: 54px;
+  max-width: 100%;
+  padding: 15px 28px;
+  border: 1px solid rgba(249,247,240,.65);
+  background: var(--cream);
+  color: var(--sage-deep);
+  box-shadow: 0 5px 18px rgba(0,0,0,.10);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.seo-service-cta .btn-whatsapp .whatsapp-button-icon { width: 23px; height: 23px; flex: none; }
+.seo-service-cta .btn-whatsapp:hover { background: var(--cream-warm); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.16); }
+.seo-service-cta .btn-whatsapp:focus-visible { outline: 3px solid var(--sage-light); outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) {
+  .seo-service-cta .btn-whatsapp { transition: none; }
+  .seo-service-cta .btn-whatsapp:hover { transform: none; }
+}
