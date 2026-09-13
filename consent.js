@@ -30,7 +30,7 @@
     for (var i = 1; i < parts.length; i++) paths.push(parts.slice(0, i).join('/') + '/');
     document.cookie.split(';').forEach(function (cookie) {
       var name = cookie.split('=')[0].trim();
-      if (!/^(?:_ga(?:_|$)|_gid$|_gat(?:_|$)|_gcl_|_clck$|_clsk$|_hj|_mc_|mc_|MCPopup|MCEvilPopup|mailchimp)/i.test(name)) return;
+      if (!/^(?:_ga(?:_|$)|_gid$|_gat(?:_|$)|_gcl_|_clck$|_clsk$|_hj|_mc_|mc_|mcforms[-_]|MCPopup|MCEvilPopup|mailchimp)/i.test(name)) return;
       domains.forEach(function (domain) {
         paths.forEach(function (path) {
           document.cookie = name + '=; Max-Age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + path + (domain ? '; domain=' + domain : '') + '; SameSite=Lax';
