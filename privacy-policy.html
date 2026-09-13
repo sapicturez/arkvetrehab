@@ -7,50 +7,15 @@
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-italic-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-normal-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/inter-tight-normal-400-latin.woff2" crossorigin>
-<link rel="stylesheet" href="./style.min.css?v=20260914">
-<!-- Google tag (gtag.js) -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MQ59ZFM9GW');
-</script>
+<link rel="stylesheet" href="./style.min.css?v=20260914-consent1">
+<script defer src="./consent.min.js?v=20260914-consent1"></script>
 <title>Privacy Policy | ARK Veterinary Rehabilitation</title>
 <meta name="description" content="Privacy Policy for ARK Veterinary Rehabilitation — how we collect, use and protect your data in compliance with Singapore PDPA." />
 <meta name="robots" content="noindex, follow" />
 <link rel="icon" type="image/png" href="./images/favicon-48.png" sizes="48x48">
 <link rel="canonical" href="https://arkvetrehab.com/privacy-policy.html">
-<!-- Microsoft Clarity heatmap -->
-<script>
-/* Preserve queued analytics calls while prioritising the first visible content. */
-window.arkAfterFirstPaint = function (callback) {
-  var done = false;
-  function run() { if (!done) { done = true; callback(); } }
-  if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes && PerformanceObserver.supportedEntryTypes.indexOf('paint') !== -1) {
-    var observer = new PerformanceObserver(function (list) {
-      if (list.getEntries().some(function (entry) { return entry.name === 'first-contentful-paint'; })) {
-        observer.disconnect();
-        run();
-      }
-    });
-    observer.observe({ type: 'paint', buffered: true });
-  } else {
-    function afterLoad() { requestAnimationFrame(function () { requestAnimationFrame(run); }); }
-    if (document.readyState === 'complete') afterLoad();
-    else window.addEventListener('load', afterLoad, { once: true });
-  }
-};
-window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
-window.arkAfterFirstPaint(function () {
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.clarity.ms/tag/wrzh4olbi6';
-  document.head.appendChild(script);
-});
-</script>
 </head>
-<body>
+<body data-ark-clarity>
 
 <!-- ================= NAV ================= -->
 <nav>
@@ -102,7 +67,7 @@ window.arkAfterFirstPaint(function () {
 <main>
   <div class="pp-body">
 
-    <p class="pp-updated">Last updated: 17 May 2026</p>
+    <p class="pp-updated">Last updated: 14 September 2026</p>
 
     <h2>Who we are</h2>
     <p>ARK Veterinary Rehabilitation Pte. Ltd. ("ARK", "we", "us") operates the website <a href="https://arkvetrehab.com">arkvetrehab.com</a> and provides veterinary rehabilitation services at 7d Crane Road, Singapore 429356.</p>
@@ -112,76 +77,32 @@ window.arkAfterFirstPaint(function () {
     <p>We may collect the following types of information when you visit our website or contact us:</p>
     <ul>
       <li><strong>Usage data</strong> — pages visited, time on site, device type, browser, referring URL (via Google Analytics)</li>
-      <li><strong>Session recordings</strong> — anonymised click and scroll behaviour (via Microsoft Clarity)</li>
+      <li><strong>Session recordings</strong> — click and scroll behaviour after consent (via Microsoft Clarity)</li>
       <li><strong>Contact data</strong> — your name, phone number, and pet details when you message us via WhatsApp</li>
       <li><strong>Cookies</strong> — small files stored in your browser (see Cookies section below)</li>
     </ul>
     <p>We do not collect payment information directly. We do not sell your data to third parties.</p>
 
     <h2 id="cookies">Cookies</h2>
-    <p>Our website uses cookies to understand how visitors use the site and to improve your experience. The table below lists all cookies we use:</p>
+    <p>Google Analytics, Microsoft Clarity and Mailchimp load only after you select Accept. Before you choose, or if you select Decline, these optional services stay off. Essential website functions, including contacting us and requesting an appointment, remain available. We remember your choice for 180 days in this browser.</p>
 
+    <p>You can reopen <a href="#cookies" data-ark-cookie-settings>Cookie settings</a> at any time using the link in the footer. Selecting Decline after accepting withdraws your permission and reloads the page to stop optional services. We also remove accessible analytics and marketing cookies set on this website. Withdrawing consent does not delete information already received by a provider.</p>
+    <p>Google Maps stays paused until you accept or explicitly select Load map. Loading a map connects to Google and may use its cookies; this does not enable our analytics or marketing tools. External booking services load when you choose to use them and have their own privacy practices.</p>
     <table class="pp-cookie-table">
-      <thead>
-        <tr>
-          <th>Cookie</th>
-          <th>Set by</th>
-          <th>Purpose</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Storage</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr></thead>
       <tbody>
-        <tr>
-          <td><code>_ga</code></td>
-          <td>Google Analytics</td>
-          <td>Distinguishes unique visitors</td>
-          <td>14 months</td>
-        </tr>
-        <tr>
-          <td><code>_ga_*</code></td>
-          <td>Google Analytics</td>
-          <td>Session state for GA4</td>
-          <td>14 months</td>
-        </tr>
-        <tr>
-          <td><code>_gid</code></td>
-          <td>Google Analytics</td>
-          <td>Session identifier</td>
-          <td>24 hours</td>
-        </tr>
-        <tr>
-          <td><code>_gcl_au</code></td>
-          <td>Google Ads</td>
-          <td>Conversion measurement</td>
-          <td>90 days</td>
-        </tr>
-        <tr>
-          <td><code>_clsk</code></td>
-          <td>Microsoft Clarity</td>
-          <td>Session recording (anonymised)</td>
-          <td>1 day</td>
-        </tr>
-        <tr>
-          <td><code>_clck</code></td>
-          <td>Microsoft Clarity</td>
-          <td>Visitor identifier (anonymised)</td>
-          <td>1 year</td>
-        </tr>
-        <tr>
-          <td><code>ark_cookie_ok</code></td>
-          <td>arkvetrehab.com</td>
-          <td>Remembers your cookie notice dismissal</td>
-          <td>Persistent (localStorage)</td>
-        </tr>
+        <tr><td><code>ark_cookie_consent_v2</code></td><td>ARK</td><td>Remembers Accept or Decline in localStorage</td><td>180 days</td></tr>
+        <tr><td><code>_ga</code>, <code>_ga_*</code></td><td>Google Analytics</td><td>Visitor and session measurement after consent</td><td>Up to 180 days, renewed during use</td></tr>
+        <tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Clarity</td><td>Visitor and session measurement after consent</td><td>Typically 1 year and 1 day respectively</td></tr>
+        <tr><td>Marketing form storage</td><td>Mailchimp</td><td>Marketing features and form preferences after consent</td><td>Depends on the feature used</td></tr>
       </tbody>
     </table>
-
-    <p>All analytics data is aggregated and anonymised. We do not use cookies to identify you personally.</p>
+    <p>Analytics services can process browser identifiers and interaction data. See the providers' privacy policies below for details. Accepting cookies does not subscribe you to our newsletter.</p>
 
     <h2>How we use your data</h2>
     <ul>
       <li>To understand website traffic and improve our pages</li>
-      <li>To measure the effectiveness of our Google Ads campaigns</li>
+      <li>To understand how visitors reach our website, after consent</li>
       <li>To respond to appointment enquiries sent via WhatsApp</li>
       <li>To identify and fix technical issues on the website</li>
     </ul>
@@ -190,8 +111,9 @@ window.arkAfterFirstPaint(function () {
     <p>We use the following third-party tools that may process data on our behalf:</p>
     <ul>
       <li><strong>Google Analytics 4</strong> — website traffic analysis. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-      <li><strong>Google Ads</strong> — advertising and conversion tracking. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-      <li><strong>Microsoft Clarity</strong> — anonymised session recordings and heatmaps. <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a></li>
+      <li><strong>Mailchimp</strong> — marketing forms and related features, after consent. <a href="https://www.intuit.com/privacy/statement/" target="_blank" rel="noopener">Intuit Privacy Statement</a></li>
+      <li><strong>Google Maps</strong> — maps loaded after consent or at your request. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Microsoft Clarity</strong> — session recordings and heatmaps, after consent. <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft Privacy Statement</a></li>
       <li><strong>Hostinger</strong> — website hosting provider. <a href="https://www.hostinger.com/privacy-policy" target="_blank" rel="noopener">Hostinger Privacy Policy</a></li>
       <li><strong>WhatsApp</strong> — appointment bookings via chat. <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">WhatsApp Privacy Policy</a></li>
     </ul>
@@ -202,7 +124,7 @@ window.arkAfterFirstPaint(function () {
       <li><strong>Access</strong> — request a copy of personal data we hold about you</li>
       <li><strong>Correction</strong> — ask us to correct inaccurate data</li>
       <li><strong>Withdrawal of consent</strong> — withdraw consent for data collection at any time</li>
-      <li><strong>Opt out of analytics</strong> — install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a></li>
+      <li><strong>Opt out of analytics</strong> — open <a href="#cookies" data-ark-cookie-settings>Cookie settings</a> and select Decline</li>
     </ul>
     <p>To exercise any of these rights, contact us at <a href="mailto:arkvetrehab@gmail.com">arkvetrehab@gmail.com</a>.</p>
 
@@ -218,7 +140,7 @@ window.arkAfterFirstPaint(function () {
     <p>Google Analytics event data is retained for <strong>14 months</strong>. User data is retained for <strong>14 months</strong> with reset on new activity. WhatsApp conversations are retained at our discretion and deleted upon request.</p>
 
     <h2>Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of the website after changes constitutes acceptance of the updated policy.</p>
+    <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Changes to this policy do not override your cookie choice. If the purposes of optional services change, we will ask for a new choice.</p>
 
     <h2>Contact us</h2>
     <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us:</p>
@@ -277,7 +199,8 @@ window.arkAfterFirstPaint(function () {
           </div>
         </div>
         <div class="footer-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
+          <div class="ark-map-consent"><p>Google Maps is paused for your privacy.</p><button type="button" data-ark-load-map>Load map</button><small>Loading the map connects to Google and may use cookies.</small></div>
+<iframe data-ark-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" hidden allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
         </div>
       </div>
     </div>
@@ -286,12 +209,13 @@ window.arkAfterFirstPaint(function () {
       <div style="display:flex;gap:24px">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="privacy-policy.html#cookies">Cookie Policy</a>
+        <a href="privacy-policy.html#cookies" data-ark-cookie-settings>Cookie settings</a>
         <a href="#">Terms &amp; Conditions</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="script.min.js?v=20260914"></script>
+<script src="script.min.js?v=20260914-consent1"></script>
 </body>
 </html>

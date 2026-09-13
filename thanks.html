@@ -7,16 +7,8 @@
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-italic-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-normal-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/inter-tight-normal-400-latin.woff2" crossorigin>
-<link rel="stylesheet" href="./style.min.css?v=20260914">
-<!-- Google tag (gtag.js) -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MQ59ZFM9GW');
-  gtag('event', 'booking_request_sent', { event_category: 'form', event_label: 'booking_form' });
-</script>
+<link rel="stylesheet" href="./style.min.css?v=20260914-consent1">
+<script defer src="./consent.min.js?v=20260914-consent1"></script>
 <title>Appointment Request Received — ARK Veterinary Rehabilitation</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="./images/favicon-48.png" sizes="48x48">
@@ -169,7 +161,7 @@
   }
 </style>
 </head>
-<body>
+<body data-ark-booking-confirmation>
 
 <div class="thanks-page">
 
@@ -221,5 +213,6 @@
 
 </div>
 
+<p class="ark-thanks-cookie-settings"><a href="privacy-policy.html#cookies" data-ark-cookie-settings>Cookie settings</a></p>
 </body>
 </html>

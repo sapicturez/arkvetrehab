@@ -7,15 +7,8 @@
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-italic-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-normal-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/inter-tight-normal-400-latin.woff2" crossorigin>
-<link rel="stylesheet" href="./style.min.css?v=20260914">
-<!-- Google tag (gtag.js) -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MQ59ZFM9GW');
-</script>
+<link rel="stylesheet" href="./style.min.css?v=20260914-consent1">
+<script defer src="./consent.min.js?v=20260914-consent1"></script>
 <title>Dog Hydrotherapy Membership Singapore | Treat-mill Club</title>
 <meta name="description" content="Explore ARK Treat-mill Club, a dog hydrotherapy membership in Singapore with monthly underwater treadmill sessions and flexible care options." />
 
@@ -945,36 +938,8 @@
   .mc-footer { flex-direction: column; align-items: stretch; }
 }
 </style>
-<!-- Microsoft Clarity heatmap -->
-<script>
-/* Preserve queued analytics calls while prioritising the first visible content. */
-window.arkAfterFirstPaint = function (callback) {
-  var done = false;
-  function run() { if (!done) { done = true; callback(); } }
-  if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes && PerformanceObserver.supportedEntryTypes.indexOf('paint') !== -1) {
-    var observer = new PerformanceObserver(function (list) {
-      if (list.getEntries().some(function (entry) { return entry.name === 'first-contentful-paint'; })) {
-        observer.disconnect();
-        run();
-      }
-    });
-    observer.observe({ type: 'paint', buffered: true });
-  } else {
-    function afterLoad() { requestAnimationFrame(function () { requestAnimationFrame(run); }); }
-    if (document.readyState === 'complete') afterLoad();
-    else window.addEventListener('load', afterLoad, { once: true });
-  }
-};
-window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
-window.arkAfterFirstPaint(function () {
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.clarity.ms/tag/wrzh4olbi6';
-  document.head.appendChild(script);
-});
-</script>
 </head>
-<body>
+<body data-ark-clarity>
 
 <!-- ================= NAV ================= -->
 <nav>
@@ -1514,7 +1479,8 @@ window.arkAfterFirstPaint(function () {
           </div>
         </div>
         <div class="footer-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
+          <div class="ark-map-consent"><p>Google Maps is paused for your privacy.</p><button type="button" data-ark-load-map>Load map</button><small>Loading the map connects to Google and may use cookies.</small></div>
+<iframe data-ark-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.771360356949!2d103.8991265!3d1.3126096999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19d7c0288ca7%3A0xc2add425db63b79c!2sARK%20Veterinary%20Rehabilitation!5e0!3m2!1sen!2sth!4v1778925336081!5m2!1sen!2sth" hidden allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation location"></iframe>
         </div>
       </div>
     </div>
@@ -1524,13 +1490,14 @@ window.arkAfterFirstPaint(function () {
       <div style="display:flex;gap:24px">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="privacy-policy.html#cookies">Cookie Policy</a>
+        <a href="privacy-policy.html#cookies" data-ark-cookie-settings>Cookie settings</a>
         <a href="#">Terms &amp; Conditions</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="script.min.js?v=20260914"></script>
+<script src="script.min.js?v=20260914-consent1"></script>
 <script>
 function tmFaq(btn) {
   var item = btn.closest('.tm-faq-item');

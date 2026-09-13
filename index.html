@@ -7,15 +7,8 @@
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-italic-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/fraunces-normal-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="./fonts/inter-tight-normal-400-latin.woff2" crossorigin>
-<link rel="stylesheet" href="./style.min.css?v=20260914">
-<!-- Google tag (gtag.js) -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-MQ59ZFM9GW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MQ59ZFM9GW');
-</script>
+<link rel="stylesheet" href="./style.min.css?v=20260914-consent1">
+<script defer src="./consent.min.js?v=20260914-consent1"></script>
 <title>Veterinary Rehabilitation Singapore | ARK Vet Rehab</title>
 <meta name="description" content="Veterinary rehabilitation in Singapore with hydrotherapy, physiotherapy, laser, acupuncture and personalised mobility care for dogs and cats." />
 
@@ -330,34 +323,6 @@
   .pk3-ribbon { font-size: 7px; padding: 4px 9px; top: 10px; right: 10px; }
 }
 </style>
-<!-- Microsoft Clarity heatmap -->
-<script>
-/* Preserve queued analytics calls while prioritising the first visible content. */
-window.arkAfterFirstPaint = function (callback) {
-  var done = false;
-  function run() { if (!done) { done = true; callback(); } }
-  if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes && PerformanceObserver.supportedEntryTypes.indexOf('paint') !== -1) {
-    var observer = new PerformanceObserver(function (list) {
-      if (list.getEntries().some(function (entry) { return entry.name === 'first-contentful-paint'; })) {
-        observer.disconnect();
-        run();
-      }
-    });
-    observer.observe({ type: 'paint', buffered: true });
-  } else {
-    function afterLoad() { requestAnimationFrame(function () { requestAnimationFrame(run); }); }
-    if (document.readyState === 'complete') afterLoad();
-    else window.addEventListener('load', afterLoad, { once: true });
-  }
-};
-window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
-window.arkAfterFirstPaint(function () {
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://www.clarity.ms/tag/wrzh4olbi6';
-  document.head.appendChild(script);
-});
-</script>
 <style>
   /* ====== Why-section image highlights (index.html only) ====== */
   .why-highlights {
@@ -1023,7 +988,7 @@ window.arkAfterFirstPaint(function () {
   }
 </style>
 </head>
-<body>
+<body data-ark-clarity data-ark-mailchimp>
 
 
 <!-- ================= NAV ================= -->
@@ -1998,7 +1963,8 @@ window.arkAfterFirstPaint(function () {
 <!-- ================= MAP ================= -->
 <section class="map-section" id="map" aria-label="Find us">
   <div class="map-embed">
-    <iframe src="https://www.google.com/maps/d/embed?mid=19G4C7CcRlj1y_i7WvKXC4jPID_uYhT4" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation — location & client parking"></iframe>
+    <div class="ark-map-consent"><p>Google Maps is paused for your privacy.</p><button type="button" data-ark-load-map>Load map</button><small>Loading the map connects to Google and may use cookies.</small></div>
+<iframe data-ark-map-src="https://www.google.com/maps/d/embed?mid=19G4C7CcRlj1y_i7WvKXC4jPID_uYhT4" hidden allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ARK Veterinary Rehabilitation — location & client parking"></iframe>
     <div class="map-guard" aria-hidden="true"><span class="map-guard-hint">Click to interact</span></div>
     <a class="map-pill" href="https://maps.app.goo.gl/jR2WhRcexuFmr4oB6" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -2075,22 +2041,13 @@ window.arkAfterFirstPaint(function () {
       <div style="display:flex;gap:24px">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="privacy-policy.html#cookies">Cookie Policy</a>
+        <a href="privacy-policy.html#cookies" data-ark-cookie-settings>Cookie settings</a>
         <a href="#">Terms &amp; Conditions</a>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="script.min.js?v=20260914" defer></script>
-<script id="mcjs">
-/* The marketing form remains active, but cannot block the initial screen. */
-window.arkAfterFirstPaint(function () {
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = 'https://chimpstatic.com/mcjs-connected/js/users/2f53abceec0411cbbcd592f88/88538bbf13c08ae05ef2374b7.js';
-  document.head.appendChild(script);
-});
-</script>
-
+<script src="script.min.js?v=20260914-consent1" defer></script>
 </body>
 </html>
