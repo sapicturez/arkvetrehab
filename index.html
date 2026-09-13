@@ -2062,7 +2062,23 @@
 </footer>
 
 <script src="script.min.js?v=20260914" defer></script>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/2f53abceec0411cbbcd592f88/88538bbf13c08ae05ef2374b7.js");</script>
+<script id="mcjs">
+/* Load the marketing form after the first rendered screen, keeping booking responsive. */
+(function () {
+  function loadMarketingForm() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://chimpstatic.com/mcjs-connected/js/users/2f53abceec0411cbbcd592f88/88538bbf13c08ae05ef2374b7.js';
+        document.head.appendChild(script);
+      });
+    });
+  }
+  if (document.readyState === 'complete') loadMarketingForm();
+  else window.addEventListener('load', loadMarketingForm, { once: true });
+})();
+</script>
 
 </body>
 </html>
